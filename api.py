@@ -73,7 +73,6 @@ if __name__ == "__main__":
     key = b"***REMOVED***"
     aes = AES.new(key, AES.MODE_CBC, byte_data[0:16])
     pad_text = aes.decrypt(byte_data[16:])
-    print(pad_text[:-2])
-    text = unpad(pad_text, 128)
-    data_loaded = msgpack.unpackb(pad_text[:-2])
+    text = unpad(pad_text, 16)
+    data_loaded = msgpack.unpackb(text)
     print(data_loaded)
