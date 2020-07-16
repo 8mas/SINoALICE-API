@@ -12,12 +12,11 @@ import hmac
 import base64
 import time
 import random
-from collections import OrderedDict
 from urllib.parse import quote_plus
+from collections import OrderedDict
 
 DEBUG = True
 instances = 0
-
 
 def encodeRFC3986(input_string):
     if input_string is None:
@@ -33,49 +32,105 @@ def encodeRFC3986(input_string):
 
 
 def generate_nonce(length=19):
-    return hex(int(''.join([str(random.randint(0, 15)) for i in range(length)])))
+    return int(''.join([str(random.randint(0, 9)) for i in range(length)]))
+
+
+def generate_device_id():
+    id = "=="
+    return id+"".join([random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 
 
 class API:
     URL = "https://api-sinoalice-us.pokelabo.jp"
     crypto_key = b"***REMOVED***"
-    app_secret = "***REMOVED***"
+    app_secret = "***REMOVED***" # TODO is this secret static?
+    app_id = "***REMOVED***"  # The application id / shared by all players!
+
     def __init__(self):
         self.request_session = requests.session()
         self.request_session.verify = False
 
-        self.consumer_key = generate_nonce(15)  # Like device id
-        self.private_key = RSA.generate(1024)
+        self.uuid = "" # This is in the first response when sending app id
+        self.x_uid = "" # response to auth/x_uid TODO what is this for
+        self.device_id = generate_device_id() # Unknown what this is for, but it is okay to generate
+        self.private_key = RSA.generate(512) # Unknown if all share the same key, but it is okay this way
 
         # Use local proxy
         if DEBUG:
             print("Using proxy")
             self.request_session.proxies.update({"http": "http://127.0.0.1:8888", "https": "https://127.0.0.1:8888", })
 
-    """
-    Benutzung von SHA1-RSA-PKCS 
-    DefaultSigner wird für den ersten kontakt genommen
-    Dann Authoratife für den zweiten (auth/x_uid)
-    
-    """
+    def login(self, new_account=False):
+        base_us_url = "https://bn-payment-us.wrightflyer.net"
+        auth_initialize = "/v1.0/auth/initialize"
 
-    def register_new_account(self):
-        oauth_header = self._build_oauth_header()
+        header = {
+            "Authorization": "To-be-created",
+            "X-GREE-GAMELIB": "authVersion%3D1.4.10%26storeType%3Dgoogle%26appVersion%3D1.0.16%26uaType%3Dandroid-app"
+                              "%26carrier%3DMEDIONmobile%26compromised%3Dfalse%26countryCode%3DUS%26currencyCode%3DUSD", #Update
+            "User-Agent": "Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36",
+        }
 
-        pass
+        login_payload = {
+            "device_id": f"{self.device_id}",
+            "token": f"{self.private_key.publickey().export_key().decode()}",
+            "payload": {
+                "appVersion": "1.0.16",
+                "urlParam": None,
+                "deviceModel": "OnePlus ONEPLUS A6042",
+                "osType": 2,
+                "osVersion": "Android OS 10 / API-29",
+                "storeType": 2,
+                "graphicsDeviceId": 0,
+                "graphicsDeviceVendorId": 0,
+                "processorCount": 8,
+                "processorType": "ARM64 FP ASIMD AES",
+                "supportedRenderTargetCount": 8,
+                "supports3DTextures": True,
+                "supportsAccelerometer": True,
+                "supportsComputeShaders": True,
+                "supportsGyroscope": True,
+                "supportsImageEffects": True,
+                "supportsInstancing": True,
+                "supportsLocationService": True,
+                "supportsRenderTextures": True,
+                "supportsRenderToCubemap": True,
+                "supportsShadows": True,
+                "supportsSparseTextures": True,
+                "supportsStencil": 1,
+                "supportsVibration": True,
+                "uuid": None,  # Is returned by a request
+                "xuid": 0,  # Is returned by a request
+                "locale": "en_US",
+                "numericCountryCode": 826
+            }
+        }
 
-    def login(self):
-        pass
+        login_payload_bytes = json.dumps(login_payload)
+        authorization = self._build_oauth_header_entry("POST", base_us_url + auth_initialize, login_payload_bytes.encode(), new_account)
+        header["Authorization"] = authorization
 
-    def _build_oauth_header(self, rest_method: str, full_url: str, body_data: bytes, new_account=False):
+        self.request_session.headers = header
+        self.request_session.post(base_us_url + auth_initialize, login_payload_bytes)
+
+    def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, new_account=False):
+        timestamp = int(time.time())
         oauth_header = {
             "oauth_body_hash": f"{base64.b64encode(SHA1.new(body_data).digest()).decode()}",
-            "oauth_consumer_key": f"{self.consumer_key}",
-            "oauth_nonce": f"{-6646833009595137866}",
+            "oauth_consumer_key": f"{self.app_id}",
+            "oauth_nonce": f"{generate_nonce(19)}",
             "oauth_signature_method": f"{'HMAC-SHA1' if new_account else 'RSA-SHA1'}",
-            "oauth_timestamp": f"{int(time.time())}",
+            "oauth_timestamp": f"{timestamp}",
             "oauth_version": "1.0"
         }
+
+        if not new_account:
+            to_hash = (self.app_secret + str(timestamp)).encode()
+            param_signature = self._generate_signature(to_hash, SHA1)
+            oauth_header["xoauth_as_hash"] = param_signature
+
+            oauth_header["xoauth_requestor_id"] = "TODO UUID"
 
         auth_string = ""
         for key, value in sorted(oauth_header.items()):
@@ -91,25 +146,26 @@ class API:
                       quote_plus(auth_string.rsplit("&", 1)[0])
 
         if new_account:
-            oauth_signature = hmac.new("TODO_get_this.secret", string_to_hash, "SHA1")
+            oauth_signature = hmac.new(self.app_secret.encode(), string_to_hash.encode(), "SHA1").digest()
+            oauth_signature = base64.b64encode(oauth_signature)
         else:
-            hashed_string = SHA1.new(string_to_hash.encode())
-            oauth_signature = pkcs1_15.new(self.private_key).sign(hashed_string)
+            oauth_signature = self._generate_signature(string_to_hash.encode(), SHA1)
 
-        oauth_header["oauth_signature"] = base64.b64encode(oauth_signature)
+        oauth_header["oauth_signature"] = oauth_signature
 
-        oauth_header_entry = "Oauth "
+        oauth_header_entry = "OAuth "
         for key, value in sorted(oauth_header.items()):
             oauth_header_entry += key
             oauth_header_entry += "=\""
             oauth_header_entry += quote_plus(value)
             oauth_header_entry += "\","
         oauth_header_entry = oauth_header_entry[:-1]
-        print(oauth_header_entry)
+        return oauth_header_entry
 
-    def _generate_signatur(self, data: bytes):
-        mac = SHA1.new(data).digest()
-        return mac
+    def _generate_signature(self, data: bytes, hash_function):
+        hashed_string = hash_function.new(data)
+        signature = pkcs1_15.new(self.private_key).sign(hashed_string)
+        return base64.b64encode(signature)
 
     def _decrypt_response(self, response_content: bytes) -> dict:
         iv = response_content[0:16]
@@ -227,15 +283,11 @@ class SigningException(Exception):
 
 """
 Hooked
-POST&https%3A%2F%2Fbn-payment-us.wrightflyer.net%2Fv1.0%2Fauth%2Fauthorize&oauth_body_hash%3D2jmj7l5rSw0yVb%252FvlWAYkK%252FYBwk%253D%26oauth_consumer_key%3D0x181d2de911f99bdcd83%26oauth_nonce%3D-6646833009595137866%26oauth_signature_method%3DRSA-SHA1%26oauth_timestamp%3D1594837849%26oauth_version%3D1.0
+Oauth oauth_body_hash="2jmj7l5rSw0yVb%2FvlWAYkK%2FYBwk%3D",oauth_consumer_key="0x3f6e38a9bc25b9f657",oauth_nonce="-6646833009595137866",oauth_signature="WIkF0usv4D0iFzY9CTbcOxWGxT6ZRprr90r87os1sGu9hrnhCKkdy6ReGFPjHk6%2FdWQRJIw7W5UT9yWBbZa6%2Fw%3D%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1594896527",oauth_version="1.0"
 
-Nonce -6646833009595137866
-GenerateSignaturString
 GET&https%3A%2F%2Fbn-moderation-us.wrightflyer.net%2Fv1.0%2Fmoderate%2Fkeywordlist&oauth_body_hash%3D2jmj7l5rSw0yVb%252FvlWAYkK%252FYBwk%253D%26oauth_consumer_key%3D***REMOVED***%26oauth_nonce%3Dcaa48ee35fb3907ba1d6637887fbe794%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1594822363%26oauth_version%3D1.0%26timestamp%3D1594637669 ***REMOVED***"""
 if __name__ == "__main__":
     a = API()
-    a._build_oauth_header("POST", "https://bn-payment-us.wrightflyer.net/v1.0/auth/authorize", b"")
-    #a.POST__api_login()
+    a.login(True)
 
-    n = "9038718546081284029"
-    print(SHA1.new("***REMOVED***".encode()).hexdigest())
+
