@@ -47,8 +47,7 @@ class API:
     crypto_key = b"***REMOVED***"  # Reverse: Static, Unity part, BasicCrypto.encrypt
     app_secret = "***REMOVED***"  # Reverse: Static, Java Part, .sign.AuthorizedSigner constructor
     app_id = "***REMOVED***"  # Reverse: Static, web log
-    #***REMOVED*** 761fa0850e76a9898572ac7ef7c11bc3
-    #***REMOVED*** 636a36e2c5f747fdb12e059a5f830369
+
     def __init__(self):
         self.request_session = requests.session()
         self.request_session.verify = False
@@ -122,8 +121,7 @@ class API:
         self.request_session.headers = header
         response = self.request_session.post(base_us_url + auth_initialize, login_payload_bytes)
         self.uuid = response.json()["uuid"]
-        #***REMOVED***7ceb8bdd15240fae777e6ab8246c3ba0
-        #***REMOVED***7ceb8bdd15240fae777e6ab8246c3ba0
+
         auth_x_uid = "/v1.0/auth/x_uid"
         authorization = self._build_oauth_header_entry("GET", base_us_url + auth_x_uid, b"")
         header["Authorization"] = authorization
@@ -131,11 +129,11 @@ class API:
         self.x_uid = json.loads(response.content)["x_uid"]
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, new_account=False):
-        timestamp = int(time.time())
+        timestamp = 1593629820
         oauth_header = {
             "oauth_body_hash": f"{base64.b64encode(SHA1.new(body_data).digest()).decode()}",
             "oauth_consumer_key": f"{self.app_id}",
-            "oauth_nonce": f"{generate_nonce(19)}",
+            "oauth_nonce": f"{generate_nonce()}",
             "oauth_signature_method": f"{'HMAC-SHA1' if new_account else 'RSA-SHA1'}",
             "oauth_timestamp": f"{timestamp}",
             "oauth_version": "1.0"
@@ -144,7 +142,7 @@ class API:
         if not new_account:
             to_hash = (self.app_secret + str(timestamp)).encode()
             param_signature = self._generate_signature(to_hash, SHA1)
-            oauth_header["xoauth_as_hash"] = param_signature
+            oauth_header["xoauth_as_hash"] = param_signature.strip()
 
             oauth_header["xoauth_requestor_id"] = self.uuid
 
