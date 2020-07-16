@@ -13,17 +13,18 @@ import base64
 import time
 import random
 from urllib.parse import quote_plus
-from collections import OrderedDict
 
 DEBUG = True
 instances = 0
+
 
 def encodeRFC3986(input_string):
     if input_string is None:
         return input_string
     sb = ""
     for c in input_string:
-        if (c < 'A' or c > 'Z') and ((c < 'a' or c > 'z') and not ((c >= '0' and c <= '9') or c == '-' or c == '.' or c == '_' or c == '~')):
+        if (c < 'A' or c > 'Z') and (
+                (c < 'a' or c > 'z') and not ((c >= '0' and c <= '9') or c == '-' or c == '.' or c == '_' or c == '~')):
             for b in c.encode():
                 sb += "%".join('%02x'.format() % b)
         else:
@@ -37,23 +38,24 @@ def generate_nonce(length=19):
 
 def generate_device_id():
     id = "=="
-    return id+"".join([random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
+    return id + "".join(
+        [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 
 
 class API:
     URL = "https://api-sinoalice-us.pokelabo.jp"
-    crypto_key = b"***REMOVED***"
-    app_secret = "***REMOVED***" # TODO is this secret static?
-    app_id = "***REMOVED***"  # The application id / shared by all players!
+    crypto_key = b"***REMOVED***"  # Reverse: Static, Unity part, BasicCrypto.encrypt
+    app_secret = "***REMOVED***"  # Reverse: Static, Java Part, .sign.AuthorizedSigner constructor
+    app_id = "***REMOVED***"  # Reverse: Static, web log
 
     def __init__(self):
         self.request_session = requests.session()
         self.request_session.verify = False
 
-        self.uuid = "" # This is in the first response when sending app id
-        self.x_uid = "" # response to auth/x_uid TODO what is this for
-        self.device_id = generate_device_id() # Unknown what this is for, but it is okay to generate
-        self.private_key = RSA.generate(512) # Unknown if all share the same key, but it is okay this way
+        self.uuid = ""  # static, This is in the first response when sending app id
+        self.x_uid = ""  # static, response to auth/x_uid TODO what is this for
+        self.device_id = generate_device_id()  # Unknown: user generated?, what this is for, but it is okay to generate
+        self.private_key = RSA.generate(512)  # Unknown: user generated?, if all share the same key, but it is okay this way
 
         # Use local proxy
         if DEBUG:
@@ -66,9 +68,9 @@ class API:
 
         header = {
             "Authorization": "To-be-created",
-            "X-GREE-GAMELIB": "authVersion%3D1.4.10%26storeType%3Dgoogle%26appVersion%3D1.0.16%26uaType%3Dandroid-app"
-                              "%26carrier%3DMEDIONmobile%26compromised%3Dfalse%26countryCode%3DUS%26currencyCode%3DUSD", #Update
-            "User-Agent": "Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 "
+            "X-GREE-GAMELIB": "authVersion%3D1.4.10%26storeType%3Dgoogle%26appVersion%3D1.0.16%26uaType%3Dandroid-app"      # Reverse, static, web log 
+                              "%26carrier%3DMEDIONmobile%26compromised%3Dfalse%26countryCode%3DUS%26currencyCode%3DUSD",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 "    
                           "(KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36",
         }
 
@@ -100,15 +102,16 @@ class API:
                 "supportsSparseTextures": True,
                 "supportsStencil": 1,
                 "supportsVibration": True,
-                "uuid": None,  # Is returned by a request
-                "xuid": 0,  # Is returned by a request
+                "uuid": None,
+                "xuid": 0,
                 "locale": "en_US",
                 "numericCountryCode": 826
             }
         }
 
         login_payload_bytes = json.dumps(login_payload)
-        authorization = self._build_oauth_header_entry("POST", base_us_url + auth_initialize, login_payload_bytes.encode(), new_account)
+        authorization = self._build_oauth_header_entry("POST", base_us_url + auth_initialize,
+                                                       login_payload_bytes.encode(), new_account)
         header["Authorization"] = authorization
 
         self.request_session.headers = header
@@ -142,8 +145,8 @@ class API:
             auth_string += "&"
 
         string_to_hash = quote_plus(rest_method) + "&" + \
-                      quote_plus(full_url) + "&" + \
-                      quote_plus(auth_string.rsplit("&", 1)[0])
+                         quote_plus(full_url) + "&" + \
+                         quote_plus(auth_string.rsplit("&", 1)[0])
 
         if new_account:
             oauth_signature = hmac.new(self.app_secret.encode(), string_to_hash.encode(), "SHA1").digest()
@@ -281,6 +284,7 @@ class API:
 class SigningException(Exception):
     pass
 
+
 """
 Hooked
 Oauth oauth_body_hash="2jmj7l5rSw0yVb%2FvlWAYkK%2FYBwk%3D",oauth_consumer_key="0x3f6e38a9bc25b9f657",oauth_nonce="-6646833009595137866",oauth_signature="WIkF0usv4D0iFzY9CTbcOxWGxT6ZRprr90r87os1sGu9hrnhCKkdy6ReGFPjHk6%2FdWQRJIw7W5UT9yWBbZa6%2Fw%3D%3D",oauth_signature_method="RSA-SHA1",oauth_timestamp="1594896527",oauth_version="1.0"
@@ -289,5 +293,3 @@ GET&https%3A%2F%2Fbn-moderation-us.wrightflyer.net%2Fv1.0%2Fmoderate%2Fkeywordli
 if __name__ == "__main__":
     a = API()
     a.login(True)
-
-
