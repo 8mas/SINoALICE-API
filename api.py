@@ -37,9 +37,7 @@ def generate_nonce(length=19):
 
 
 def generate_device_id():
-    id = "=="
-    return "==DM2RGLjtmLmL2AkVmLzuwZ"
-    return id + "".join(
+    return "==" + "".join(
         [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 
 
@@ -53,10 +51,13 @@ class API:
         self.request_session = requests.session()
         self.request_session.verify = False
 
-        self.uuid = ""  # static, This is in the first response when sending app id
-        self.x_uid = ""  # static, response to auth/x_uid TODO what is this for
         self.device_id = generate_device_id()  # Unknown: user generated?, what this is for, but it is okay to generate
-        self.private_key = RSA.generate(512)  # Unknown: user generated?, if all share the same key, but it is okay this way
+        self.uuid_payment = ""  # static, This is in the first response when sending app id
+        self.uuid_moderation = ""  # static, This is in the first response when sending app id
+        self.x_uid_payment = ""  # static, response to auth/x_uid TODO what is this for
+        self.x_uid_moderation = ""  # static, response to auth/x_uid TODO Not used yet + what is this for
+        self.private_key_payment = RSA.generate(512)
+        self.private_key_moderation = RSA.generate(512)
 
         # Use local proxy
         if DEBUG:
@@ -64,11 +65,12 @@ class API:
             self.request_session.proxies.update({"http": "http://127.0.0.1:8888", "https": "https://127.0.0.1:8888", })
 
     def login(self, new_account=False):
-        base_us_url = "https://bn-payment-us.wrightflyer.net"
+        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
+        base_us_moderation_url = "https://bn-moderation-us.wrightflyer.net"
         auth_initialize = "/v1.0/auth/initialize"
 
         header = {
-            "Authorization": "To-be-created",
+            "Authorization": "To-be-created-Next",
             "X-GREE-GAMELIB": "authVersion%3D1.4.10%26storeType%3Dgoogle%26appVersion%3D1.5.0%26uaType%3Dandroid-app%26carrier%3DMEDIONmobile%26compromised%3Dfalse%26countryCode%3DUS%26currencyCode%3DUSD",
             "User-Agent": "Mozilla/5.0 (Linux; Android 10; ONEPLUS A6000 Build/QKQ1.190716.003; wv) AppleWebKit/537.36 "    
                           "(KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36",
@@ -78,55 +80,76 @@ class API:
             "Connection": "keep-alive"
         }
 
+        inner_login_payload = {
+            "appVersion": "1.5.0",
+            "urlParam": None,
+            "deviceModel": "OnePlus ONEPLUS A6042",
+            "osType": 2,
+            "osVersion": "Android OS 10 / API-29",
+            "storeType": 2,
+            "graphicsDeviceId": 0,
+            "graphicsDeviceVendorId": 0,
+            "processorCount": 8,
+            "processorType": "ARM64 FP ASIMD AES",
+            "supportedRenderTargetCount": 8,
+            "supports3DTextures": True,
+            "supportsAccelerometer": True,
+            "supportsComputeShaders": True,
+            "supportsGyroscope": True,
+            "supportsImageEffects": True,
+            "supportsInstancing": True,
+            "supportsLocationService": True,
+            "supportsRenderTextures": True,
+            "supportsRenderToCubemap": True,
+            "supportsShadows": True,
+            "supportsSparseTextures": True,
+            "supportsStencil": 1,
+            "supportsVibration": True,
+            "uuid": None,
+            "xuid": 0,
+            "locale": "en_US",
+            "numericCountryCode": 826
+        }
+
         login_payload = {
             "device_id": f"{self.device_id}",
-            "token": f"{self.private_key.publickey().export_key().decode()}",
-            "payload": json.dumps({
-                "appVersion": "1.5.0",
-                "urlParam": None,
-                "deviceModel": "OnePlus ONEPLUS A6042",
-                "osType": 2,
-                "osVersion": "Android OS 10 / API-29",
-                "storeType": 2,
-                "graphicsDeviceId": 0,
-                "graphicsDeviceVendorId": 0,
-                "processorCount": 8,
-                "processorType": "ARM64 FP ASIMD AES",
-                "supportedRenderTargetCount": 8,
-                "supports3DTextures": True,
-                "supportsAccelerometer": True,
-                "supportsComputeShaders": True,
-                "supportsGyroscope": True,
-                "supportsImageEffects": True,
-                "supportsInstancing": True,
-                "supportsLocationService": True,
-                "supportsRenderTextures": True,
-                "supportsRenderToCubemap": True,
-                "supportsShadows": True,
-                "supportsSparseTextures": True,
-                "supportsStencil": 1,
-                "supportsVibration": True,
-                "uuid": None,
-                "xuid": 0,
-                "locale": "en_US",
-                "numericCountryCode": 826
-            })
+            "token": f"{self.private_key_payment.publickey().export_key().decode()}",
+            "payload": json.dumps(inner_login_payload)
         }
 
         login_payload_bytes = json.dumps(login_payload)
-        authorization = self._build_oauth_header_entry("POST", base_us_url + auth_initialize,
+        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + auth_initialize,
                                                        login_payload_bytes.encode(), new_account)
         header["Authorization"] = authorization
 
         self.request_session.headers = header
-        response = self.request_session.post(base_us_url + auth_initialize, login_payload_bytes)
-        self.uuid = response.json()["uuid"]
+        response = self.request_session.post(base_us_payment_url + auth_initialize, login_payload_bytes)
+        self.uuid_payment = response.json()["uuid"]
 
         auth_x_uid = "/v1.0/auth/x_uid"
-        authorization = self._build_oauth_header_entry("GET", base_us_url + auth_x_uid, b"")
+        authorization = self._build_oauth_header_entry("GET", base_us_payment_url + auth_x_uid, b"")
         header["Authorization"] = authorization
-        response = self.request_session.get(base_us_url + auth_x_uid)
-        self.x_uid = json.loads(response.content)["x_uid"]
+        response = self.request_session.get(base_us_payment_url + auth_x_uid)
+        self.x_uid_payment = response.json()["x_uid"]
+
+        # Moderation Code
+        inner_login_payload["uuid"] = self.uuid_payment
+        login_payload = {
+            "device_id": f"{self.device_id}",
+            "token": f"{self.private_key_moderation.publickey().export_key().decode()}",
+            "payload": json.dumps(inner_login_payload)
+        }
+
+        login_payload_bytes = json.dumps(login_payload)
+        authorization = self._build_oauth_header_entry("POST", base_us_moderation_url + auth_initialize,
+                                                       login_payload_bytes.encode(), new_account)
+        header["Authorization"] = authorization
+        header["Host"] = "bn-moderation-us.wrightflyer.net"
+
+        self.request_session.headers = header
+        response = self.request_session.post(base_us_moderation_url + auth_initialize, login_payload_bytes)
+        self.uuid_moderation = response.json()["uuid"]
+
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, new_account=False):
         timestamp = 1593629820
@@ -138,14 +161,13 @@ class API:
             "oauth_timestamp": f"{timestamp}",
             "oauth_version": "1.0"
         }
-        #nMFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAPYzsfCaW0ACDmrGOP4gQ+pmdfkPTzM\nFNfWLVeIcjwhfUVsA1S45OLm8PGfynwiQ0Hs5+Loe9MJ1tZvYCyHTGOsCAwEAAQ\n==\
-        #nMFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAOax19iCQu0oFwNtNFnE6BAjkOIsWCR\nVEffdjGDbVBXB6Z4wvAFFcxi7pJja+8+1rF2xnji3qw00ZkL2DLVS6jcCAwEAA
+
         if not new_account:
             to_hash = (self.app_secret + str(timestamp)).encode()
-            param_signature = self._generate_signature(to_hash, SHA1, self.private_key)
+            param_signature = self._generate_signature(to_hash, SHA1, self.private_key_payment)
             oauth_header["xoauth_as_hash"] = param_signature.strip()
 
-            oauth_header["xoauth_requestor_id"] = self.uuid
+            oauth_header["xoauth_requestor_id"] = self.uuid_payment
 
         auth_string = ""
         for key, value in sorted(oauth_header.items()):
@@ -164,7 +186,7 @@ class API:
             oauth_signature = hmac.new(self.app_secret.encode(), string_to_hash.encode(), "SHA1").digest()
             oauth_signature = base64.b64encode(oauth_signature)
         else:
-            oauth_signature = self._generate_signature(string_to_hash.encode(), SHA1, self.private_key)
+            oauth_signature = self._generate_signature(string_to_hash.encode(), SHA1, self.private_key_payment)
 
         oauth_header["oauth_signature"] = oauth_signature
 
@@ -239,7 +261,7 @@ class API:
             param_signature = self._generate_signature(to_hash, SHA1, rsa_key)
             oauth_header["xoauth_as_hash"] = param_signature.strip()
 
-            oauth_header["xoauth_requestor_id"] = self.uuid
+            oauth_header["xoauth_requestor_id"] = self.uuid_payment
 
         auth_string = ""
         for key, value in sorted(oauth_header.items()):
