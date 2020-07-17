@@ -4,7 +4,7 @@ import msgpack
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
 from Crypto.Signature import pkcs1_15
-from Crypto.Hash import SHA1, MD5, SHA256
+from Crypto.Hash import SHA1
 from Crypto.PublicKey import RSA
 
 import hmac
@@ -12,7 +12,9 @@ import base64
 import time
 import random
 from urllib.parse import quote_plus
-from dataclasses import dataclass
+
+from DeviceInformation import DeviceInfo
+
 
 DEBUG = True
 
@@ -26,68 +28,11 @@ def generate_device_id():
         [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 
 
-@dataclass(unsafe_hash=True)
-class DeviceInfo:
-    appVersion: str = "1.5.0"
-    deviceModel: str = "Samsung Galaxy Note10"
-    numericCountryCode: int = 840
-
-    carrier: str = "Vodafone"
-    country_code: str = "US"
-    auth_version: str = "1.4.10"
-    store_type: str = "google"
-    uaType: str = "android-app"
-    currency_code: str = "USD"
-    host: str = "bn-payment-us.wrightflyer.net"
-
-    device_header_login_dict = {
-        "Authorization": None,
-        "X-GREE-GAMELIB": f"authVersion%3D{auth_version}%26storeType%3D{store_type}%26appVersion%3D{appVersion}"
-                          f"%26uaType%3D{uaType}%26carrier%3D{carrier}%26compromised%3Dfalse"
-                          f"%26countryCode%3D{country_code}%26currencyCode%3D{currency_code}",
-
-        "User-Agent": f"Mozilla/5.0 (Linux; Android 10; {deviceModel} AppleWebKit/537.36 "
-                      "(KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.101 Mobile Safari/537.36",
-        "Content-Type": "application/json; charset=UTF-8",
-        "Host": host,
-        "Accept-Encoding": "gzip",
-        "Connection": "keep-alive"
-    }
-
-    device_info_dict = {
-        "appVersion": appVersion,
-        "urlParam": None,
-        "deviceModel": deviceModel,
-        "osType": 2,
-        "osVersion": "Android OS 10 / API-29",
-        "storeType": 2,
-        "graphicsDeviceId": 0,
-        "graphicsDeviceVendorId": 0,
-        "processorCount": 8,
-        "processorType": "ARM64 FP ASIMD AES",
-        "supportedRenderTargetCount": 8,
-        "supports3DTextures": True,
-        "supportsAccelerometer": True,
-        "supportsComputeShaders": True,
-        "supportsGyroscope": True,
-        "supportsImageEffects": True,
-        "supportsInstancing": True,
-        "supportsLocationService": True,
-        "supportsRenderTextures": True,
-        "supportsRenderToCubemap": True,
-        "supportsShadows": True,
-        "supportsSparseTextures": True,
-        "supportsStencil": 1,
-        "supportsVibration": True,
-        "uuid": None,
-        "xuid": 0,
-        "locale": "en_US",
-        "numericCountryCode": numericCountryCode
-    }
-
-
 class BaseApi:
     URL = "https://api-sinoalice-us.pokelabo.jp"
+    BN_PAYMENT_URL = "https://bn-payment-us.wrightflyer.net"
+    BN_MODERATION_URL = "https://bn-moderation-us.wrightflyer.net"
+
     crypto_key = b"***REMOVED***"  # Reverse: Static, Unity part, BasicCrypto.encrypt
     app_secret_payment = "***REMOVED***"  # Reverse: Static, Java Part, .sign.AuthorizedSigner constructor
     app_secret_moderation = "***REMOVED***"
@@ -115,21 +60,17 @@ class BaseApi:
 
     # We can not fake a attestation :/ we can leave it empty or throw an error that is defined in the app
     def _payment_device_verification(self):
-
-        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
         nonce = "/v1.0/deviceverification/nonce"
-
-        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + nonce, b"", self.app_secret_payment,
+        authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + nonce, b"", self.app_secret_payment,
                                                        self.private_key_payment)
 
-        header = self.device_info.device_header_login_dict
+        header = self.device_info.bn_payment_header
         header["Authorization"] = authorization
-        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
         self.request_session.headers = header
-        self.request_session.post(base_us_payment_url + nonce)
+        self.request_session.post(self.BN_PAYMENT_URL + nonce)
+
 
         verify_endpoint = "/v1.0/deviceverification/verify"
-
         verification_payload = {
             "device_id": f"{self.device_id}",
             "compromised": False,
@@ -143,33 +84,26 @@ class BaseApi:
         }
 
         payload = json.dumps(verification_payload).encode()
-        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + verify_endpoint, payload,
+        authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + verify_endpoint, payload,
                                                        self.app_secret_payment, self.private_key_payment)
 
-        header = self.device_info.device_header_login_dict
+        header = self.device_info.bn_payment_header
         header["Authorization"] = authorization
-        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
         self.request_session.headers = header
-
-        self.request_session.post(base_us_payment_url + verify_endpoint, payload)
+        self.request_session.post(self.BN_PAYMENT_URL + verify_endpoint, payload)
 
     def _payment_authorize(self):
-        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
         authorize_endpoint = "/v1.0/auth/authorize"
 
-        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + authorize_endpoint, b"",
+        authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + authorize_endpoint, b"",
                                                        self.app_secret_payment, self.private_key_payment)
 
-        header = self.device_info.device_header_login_dict
+        header = self.device_info.bn_payment_header
         header["Authorization"] = authorization
-        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
         self.request_session.headers = header
-
-        self.request_session.post(base_us_payment_url + authorize_endpoint)
-
+        self.request_session.post(self.BN_PAYMENT_URL + authorize_endpoint)
 
     def _payment_registration(self):
-        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
         auth_initialize = "/v1.0/auth/initialize"
 
         device_info_dict = self.device_info.device_info_dict
@@ -183,28 +117,26 @@ class BaseApi:
         }
 
         login_payload_bytes = json.dumps(login_payload).encode()
-        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + auth_initialize,
+        authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + auth_initialize,
                                                        login_payload_bytes, self.app_secret_payment, new_account=True)
 
-        header = self.device_info.device_header_login_dict
+        header = self.device_info.bn_payment_header
         header["Authorization"] = authorization
-        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
         self.request_session.headers = header
 
-        response = self.request_session.post(base_us_payment_url + auth_initialize, login_payload_bytes)
+        response = self.request_session.post(self.BN_PAYMENT_URL + auth_initialize, login_payload_bytes)
         self.uuid_payment = response.json()["uuid"]
 
 
         auth_x_uid = "/v1.0/auth/x_uid"
-        authorization = self._build_oauth_header_entry("GET", base_us_payment_url + auth_x_uid, b"",
+        authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + auth_x_uid, b"",
                                                        self.app_secret_payment, self.private_key_payment)
 
         header["Authorization"] = authorization
-        response = self.request_session.get(base_us_payment_url + auth_x_uid)
+        response = self.request_session.get(self.BN_PAYMENT_URL + auth_x_uid)
         self.x_uid_payment = response.json()["x_uid"]
 
     def _moderation_registration(self):
-        base_us_moderation_url = "https://bn-moderation-us.wrightflyer.net"
         auth_initialize = "/v1.0/auth/initialize"
 
         device_info_dict = self.device_info.device_info_dict
@@ -218,18 +150,15 @@ class BaseApi:
         }
 
         login_payload_bytes = json.dumps(login_payload)
-        authorization = self._build_oauth_header_entry("POST", base_us_moderation_url + auth_initialize,
+        authorization = self._build_oauth_header_entry("POST", self.BN_MODERATION_URL + auth_initialize,
                                                        login_payload_bytes.encode(), self.app_secret_moderation, new_account=True)
 
-        self.device_info.device_header_login_dict["X-GREE-GAMELIB"] = "authVersion%3D1.4.10%26appVersion%3D1.5.0%26uaType%3Dandroid-app%26carrier%3DMEDIONmobile%26compromised%3Dfalse%26countryCode%3DUS%26currencyCode%3DUSD"
-        header = self.device_info.device_header_login_dict
+        header = self.device_info.bn_moderation_header
         header["Authorization"] = authorization
-        header["Host"] = base_us_moderation_url.rsplit("/", 1)[1]
 
         self.request_session.headers = header
-        response = self.request_session.post(base_us_moderation_url + auth_initialize, login_payload_bytes)
+        response = self.request_session.post(self.BN_MODERATION_URL + auth_initialize, login_payload_bytes)
         self.uuid_moderation = response.json()["uuid"]
-
 
     def _login_account(self):
         inner_payload = self.device_info.device_info_dict
@@ -354,7 +283,6 @@ class BaseApi:
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
         code = response.status_code
-        print(decrypted_response)
         return decrypted_response
 
     def _get(self, resource, params={}):
