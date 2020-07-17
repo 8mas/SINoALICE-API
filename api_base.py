@@ -104,13 +104,69 @@ class BaseApi:
         self.x_uid_moderation = ""  # static, response to auth/x_uid TODO Not used yet + what is this for
         self.private_key_payment = RSA.generate(512)
         self.private_key_moderation = RSA.generate(512)
-
+        self.session_id: str = "" # static, response to api login, also the
+        self.user_id: int = 0 # static, response to api login
         self.device_info = DeviceInfo()
 
         # Use local proxy
         if DEBUG:
             print("Using proxy")
             self.request_session.proxies.update({"http": "http://127.0.0.1:8888", "https": "https://127.0.0.1:8888", })
+
+    # We can not fake a attestation :/ we can leave it empty or throw an error that is defined in the app
+    def _payment_device_verification(self):
+
+        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
+        nonce = "/v1.0/deviceverification/nonce"
+
+        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + nonce, b"", self.app_secret_payment,
+                                                       self.private_key_payment)
+
+        header = self.device_info.device_header_login_dict
+        header["Authorization"] = authorization
+        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
+        self.request_session.headers = header
+        self.request_session.post(base_us_payment_url + nonce)
+
+        verify_endpoint = "/v1.0/deviceverification/verify"
+
+        verification_payload = {
+            "device_id": f"{self.device_id}",
+            "compromised": False,
+            "emulator": False,
+            "debug": False,
+            "installer": "com.android.vending",
+            "bundle_id": "com.nexon.sinoalice",
+            "app_version": "1.5.0",
+            "os_version": "10",
+            "sf_jws": ""
+        }
+
+        payload = json.dumps(verification_payload).encode()
+        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + verify_endpoint, payload,
+                                                       self.app_secret_payment, self.private_key_payment)
+
+        header = self.device_info.device_header_login_dict
+        header["Authorization"] = authorization
+        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
+        self.request_session.headers = header
+
+        self.request_session.post(base_us_payment_url + verify_endpoint, payload)
+
+    def _payment_authorize(self):
+        base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
+        authorize_endpoint = "/v1.0/auth/authorize"
+
+        authorization = self._build_oauth_header_entry("POST", base_us_payment_url + authorize_endpoint, b"",
+                                                       self.app_secret_payment, self.private_key_payment)
+
+        header = self.device_info.device_header_login_dict
+        header["Authorization"] = authorization
+        header["Host"] = base_us_payment_url.rsplit("/", 1)[1]
+        self.request_session.headers = header
+
+        self.request_session.post(base_us_payment_url + authorize_endpoint)
+
 
     def _payment_registration(self):
         base_us_payment_url = "https://bn-payment-us.wrightflyer.net"
@@ -126,10 +182,9 @@ class BaseApi:
             "payload": json.dumps(device_info_dict)
         }
 
-
-        login_payload_bytes = json.dumps(login_payload)
+        login_payload_bytes = json.dumps(login_payload).encode()
         authorization = self._build_oauth_header_entry("POST", base_us_payment_url + auth_initialize,
-                                                       login_payload_bytes.encode(), self.app_secret_payment, new_account=True)
+                                                       login_payload_bytes, self.app_secret_payment, new_account=True)
 
         header = self.device_info.device_header_login_dict
         header["Authorization"] = authorization
@@ -139,9 +194,10 @@ class BaseApi:
         response = self.request_session.post(base_us_payment_url + auth_initialize, login_payload_bytes)
         self.uuid_payment = response.json()["uuid"]
 
+
         auth_x_uid = "/v1.0/auth/x_uid"
-        authorization = self._build_oauth_header_entry("GET", base_us_payment_url + auth_x_uid, b"",self.app_secret_payment,
-                                                       rsa_key=self.private_key_payment)
+        authorization = self._build_oauth_header_entry("GET", base_us_payment_url + auth_x_uid, b"",
+                                                       self.app_secret_payment, self.private_key_payment)
 
         header["Authorization"] = authorization
         response = self.request_session.get(base_us_payment_url + auth_x_uid)
@@ -174,6 +230,7 @@ class BaseApi:
         response = self.request_session.post(base_us_moderation_url + auth_initialize, login_payload_bytes)
         self.uuid_moderation = response.json()["uuid"]
 
+
     def _login_account(self):
         inner_payload = self.device_info.device_info_dict
         inner_payload["uuid"] = None
@@ -189,7 +246,6 @@ class BaseApi:
             "actionTime": 132381034208143910 # TODO
         }
 
-        payload = json.dumps(payload)
         self._post("/api/login", payload, remove_header={'Cookie'})
 
     def login(self, new_registration=False):
@@ -197,8 +253,10 @@ class BaseApi:
             self._payment_registration()
             self._moderation_registration()
             self._login_account()
-
-
+        else:
+            pass
+        self._payment_device_verification()
+        self._payment_authorize()
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, app_secret, rsa_key=None,
                                   new_account=False):
@@ -213,6 +271,7 @@ class BaseApi:
         }
 
         if not new_account:
+            print(app_secret)
             to_hash = (app_secret + str(timestamp)).encode()
             param_signature = self._generate_signature(to_hash, SHA1, rsa_key)
             oauth_header["xoauth_as_hash"] = param_signature.strip()
@@ -261,15 +320,15 @@ class BaseApi:
         data_loaded = msgpack.unpackb(text)
         return data_loaded
 
-    def _encrypt_request(self, request_content: str):
-        iv = request_content[0:16].encode()  # TODO check if ok
-        packed_request_content = msgpack.packb(json.loads(request_content))
+    def _encrypt_request(self, request_content: dict):
+        packed_request_content = msgpack.packb(request_content)
+        iv = packed_request_content[0:16]
         padded_request_content = pad(packed_request_content, 16)
-        aes = AES.new(self.crypto_key, AES.MODE_CBC, iv) #TODO critical different key?
+        aes = AES.new(self.crypto_key, AES.MODE_CBC, iv)
         encrypted_request_content = aes.encrypt(padded_request_content)
         return iv + encrypted_request_content
 
-    def _prepare_request(self, request_type, resource, data, remove_header=None):
+    def _prepare_request(self, request_type, resource, data: dict, remove_header=None):
         data = self._encrypt_request(data)
         print(self._decrypt_response(data))
         mac = self._generate_signature(data, SHA1, self.private_key_payment).decode()
@@ -305,7 +364,7 @@ class BaseApi:
         response = self.request_session.get(url, params=params)
         return self._handle_response(response)
 
-    def _post(self, resource, payload: str, remove_header=None):
+    def _post(self, resource, payload: dict, remove_header=None):
         url = BaseApi.URL + resource
 
         payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
