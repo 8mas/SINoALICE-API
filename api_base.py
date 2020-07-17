@@ -64,8 +64,7 @@ class BaseApi:
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + nonce, b"", self.app_secret_payment,
                                                        self.private_key_payment)
 
-        header = self.device_info.bn_payment_header
-        header["Authorization"] = authorization
+        header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
         self.request_session.post(self.BN_PAYMENT_URL + nonce)
 
@@ -87,8 +86,7 @@ class BaseApi:
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + verify_endpoint, payload,
                                                        self.app_secret_payment, self.private_key_payment)
 
-        header = self.device_info.bn_payment_header
-        header["Authorization"] = authorization
+        header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
         self.request_session.post(self.BN_PAYMENT_URL + verify_endpoint, payload)
 
@@ -98,15 +96,14 @@ class BaseApi:
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + authorize_endpoint, b"",
                                                        self.app_secret_payment, self.private_key_payment)
 
-        header = self.device_info.bn_payment_header
-        header["Authorization"] = authorization
+        header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
         self.request_session.post(self.BN_PAYMENT_URL + authorize_endpoint)
 
     def _payment_registration(self):
         auth_initialize = "/v1.0/auth/initialize"
 
-        device_info_dict = self.device_info.device_info_dict
+        device_info_dict = self.device_info.get_device_info_dict()
         device_info_dict["uuid"] = None
         device_info_dict["xuid"] = 0
 
@@ -120,7 +117,7 @@ class BaseApi:
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + auth_initialize,
                                                        login_payload_bytes, self.app_secret_payment, new_account=True)
 
-        header = self.device_info.bn_payment_header
+        header = self.device_info.get_bn_payment_header(authorization)
         header["Authorization"] = authorization
         self.request_session.headers = header
 
@@ -139,7 +136,7 @@ class BaseApi:
     def _moderation_registration(self):
         auth_initialize = "/v1.0/auth/initialize"
 
-        device_info_dict = self.device_info.device_info_dict
+        device_info_dict = self.device_info.get_device_info_dict()
         device_info_dict["uuid"] = self.uuid_payment
         device_info_dict["xuid"] = 0
 
@@ -153,15 +150,14 @@ class BaseApi:
         authorization = self._build_oauth_header_entry("POST", self.BN_MODERATION_URL + auth_initialize,
                                                        login_payload_bytes.encode(), self.app_secret_moderation, new_account=True)
 
-        header = self.device_info.bn_moderation_header
-        header["Authorization"] = authorization
+        header = self.device_info.get_bn_moderation_header(authorization)
 
         self.request_session.headers = header
         response = self.request_session.post(self.BN_MODERATION_URL + auth_initialize, login_payload_bytes)
         self.uuid_moderation = response.json()["uuid"]
 
     def _login_account(self):
-        inner_payload = self.device_info.device_info_dict
+        inner_payload = self.device_info.get_device_info_dict()
         inner_payload["uuid"] = None
         inner_payload["xuid"] = self.x_uid_payment
 
@@ -200,7 +196,6 @@ class BaseApi:
         }
 
         if not new_account:
-            print(app_secret)
             to_hash = (app_secret + str(timestamp)).encode()
             param_signature = self._generate_signature(to_hash, SHA1, rsa_key)
             oauth_header["xoauth_as_hash"] = param_signature.strip()
