@@ -174,10 +174,29 @@ class BaseApi:
         response = self.request_session.post(base_us_moderation_url + auth_initialize, login_payload_bytes)
         self.uuid_moderation = response.json()["uuid"]
 
+    def _login_account(self):
+        inner_payload = self.device_info.device_info_dict
+        inner_payload["uuid"] = None
+        inner_payload["xuid"] = self.x_uid_payment
+
+        payload = {
+            "payload": inner_payload,
+            "uuid": self.uuid_payment,
+            "userId": 0,
+            "sessionId": "",
+            "actionToken": None,
+            "ctag": None,
+            "actionTime": 132381034208143910 # TODO
+        }
+
+        payload = json.dumps(payload)
+        self._post("/api/login", payload, remove_header={'Cookie'})
+
     def login(self, new_registration=False):
         if new_registration:
             self._payment_registration()
             self._moderation_registration()
+            self._login_account()
 
 
 
@@ -242,34 +261,36 @@ class BaseApi:
         data_loaded = msgpack.unpackb(text)
         return data_loaded
 
-    def _encrypt_request(self, request_content: bytes):
-        request_content = pad(request_content, 16)
-        iv = request_content[0:16]  # TODO check if ok
-        aes = AES.new(self.crypto_key, AES.MODE_CBC, iv)
-        text = aes.encrypt(request_content)
-        data_loaded = msgpack.packb(text)
-        return iv + data_loaded
+    def _encrypt_request(self, request_content: str):
+        iv = request_content[0:16].encode()  # TODO check if ok
+        packed_request_content = msgpack.packb(json.loads(request_content))
+        padded_request_content = pad(packed_request_content, 16)
+        aes = AES.new(self.crypto_key, AES.MODE_CBC, iv) #TODO critical different key?
+        encrypted_request_content = aes.encrypt(padded_request_content)
+        return iv + encrypted_request_content
 
     def _prepare_request(self, request_type, resource, data, remove_header=None):
-        data = self._encrypt_request(data.encode())
-        mac = self._generate_signatur(data)
+        data = self._encrypt_request(data)
+        print(self._decrypt_response(data))
+        mac = self._generate_signature(data, SHA1, self.private_key_payment).decode()
 
-        exit(1)
         common_headers = {
-            "Host": "api-sinoalice-us.pokelabo.jp",
-            "User-Agent": "UnityRequest com.nexon.sinoalice 1.0.16 (OnePlus ONEPLUS A6000 Android OS 10 / API-29 (QKQ1.190716.003/2002220019))",
-            "X-Unity-Version": "2018.4.19f1",
-            "Content-Type": "application/json",
             "Expect": "100-continue",
+            "User-Agent": "UnityRequest com.nexon.sinoalice 1.0.16 (OnePlus ONEPLUS A6000 Android OS 10 / API-29 (QKQ1.190716.003/2002220019))",
+            "X-post-signature": f"{mac}",
+            "X-Unity-Version": "2018.4.19f1",
+            "Content-Type": "application/x-msgpack",
             "Connection": "Keep-Alive",
             "Accept-Encoding": "gzip",
             "Cookie": "TODO_Define",
-            "X-post-signature": f"{mac}"
+            "Host": "api-sinoalice-us.pokelabo.jp",
+
         }
         for header in remove_header:
             common_headers.pop(header)
 
         self.request_session.headers = common_headers
+        return data
 
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
@@ -287,7 +308,7 @@ class BaseApi:
     def _post(self, resource, payload: str, remove_header=None):
         url = BaseApi.URL + resource
 
-        self._prepare_request("POST", resource, payload, remove_header=remove_header)
+        payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
 
         response = self.request_session.post(url, payload)
         return self._handle_response(response)
