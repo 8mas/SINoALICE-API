@@ -10,6 +10,7 @@ import random
 Base = declarative_base()
 engine = create_engine("sqlite:///foo.db", echo=True)
 
+
 def generate_device_id():
     return "==" + "".join(
         [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
@@ -19,14 +20,14 @@ class PlayerInformation(Base):
     __tablename__ = "PlayerInformation"
 
     server: str = Column(String)
-    device_id: str = Column(String)
-    uuid_payment: str = Column(String, primary_key=True)
-    uuid_moderation: str = Column(String)
-    x_uid_payment: str = Column(String)
-    x_uid_moderation: str = Column(String)
+    device_id: str = Column(String)  # Unknown: user generated?, what this is for, but it is okay to generate
+    uuid_payment: str = Column(String, primary_key=True)  # static, This is in the first response when sending app id
+    uuid_moderation: str = Column(String)  # static, This is in the first response when sending app id
+    x_uid_payment: str = Column(String)  # static, response to auth/x_uid TODO what is this for
+    x_uid_moderation: str = Column(String)  # static, response to auth/x_uid TODO Not used yet + what is this for
     _private_key_payment: str = Column(String)
     _private_key_moderation: str = Column(String)
-    user_id: int = Column(Integer)
+    user_id: int = Column(Integer)  # static, response to api login
 
     private_key_payment: RsaKey = RSA.generate(512)
     private_key_moderation: RsaKey = RSA.generate(512)

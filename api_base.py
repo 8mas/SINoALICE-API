@@ -14,18 +14,13 @@ import random
 from urllib.parse import quote_plus
 
 from DeviceInformation import DeviceInfo
-
+from PlayerInformation import PlayerInformation
 
 DEBUG = True
 
 
 def generate_nonce(length=19):
     return int(''.join([str(random.randint(0, 9)) for i in range(length)]))
-
-
-def generate_device_id():
-    return "==" + "".join(
-        [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 
 
 class BaseApi:
@@ -38,21 +33,16 @@ class BaseApi:
     app_secret_moderation = "***REMOVED***"
     app_id = "***REMOVED***"  # Reverse: Static, web log
 
-    def __init__(self):
+    def __init__(self, player_information: PlayerInformation = None):
         self.request_session = requests.session()
         self.request_session.verify = False
 
-        self.device_id: str = generate_device_id()  # Unknown: user generated?, what this is for, but it is okay to generate
-        self.uuid_payment: str = ""  # static, This is in the first response when sending app id
-        self.uuid_moderation: str = ""  # static, This is in the first response when sending app id
-        self.x_uid_payment: str = ""  # static, response to auth/x_uid TODO what is this for
-        self.x_uid_moderation: str = ""  # static, response to auth/x_uid TODO Not used yet + what is this for
-        self.private_key_payment = RSA.generate(512)
-        self.private_key_moderation = RSA.generate(512)
-        self.session_id: str = "" # static, response to api login, also the
-        self.user_id: int = 0 # static, response to api login
+        self.player_information = player_information
+        if player_information is None:
+            self.player_information = PlayerInformation()
 
         self.device_info = DeviceInfo()
+        self.session_id: str = ""
 
         # Use local proxy
         if DEBUG:
@@ -63,7 +53,7 @@ class BaseApi:
     def _payment_device_verification(self):
         nonce = "/v1.0/deviceverification/nonce"
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + nonce, b"", self.app_secret_payment,
-                                                       self.private_key_payment)
+                                                       self.player_information.private_key_payment)
 
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
@@ -72,7 +62,7 @@ class BaseApi:
 
         verify_endpoint = "/v1.0/deviceverification/verify"
         verification_payload = {
-            "device_id": f"{self.device_id}",
+            "device_id": f"{self.player_information.device_id}",
             "compromised": False,
             "emulator": False,
             "debug": False,
@@ -85,7 +75,7 @@ class BaseApi:
 
         payload = json.dumps(verification_payload).encode()
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + verify_endpoint, payload,
-                                                       self.app_secret_payment, self.private_key_payment)
+                                                       self.app_secret_payment, self.player_information.private_key_payment)
 
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
@@ -95,7 +85,7 @@ class BaseApi:
         authorize_endpoint = "/v1.0/auth/authorize"
 
         authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + authorize_endpoint, b"",
-                                                       self.app_secret_payment, self.private_key_payment)
+                                                       self.app_secret_payment, self.player_information.private_key_payment)
 
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
@@ -109,8 +99,8 @@ class BaseApi:
         device_info_dict["xuid"] = 0
 
         login_payload = {
-            "device_id": f"{self.device_id}",
-            "token": f"{self.private_key_payment.publickey().export_key().decode()}",
+            "device_id": f"{self.player_information.device_id}",
+            "token": f"{self.player_information.private_key_payment.publickey().export_key().decode()}",
             "payload": json.dumps(device_info_dict)
         }
 
@@ -128,7 +118,7 @@ class BaseApi:
 
         auth_x_uid = "/v1.0/auth/x_uid"
         authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + auth_x_uid, b"",
-                                                       self.app_secret_payment, self.private_key_payment)
+                                                       self.app_secret_payment, self.player_information.private_key_payment)
 
         header["Authorization"] = authorization
         response = self.request_session.get(self.BN_PAYMENT_URL + auth_x_uid)
@@ -142,8 +132,8 @@ class BaseApi:
         device_info_dict["xuid"] = 0
 
         login_payload = {
-            "device_id": f"{self.device_id}",
-            "token": f"{self.private_key_moderation.publickey().export_key().decode()}",
+            "device_id": f"{self.player_information.device_id}",
+            "token": f"{self.player_information.private_key_moderation.publickey().export_key().decode()}",
             "payload": json.dumps(device_info_dict)
         }
 
@@ -255,12 +245,12 @@ class BaseApi:
 
     def _prepare_request(self, request_type, resource, data: dict, remove_header=None):
         data = self._encrypt_request(data)
-        print(self._decrypt_response(data))
-        mac = self._generate_signature(data, SHA1, self.private_key_payment).decode()
+        mac = self._generate_signature(data, SHA1, self.player_information.private_key_payment).decode()
 
         common_headers = {
             "Expect": "100-continue",
-            "User-Agent": "UnityRequest com.nexon.sinoalice 1.0.16 (OnePlus ONEPLUS A6000 Android OS 10 / API-29 (QKQ1.190716.003/2002220019))",
+            "User-Agent": f"UnityRequest com.nexon.sinoalice {self.device_info.appVersion} ({self.device_info.deviceModel}"
+                          f" Android OS 10 / API-29)",
             "X-post-signature": f"{mac}",
             "X-Unity-Version": "2018.4.19f1",
             "Content-Type": "application/x-msgpack",
