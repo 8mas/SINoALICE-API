@@ -42,15 +42,16 @@ class BaseApi:
         self.request_session = requests.session()
         self.request_session.verify = False
 
-        self.device_id = generate_device_id()  # Unknown: user generated?, what this is for, but it is okay to generate
-        self.uuid_payment = ""  # static, This is in the first response when sending app id
-        self.uuid_moderation = ""  # static, This is in the first response when sending app id
-        self.x_uid_payment = ""  # static, response to auth/x_uid TODO what is this for
-        self.x_uid_moderation = ""  # static, response to auth/x_uid TODO Not used yet + what is this for
+        self.device_id: str = generate_device_id()  # Unknown: user generated?, what this is for, but it is okay to generate
+        self.uuid_payment: str = ""  # static, This is in the first response when sending app id
+        self.uuid_moderation: str = ""  # static, This is in the first response when sending app id
+        self.x_uid_payment: str = ""  # static, response to auth/x_uid TODO what is this for
+        self.x_uid_moderation: str = ""  # static, response to auth/x_uid TODO Not used yet + what is this for
         self.private_key_payment = RSA.generate(512)
         self.private_key_moderation = RSA.generate(512)
         self.session_id: str = "" # static, response to api login, also the
         self.user_id: int = 0 # static, response to api login
+
         self.device_info = DeviceInfo()
 
         # Use local proxy
