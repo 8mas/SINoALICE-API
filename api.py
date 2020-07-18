@@ -30,7 +30,8 @@ class API(BaseApi):
     def POST__api_tutorial_fxm_tutorial_gacha_exec(self):
         self._post("/api/tutorial/fxm_tutorial_gacha_exec", None)
 
-
+    def POST__api_tutorial_get_user_mini_tutorial_data(self):
+        self._post("/api/tutorial/get_user_mini_tutorial_data", None)
 
 class SigningException(Exception):
     pass

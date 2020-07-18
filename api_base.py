@@ -290,6 +290,9 @@ class BaseApi:
         if not check_action_time(self.action_time_ticks):
             self.action_time, self.action_time_ticks = get_action_time()
             logging.debug(f"Setting new action time {self.action_time}")
+        if "exec" in resource:
+            self.action_time, self.action_time_ticks = get_action_time()
+
 
         payload = {
             "payload": inner_payload,
