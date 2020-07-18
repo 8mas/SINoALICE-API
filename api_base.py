@@ -5,8 +5,8 @@ from Crypto.Hash import SHA1
 from urllib.parse import quote_plus
 from sqlalchemy.orm import sessionmaker, session
 
-import logging
 import requests
+import logging
 import json
 import msgpack
 import hmac
@@ -18,6 +18,9 @@ import random
 from DeviceInformation import DeviceInfo
 from PlayerInformation import PlayerInformation
 
+requests.packages.urllib3.disable_warnings()
+logging.getLogger("requests").setLevel(logging.CRITICAL)
+logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 
 DEBUG = True
 
@@ -129,7 +132,7 @@ class BaseApi:
         self.request_session.headers = header
 
         response = self.request_session.post(self.BN_PAYMENT_URL + auth_initialize, login_payload_bytes)
-        self.uuid_payment = response.json()["uuid"]
+        self.player_information.uuid_payment = response.json()["uuid"]
 
         auth_x_uid = "/v1.0/auth/x_uid"
         authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + auth_x_uid, b"",
@@ -137,13 +140,13 @@ class BaseApi:
 
         header["Authorization"] = authorization
         response = self.request_session.get(self.BN_PAYMENT_URL + auth_x_uid)
-        self.x_uid_payment = response.json()["x_uid"]
+        self.player_information.x_uid_payment = response.json()["x_uid"]
 
     def _moderation_registration(self):
         auth_initialize = "/v1.0/auth/initialize"
 
         device_info_dict = self.device_info.get_device_info_dict()
-        device_info_dict["uuid"] = self.uuid_payment
+        device_info_dict["uuid"] = self.player_information.uuid_payment
         device_info_dict["xuid"] = 0
 
         login_payload = {
@@ -160,14 +163,17 @@ class BaseApi:
 
         self.request_session.headers = header
         response = self.request_session.post(self.BN_MODERATION_URL + auth_initialize, login_payload_bytes)
-        self.uuid_moderation = response.json()["uuid"]
+        self.player_information.uuid_moderation = response.json()["uuid"]
 
     def _login_account(self):
         inner_payload = self.device_info.get_device_info_dict()
         inner_payload["uuid"] = None
-        inner_payload["xuid"] = self.x_uid_payment
+        inner_payload["xuid"] = self.player_information.x_uid_payment
 
-        self._post("/api/login", inner_payload, remove_header={'Cookie'})
+        response = self._post("/api/login", inner_payload, remove_header={'Cookie'})
+        print(response)
+        self.session_id = response["payload"]["sessionId"]
+        self.player_information.user_id = response["payload"]["userId"]
 
     def login(self, new_registration=False):
         if new_registration:
@@ -178,6 +184,29 @@ class BaseApi:
             self._payment_authorize()
 
         self._payment_device_verification()
+
+    def get_migrate_information(self, password: str):
+        migration_endpoint = "/v1.0/migration/code?renew=0"
+        authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + migration_endpoint,
+                                                       b"", self.app_secret_moderation, self.player_information.private_key_payment)
+
+        header = self.device_info.get_bn_payment_header(authorization)
+        self.request_session.headers = header
+        response = self.request_session.post(self.BN_MODERATION_URL + migration_endpoint)
+        print(response.content)
+
+        migration_password_endpoint = "/v1.0/migration/password/register"
+        payload = {"migration_password": "=RGLuSJLuSJL"}
+        payload = json.dumps(payload).encode()
+
+        authorization = self._build_oauth_header_entry("POST", self.BN_PAYMENT_URL + migration_password_endpoint,
+                                                       payload, self.app_secret_moderation, self.player_information.private_key_payment)
+
+        header = self.device_info.get_bn_payment_header(authorization)
+        self.request_session.headers = header
+        response = self.request_session.post(self.BN_MODERATION_URL + migration_password_endpoint, payload)
+        print(response.content)
+
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, app_secret, rsa_key=None,
                                   new_account=False):
@@ -195,7 +224,7 @@ class BaseApi:
             to_hash = (app_secret + str(timestamp)).encode()
             param_signature = self._generate_signature(to_hash, SHA1, rsa_key)
             oauth_header["xoauth_as_hash"] = param_signature.strip()
-            oauth_header["xoauth_requestor_id"] = self.uuid_payment
+            oauth_header["xoauth_requestor_id"] = self.player_information.uuid_payment
 
         auth_string = ""
         for key, value in sorted(oauth_header.items()):
@@ -238,6 +267,8 @@ class BaseApi:
         pad_text = aes.decrypt(response_content[16:])
         text = unpad(pad_text, 16)
         data_loaded = msgpack.unpackb(text)
+        print(data_loaded)
+        print(json.dumps(data_loaded))
         return data_loaded
 
     def _encrypt_request(self, request_content: dict):
@@ -251,10 +282,11 @@ class BaseApi:
     def _prepare_request(self, request_type, resource, inner_payload: dict, remove_header=None):
         if not check_action_time(self.action_time_ticks):
             self.action_time, self.action_time_ticks = get_action_time()
+            logging.debug(f"Setting new action time {self.action_time}")
 
         payload = {
             "payload": inner_payload,
-            "uuid": self.uuid_payment,
+            "uuid": self.player_information.uuid_payment,
             "userId": 0,
             "sessionId": self.session_id,
             "actionToken": None,
@@ -262,10 +294,10 @@ class BaseApi:
             "actionTime": self.action_time
         }
 
-        logging.info(payload)
+        logging.info(f"Payload of {self.player_information.uuid_payment} {payload}")
 
-        inner_payload = self._encrypt_request(payload)
-        mac = self._generate_signature(inner_payload, SHA1, self.player_information.private_key_payment).decode()
+        payload = self._encrypt_request(payload)
+        mac = self._generate_signature(payload, SHA1, self.player_information.private_key_moderation).decode()
 
         common_headers = {
             "Expect": "100-continue",
@@ -276,7 +308,7 @@ class BaseApi:
             "Content-Type": "application/x-msgpack",
             "Connection": "Keep-Alive",
             "Accept-Encoding": "gzip",
-            "Cookie": "TODO_Define",
+            "Cookie": f"{self.session_id}",
             "Host": "api-sinoalice-us.pokelabo.jp",
 
         }
@@ -284,10 +316,11 @@ class BaseApi:
             common_headers.pop(header)
 
         self.request_session.headers = common_headers
-        return inner_payload
+        return payload
 
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
+        logging.info(f"response of {self.player_information.uuid_payment} {decrypted_response}")
         code = response.status_code
         return decrypted_response
 
@@ -300,7 +333,7 @@ class BaseApi:
         response = self.request_session.get(url, params=params)
         return self._handle_response(response)
 
-    def _post(self, resource, payload: dict, remove_header=None):
+    def _post(self, resource, payload: dict = None, remove_header=None):
         url = BaseApi.URL + resource
 
         payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
