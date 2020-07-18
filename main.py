@@ -1,6 +1,7 @@
 import logging
 import sys
 from api import API
+import time
 
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
@@ -22,9 +23,13 @@ root_logger.addHandler(console_handler)
 if __name__ == "__main__":
     a = API()
     a.login(True)
+    time.sleep(4)
     a.POST__api_tutorial_agree_legal_document()
+    time.sleep(10)
     a.POST__api_tutorial_get_tutorial_gacha()
+    time.sleep(10)
     a.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
-
+    time.sleep(14)
     a.POST__api_tutorial_fxm_tutorial_gacha_exec()
+    time.sleep(10)
     a.get_migrate_information("wtf")

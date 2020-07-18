@@ -173,7 +173,6 @@ class BaseApi:
         inner_payload["xuid"] = int(self.player_information.x_uid_payment)
 
         response = self._post("/api/login", inner_payload, remove_header={'Cookie'})
-        print(response)
         self.session_id = response["payload"]["sessionId"]
         self.player_information.user_id = response["payload"]["userId"]
 
@@ -295,7 +294,7 @@ class BaseApi:
         payload = {
             "payload": inner_payload,
             "uuid": self.player_information.uuid_payment,
-            "userId": 0,
+            "userId": self.player_information.user_id,
             "sessionId": self.session_id,
             "actionToken": None,
             "ctag": None,
