@@ -1,20 +1,23 @@
-import requests
-import json
-import msgpack
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
 from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA1
-from Crypto.PublicKey import RSA
+from urllib.parse import quote_plus
+from sqlalchemy.orm import sessionmaker, session
 
+import logging
+import requests
+import json
+import msgpack
 import hmac
 import base64
 import time
+import datetime
 import random
-from urllib.parse import quote_plus
 
 from DeviceInformation import DeviceInfo
 from PlayerInformation import PlayerInformation
+
 
 DEBUG = True
 
@@ -23,14 +26,27 @@ def generate_nonce(length=19):
     return int(''.join([str(random.randint(0, 9)) for i in range(length)]))
 
 
+def get_action_time():
+    action_times = [0xfd2c030, 0x18c120b0, 0xdd98840, 0x13ee8a0, 0x1a26560, 0x21526d10, 0xe100190, 0xfbf3830]  # Todo how are those generated
+    current_time = (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
+    time_offset = random.choice(action_times)
+    next_time = int(current_time + time_offset)
+    final_time = (next_time & 0x3FFFFFFFFFFFFFFF) - 0x701CE1722770000
+    return final_time, next_time
+
+
+def check_action_time(action_time):
+    return action_time < (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
+
+
 class BaseApi:
     URL = "https://api-sinoalice-us.pokelabo.jp"
     BN_PAYMENT_URL = "https://bn-payment-us.wrightflyer.net"
     BN_MODERATION_URL = "https://bn-moderation-us.wrightflyer.net"
 
     crypto_key = b"***REMOVED***"  # Reverse: Static, Unity part, BasicCrypto.encrypt
-    app_secret_payment = "***REMOVED***"  # Reverse: Static, Java Part, .sign.AuthorizedSigner constructor
-    app_secret_moderation = "***REMOVED***"
+    app_secret_payment = "***REMOVED***"   # Reverse: Static, Java Part, .sign.AuthorizedSigner constructor
+    app_secret_moderation = "***REMOVED***"  # Reverse: Static, Java Part, .sign.DefaultSigner constructor
     app_id = "***REMOVED***"  # Reverse: Static, web log
 
     def __init__(self, player_information: PlayerInformation = None):
@@ -43,6 +59,7 @@ class BaseApi:
 
         self.device_info = DeviceInfo()
         self.session_id: str = ""
+        self.action_time, self.action_time_ticks = get_action_time()
 
         # Use local proxy
         if DEBUG:
@@ -58,7 +75,6 @@ class BaseApi:
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
         self.request_session.post(self.BN_PAYMENT_URL + nonce)
-
 
         verify_endpoint = "/v1.0/deviceverification/verify"
         verification_payload = {
@@ -115,7 +131,6 @@ class BaseApi:
         response = self.request_session.post(self.BN_PAYMENT_URL + auth_initialize, login_payload_bytes)
         self.uuid_payment = response.json()["uuid"]
 
-
         auth_x_uid = "/v1.0/auth/x_uid"
         authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + auth_x_uid, b"",
                                                        self.app_secret_payment, self.player_information.private_key_payment)
@@ -152,17 +167,7 @@ class BaseApi:
         inner_payload["uuid"] = None
         inner_payload["xuid"] = self.x_uid_payment
 
-        payload = {
-            "payload": inner_payload,
-            "uuid": self.uuid_payment,
-            "userId": 0,
-            "sessionId": "",
-            "actionToken": None,
-            "ctag": None,
-            "actionTime": 132381034208143910 # TODO
-        }
-
-        self._post("/api/login", payload, remove_header={'Cookie'})
+        self._post("/api/login", inner_payload, remove_header={'Cookie'})
 
     def login(self, new_registration=False):
         if new_registration:
@@ -170,9 +175,9 @@ class BaseApi:
             self._moderation_registration()
             self._login_account()
         else:
-            pass
+            self._payment_authorize()
+
         self._payment_device_verification()
-        self._payment_authorize()
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, app_secret, rsa_key=None,
                                   new_account=False):
@@ -243,9 +248,24 @@ class BaseApi:
         encrypted_request_content = aes.encrypt(padded_request_content)
         return iv + encrypted_request_content
 
-    def _prepare_request(self, request_type, resource, data: dict, remove_header=None):
-        data = self._encrypt_request(data)
-        mac = self._generate_signature(data, SHA1, self.player_information.private_key_payment).decode()
+    def _prepare_request(self, request_type, resource, inner_payload: dict, remove_header=None):
+        if not check_action_time(self.action_time_ticks):
+            self.action_time, self.action_time_ticks = get_action_time()
+
+        payload = {
+            "payload": inner_payload,
+            "uuid": self.uuid_payment,
+            "userId": 0,
+            "sessionId": self.session_id,
+            "actionToken": None,
+            "ctag": None,
+            "actionTime": self.action_time
+        }
+
+        logging.info(payload)
+
+        inner_payload = self._encrypt_request(payload)
+        mac = self._generate_signature(inner_payload, SHA1, self.player_information.private_key_payment).decode()
 
         common_headers = {
             "Expect": "100-continue",
@@ -264,14 +284,16 @@ class BaseApi:
             common_headers.pop(header)
 
         self.request_session.headers = common_headers
-        return data
+        return inner_payload
 
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
         code = response.status_code
         return decrypted_response
 
-    def _get(self, resource, params={}):
+    def _get(self, resource, params=None):
+        if params is None:
+            params = {}
         url = BaseApi.URL + resource
 
         self._prepare_request("GET", resource, {})

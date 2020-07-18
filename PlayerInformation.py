@@ -1,7 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Interval, String, Integer
 from sqlalchemy import orm
-from sqlalchemy.orm import sessionmaker, session
 from sqlalchemy import create_engine
 from Crypto.PublicKey.RSA import RsaKey
 from Crypto.PublicKey import RSA

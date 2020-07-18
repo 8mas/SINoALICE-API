@@ -11,9 +11,3 @@ class API(BaseApi):
 
 class SigningException(Exception):
     pass
-
-
-if __name__ == "__main__":
-    a = API()
-    a.login(True)
-
