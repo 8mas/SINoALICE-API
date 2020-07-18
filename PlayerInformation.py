@@ -11,7 +11,7 @@ engine = create_engine("sqlite:///foo.db", echo=True)
 
 
 def generate_device_id():
-    return "==DM2RGLjtmLmL2AkVmLzuwZ"
+    #return "==DM2RGLjtmLmL2AkVmLzuwZ"
     return "==" + "".join(
         [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
 

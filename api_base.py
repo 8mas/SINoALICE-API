@@ -4,6 +4,7 @@ from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA1
 from urllib.parse import quote_plus
 from sqlalchemy.orm import sessionmaker, session
+from Crypto.PublicKey import RSA
 
 import requests
 import logging
@@ -33,6 +34,7 @@ def get_action_time():
     action_times = [0xfd2c030, 0x18c120b0, 0xdd98840, 0x13ee8a0, 0x1a26560, 0x21526d10, 0xe100190, 0xfbf3830]  # Todo how are those generated
     current_time = (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
     time_offset = random.choice(action_times)
+    print(time_offset)
     next_time = int(current_time + time_offset)
     final_time = (next_time & 0x3FFFFFFFFFFFFFFF) - 0x701CE1722770000
     return final_time, next_time
@@ -120,7 +122,7 @@ class BaseApi:
         login_payload = {
             "device_id": f"{self.player_information.device_id}",
             "token": f"{self.player_information.private_key_payment.publickey().export_key().decode()}",
-            "payload": json.dumps(device_info_dict)
+            "payload": json.dumps(device_info_dict).replace(" ", "")
         }
 
         login_payload_bytes = json.dumps(login_payload).encode()
@@ -152,7 +154,7 @@ class BaseApi:
         login_payload = {
             "device_id": f"{self.player_information.device_id}",
             "token": f"{self.player_information.private_key_moderation.publickey().export_key().decode()}",
-            "payload": json.dumps(device_info_dict)
+            "payload": json.dumps(device_info_dict).replace(" ", "")
         }
 
         login_payload_bytes = json.dumps(login_payload)
@@ -167,8 +169,8 @@ class BaseApi:
 
     def _login_account(self):
         inner_payload = self.device_info.get_device_info_dict()
-        inner_payload["uuid"] = None
-        inner_payload["xuid"] = self.player_information.x_uid_payment
+        inner_payload["uuid"] = self.player_information.uuid_payment
+        inner_payload["xuid"] = int(self.player_information.x_uid_payment)
 
         response = self._post("/api/login", inner_payload, remove_header={'Cookie'})
         print(response)
@@ -180,9 +182,9 @@ class BaseApi:
             self._payment_registration()
             self._moderation_registration()
             self._login_account()
+
         else:
             self._payment_authorize()
-
         self._payment_device_verification()
 
     def get_migrate_information(self, password: str):
@@ -256,8 +258,12 @@ class BaseApi:
         oauth_header_entry = oauth_header_entry[:-1]
         return oauth_header_entry
 
-    def _generate_signature(self, data: bytes, hash_function, key):
+    def _generate_signature(self, data: bytes, hash_function, key, base=False):
         hashed_string = hash_function.new(data)
+        if base:
+            base_string = base64.b64encode(hashed_string.digest())
+            hashed_string = hash_function.new()
+            hashed_string.update(base_string)
         signature = pkcs1_15.new(key).sign(hashed_string)
         return base64.b64encode(signature)
 
@@ -267,8 +273,6 @@ class BaseApi:
         pad_text = aes.decrypt(response_content[16:])
         text = unpad(pad_text, 16)
         data_loaded = msgpack.unpackb(text)
-        print(data_loaded)
-        print(json.dumps(data_loaded))
         return data_loaded
 
     def _encrypt_request(self, request_content: dict):
@@ -279,7 +283,11 @@ class BaseApi:
         encrypted_request_content = aes.encrypt(padded_request_content)
         return iv + encrypted_request_content
 
+
     def _prepare_request(self, request_type, resource, inner_payload: dict, remove_header=None):
+        if remove_header is None:
+            remove_header = []
+
         if not check_action_time(self.action_time_ticks):
             self.action_time, self.action_time_ticks = get_action_time()
             logging.debug(f"Setting new action time {self.action_time}")
@@ -297,7 +305,8 @@ class BaseApi:
         logging.info(f"Payload of {self.player_information.uuid_payment} {payload}")
 
         payload = self._encrypt_request(payload)
-        mac = self._generate_signature(payload, SHA1, self.player_information.private_key_moderation).decode()
+
+        mac = self._generate_signature(payload, SHA1, self.player_information.private_key_payment, base=True).strip().decode()
 
         common_headers = {
             "Expect": "100-continue",
