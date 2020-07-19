@@ -1,7 +1,8 @@
 from api.OAuth.OAuthCrypto import OAuthCrypto
 from api.Constants.Secrets import APP_VERSION, APP_SECRET_PAYMENT
 import json
-
+import codecs
+import base64
 
 class OAuthPayment:
     BN_PAYMENT_URL = "https://bn-payment-us.wrightflyer.net"
@@ -33,9 +34,10 @@ class OAuthPayment:
 
         # ToDO LOG
         print(response.content)
+        password = codecs.encode(base64.b64encode(password.encode())[::-1].decode(), "rot_13")
 
         migration_password_endpoint = "/v1.0/migration/password/register"
-        payload = {"migration_password": "=RGLuSJLuSJL"}
+        payload = {"migration_password": password}
         payload = json.dumps(payload).encode()
 
         self._prepare_request("POST", migration_password_endpoint, payload)
