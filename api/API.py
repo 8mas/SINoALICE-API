@@ -1,7 +1,4 @@
-from api_base import BaseApi
-import json
-
-DEBUG = True
+from api.BaseApi import BaseApi
 
 
 class API(BaseApi):

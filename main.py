@@ -1,8 +1,8 @@
 import logging
 import sys
-from api import API
 import time
 import random
+from api.API import API
 
 
 root_logger = logging.getLogger()
@@ -46,7 +46,6 @@ if __name__ == "__main__":
     time.sleep(7)
     a.POST__api_tutorial_fxm_tutorial_gacha_exec()
     # Loop End
-
 
     name = random.choice(common_names)
     a.POST__api_tutorial_set_user_name(name)

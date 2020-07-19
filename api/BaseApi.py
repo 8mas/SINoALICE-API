@@ -5,7 +5,7 @@ from Crypto.Hash import SHA1
 from urllib.parse import quote_plus
 from sqlalchemy.orm import sessionmaker, session
 from Crypto.PublicKey import RSA
-from ErrorCodes import *
+from resources.ErrorCodes import *
 
 import requests
 import logging
@@ -17,8 +17,8 @@ import time
 import datetime
 import random
 
-from DeviceInformation import DeviceInfo
-from PlayerInformation import PlayerInformation
+from .DeviceInformation import DeviceInfo
+from .PlayerInformation import PlayerInformation
 
 requests.packages.urllib3.disable_warnings()
 logging.getLogger("requests").setLevel(logging.CRITICAL)
