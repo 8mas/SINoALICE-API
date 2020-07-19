@@ -5,6 +5,7 @@ from Crypto.Hash import SHA1
 from urllib.parse import quote_plus
 from sqlalchemy.orm import sessionmaker, session
 from Crypto.PublicKey import RSA
+from ErrorCodes import *
 
 import requests
 import logging
@@ -34,9 +35,8 @@ def get_action_time():
     action_times = [0xfd2c030, 0x18c120b0, 0xdd98840, 0x13ee8a0, 0x1a26560, 0x21526d10, 0xe100190, 0xfbf3830]  # Todo how are those generated
     current_time = (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
     time_offset = random.choice(action_times)
-    print(time_offset)
     next_time = int(current_time + time_offset)
-    final_time = (next_time & 0x3FFFFFFFFFFFFFFF) - 0x701CE1722770000
+    final_time = ((next_time & 0x3FFFFFFFFFFFFFFF) - 0x701CE1722770000)
     return final_time, next_time
 
 
@@ -66,6 +66,7 @@ class BaseApi:
         self.session_id: str = ""
         self.action_time, self.action_time_ticks = get_action_time()
 
+        self.last_request = None
         # Use local proxy
         if DEBUG:
             print("Using proxy")
@@ -187,13 +188,17 @@ class BaseApi:
         self._payment_device_verification()
 
     def get_migrate_information(self, password: str):
-        migration_endpoint = "/v1.0/migration/code?renew=0"
-        authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + migration_endpoint,
-                                                       b"", self.app_secret_moderation, self.player_information.private_key_payment)
+        migration_endpoint = "/v1.0/migration/code"
 
+        extra_header = {"renew": "0"}
+        authorization = self._build_oauth_header_entry("GET", self.BN_PAYMENT_URL + migration_endpoint,
+                                                       b"", self.app_secret_payment,
+                                                       self.player_information.private_key_payment,
+                                                       extra_header=extra_header)
+        # TODO Invalid signature, see how base string is generated
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
-        response = self.request_session.post(self.BN_MODERATION_URL + migration_endpoint)
+        response = self.request_session.get(self.BN_PAYMENT_URL + migration_endpoint + "?renew=0")
         print(response.content)
 
         migration_password_endpoint = "/v1.0/migration/password/register"
@@ -205,12 +210,12 @@ class BaseApi:
 
         header = self.device_info.get_bn_payment_header(authorization)
         self.request_session.headers = header
-        response = self.request_session.post(self.BN_MODERATION_URL + migration_password_endpoint, payload)
+        response = self.request_session.post(self.BN_PAYMENT_URL + migration_password_endpoint, payload)
         print(response.content)
 
 
     def _build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, app_secret, rsa_key=None,
-                                  new_account=False):
+                                  new_account=False, extra_header=None):
         timestamp = int(time.time())
         oauth_header = {
             "oauth_body_hash": f"{base64.b64encode(SHA1.new(body_data).digest()).decode()}",
@@ -220,6 +225,9 @@ class BaseApi:
             "oauth_timestamp": f"{timestamp}",
             "oauth_version": "1.0"
         }
+
+        if extra_header:
+            oauth_header.update(extra_header)
 
         if not new_account:
             to_hash = (app_secret + str(timestamp)).encode()
@@ -284,15 +292,12 @@ class BaseApi:
 
 
     def _prepare_request(self, request_type, resource, inner_payload: dict, remove_header=None):
+        self.last_request = request_type, resource, inner_payload, remove_header, time.time()
+
         if remove_header is None:
             remove_header = []
 
-        if not check_action_time(self.action_time_ticks):
-            self.action_time, self.action_time_ticks = get_action_time()
-            logging.debug(f"Setting new action time {self.action_time}")
-        if "exec" in resource:
-            self.action_time, self.action_time_ticks = get_action_time()
-
+        self.action_time, self.action_time_ticks = get_action_time()
 
         payload = {
             "payload": inner_payload,
@@ -304,7 +309,7 @@ class BaseApi:
             "actionTime": self.action_time
         }
 
-        logging.info(f"Payload of {self.player_information.uuid_payment} {payload}")
+        logging.info(f"to {resource} {payload} {self.player_information.uuid_payment}")
 
         payload = self._encrypt_request(payload)
 
@@ -329,10 +334,23 @@ class BaseApi:
         self.request_session.headers = common_headers
         return payload
 
+    def _replay_last_request(self):
+        request_type, resource, inner_payload, remove_header, last_request_time = self.last_request
+
+        if request_type == "POST":
+            return self._post(resource, inner_payload, remove_header)
+
+
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
-        logging.info(f"response of {self.player_information.uuid_payment} {decrypted_response}")
+        logging.info(f"from {response.request.path_url} {decrypted_response}")
         code = response.status_code
+
+        if decrypted_response.get("errors", None) is not None:
+            if decrypted_response["errors"][0]["code"] == EXCESS_TRAFFIC:
+                logging.warning(f"EXCESS_TRAFFIC Exception {response.request.path_url}")
+                raise ExcessTrafficException("")
+
         return decrypted_response
 
     def _get(self, resource, params=None):
@@ -349,8 +367,19 @@ class BaseApi:
 
         payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
 
-        response = self.request_session.post(url, payload)
-        return self._handle_response(response)
+        resulting_response = None
+        timeout_duration = 15
+        while resulting_response is None:
+            response = self.request_session.post(url, payload)
+            try:
+                resulting_response = self._handle_response(response)
+            except ExcessTrafficException as e:
+                time.sleep(timeout_duration)
+                timeout_duration += 5
+                if timeout_duration > 300:
+                    logging.critical(f"Maximum attempts for {resource} aborting")
+                    exit(-1)
+        return resulting_response
 
     def _put(self):
         pass
@@ -360,4 +389,7 @@ class BaseApi:
 
 
 class SigningException(Exception):
+    pass
+
+class ExcessTrafficException(Exception):
     pass
