@@ -1,9 +1,8 @@
 from dataclasses import dataclass
-
+from api.Constants.Secrets import APP_VERSION
 
 @dataclass(unsafe_hash=True)
 class DeviceInfo:
-    appVersion: str = "1.5.0"
     deviceModel: str = "Samsung Galaxy Note10"
     numericCountryCode: int = 840
 
@@ -21,7 +20,7 @@ class DeviceInfo:
     def get_bn_payment_header(self, authorization_header: str):
         bn_payment_header = {
             "Authorization": authorization_header,
-            "X-GREE-GAMELIB": f"authVersion%3D{self.auth_version}%26storeType%3D{self.store_type}%26appVersion%3D{self.appVersion}"
+            "X-GREE-GAMELIB": f"authVersion%3D{self.auth_version}%26storeType%3D{self.store_type}%26appVersion%3D{APP_VERSION}"
                               f"%26uaType%3D{self.uaType}%26carrier%3D{self.carrier}%26compromised%3Dfalse"
                               f"%26countryCode%3D{self.country_code}%26currencyCode%3D{self.currency_code}",
 
@@ -37,7 +36,7 @@ class DeviceInfo:
     def get_bn_moderation_header(self, authorization_header: str):
         bn_moderation_header = {
             "Authorization": authorization_header,
-            "X-GREE-GAMELIB": f"authVersion%3D{self.auth_version}%26appVersion%3D{self.appVersion}%26uaType%3D{self.uaType}"
+            "X-GREE-GAMELIB": f"authVersion%3D{self.auth_version}%26appVersion%3D{APP_VERSION}%26uaType%3D{self.uaType}"
                               f"%26carrier%3D{self.carrier}%26compromised%3Dfalse%26countryCode%3D{self.country_code}"
                               f"%26currencyCode%3D{self.currency_code}",
 
@@ -52,7 +51,7 @@ class DeviceInfo:
 
     def get_device_info_dict(self):
         device_info_dict = {
-            "appVersion": self.appVersion,
+            "appVersion": APP_VERSION,
             "urlParam": None,
             "deviceModel": self.deviceModel,
             "osType": 2,
