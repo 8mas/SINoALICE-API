@@ -1,0 +1,2810 @@
+{
+    "1": {
+        "rarity": 4,
+        "name": "War Song's Echo"
+    },
+    "2": {
+        "rarity": 5,
+        "name": "War Song's Echo"
+    },
+    "3": {
+        "rarity": 4,
+        "name": "Book of Regret"
+    },
+    "4": {
+        "rarity": 5,
+        "name": "Book of Regret"
+    },
+    "5": {
+        "rarity": 4,
+        "name": "Staff of Submission"
+    },
+    "6": {
+        "rarity": 5,
+        "name": "Staff of Submission"
+    },
+    "7": {
+        "rarity": 4,
+        "name": "One Wish"
+    },
+    "8": {
+        "rarity": 5,
+        "name": "One Wish"
+    },
+    "9": {
+        "rarity": 4,
+        "name": "Fencer's Foil"
+    },
+    "10": {
+        "rarity": 5,
+        "name": "Fencer's Foil"
+    },
+    "11": {
+        "rarity": 4,
+        "name": "Meat Pulverizer"
+    },
+    "12": {
+        "rarity": 5,
+        "name": "Meat Pulverizer"
+    },
+    "13": {
+        "rarity": 4,
+        "name": "Princess' Pillage"
+    },
+    "14": {
+        "rarity": 5,
+        "name": "Princess' Pillage"
+    },
+    "15": {
+        "rarity": 4,
+        "name": "Illusionary Scythe"
+    },
+    "16": {
+        "rarity": 5,
+        "name": "Illusionary Scythe"
+    },
+    "17": {
+        "rarity": 4,
+        "name": "Slothful God's Harp"
+    },
+    "18": {
+        "rarity": 5,
+        "name": "Slothful God's Harp"
+    },
+    "19": {
+        "rarity": 4,
+        "name": "Torture Doctrine"
+    },
+    "20": {
+        "rarity": 5,
+        "name": "Torture Doctrine"
+    },
+    "21": {
+        "rarity": 4,
+        "name": "Monk's Staff"
+    },
+    "22": {
+        "rarity": 5,
+        "name": "Monk's Staff"
+    },
+    "23": {
+        "rarity": 4,
+        "name": "Dark Puppet"
+    },
+    "24": {
+        "rarity": 5,
+        "name": "Dark Puppet"
+    },
+    "25": {
+        "rarity": 4,
+        "name": "Embodiment of Love"
+    },
+    "26": {
+        "rarity": 5,
+        "name": "Embodiment of Love"
+    },
+    "27": {
+        "rarity": 4,
+        "name": "Grudge Hammer"
+    },
+    "28": {
+        "rarity": 5,
+        "name": "Grudge Hammer"
+    },
+    "29": {
+        "rarity": 4,
+        "name": "Ancient Elven Bow"
+    },
+    "30": {
+        "rarity": 5,
+        "name": "Ancient Elven Bow"
+    },
+    "31": {
+        "rarity": 4,
+        "name": "Thirst for War"
+    },
+    "32": {
+        "rarity": 5,
+        "name": "Thirst for War"
+    },
+    "33": {
+        "rarity": 5,
+        "name": "Harpy's Harp"
+    },
+    "34": {
+        "rarity": 6,
+        "name": "Harpy's Harp"
+    },
+    "35": {
+        "rarity": 5,
+        "name": "Tome of Absolution"
+    },
+    "36": {
+        "rarity": 6,
+        "name": "Tome of Absolution"
+    },
+    "37": {
+        "rarity": 5,
+        "name": "Risen Staff"
+    },
+    "38": {
+        "rarity": 6,
+        "name": "Risen Staff"
+    },
+    "39": {
+        "rarity": 5,
+        "name": "Astrologer's Manasto"
+    },
+    "40": {
+        "rarity": 6,
+        "name": "Astrologer's Manasto"
+    },
+    "41": {
+        "rarity": 5,
+        "name": "Blade of Depravity"
+    },
+    "42": {
+        "rarity": 6,
+        "name": "Blade of Depravity"
+    },
+    "43": {
+        "rarity": 5,
+        "name": "Retainer's Hammer"
+    },
+    "44": {
+        "rarity": 6,
+        "name": "Retainer's Hammer"
+    },
+    "45": {
+        "rarity": 5,
+        "name": "Tracker's Bow"
+    },
+    "46": {
+        "rarity": 6,
+        "name": "Tracker's Bow"
+    },
+    "47": {
+        "rarity": 5,
+        "name": "Ceremonial Spear"
+    },
+    "48": {
+        "rarity": 6,
+        "name": "Ceremonial Spear"
+    },
+    "49": {
+        "rarity": 3,
+        "name": "Poet's Harp"
+    },
+    "50": {
+        "rarity": 4,
+        "name": "Poet's Harp"
+    },
+    "51": {
+        "rarity": 5,
+        "name": "Poet's Harp"
+    },
+    "52": {
+        "rarity": 3,
+        "name": "Otherworldly Chronic"
+    },
+    "53": {
+        "rarity": 4,
+        "name": "Otherworldly Chronic"
+    },
+    "54": {
+        "rarity": 5,
+        "name": "Otherworldly Chronic"
+    },
+    "55": {
+        "rarity": 3,
+        "name": "Scepter of Power"
+    },
+    "56": {
+        "rarity": 4,
+        "name": "Scepter of Power"
+    },
+    "57": {
+        "rarity": 5,
+        "name": "Scepter of Power"
+    },
+    "58": {
+        "rarity": 3,
+        "name": "Sword of Necessary E"
+    },
+    "59": {
+        "rarity": 4,
+        "name": "Sword of Necessary E"
+    },
+    "60": {
+        "rarity": 5,
+        "name": "Sword of Necessary E"
+    },
+    "61": {
+        "rarity": 3,
+        "name": "Strongman's Hammer"
+    },
+    "62": {
+        "rarity": 4,
+        "name": "Strongman's Hammer"
+    },
+    "63": {
+        "rarity": 5,
+        "name": "Strongman's Hammer"
+    },
+    "64": {
+        "rarity": 3,
+        "name": "Farmer's Bow"
+    },
+    "65": {
+        "rarity": 4,
+        "name": "Farmer's Bow"
+    },
+    "66": {
+        "rarity": 5,
+        "name": "Farmer's Bow"
+    },
+    "67": {
+        "rarity": 3,
+        "name": "The Wolf's Offering"
+    },
+    "68": {
+        "rarity": 4,
+        "name": "The Wolf's Offering"
+    },
+    "69": {
+        "rarity": 3,
+        "name": "Lovely Violin"
+    },
+    "70": {
+        "rarity": 4,
+        "name": "Lovely Violin"
+    },
+    "71": {
+        "rarity": 3,
+        "name": "Chaotic Desire"
+    },
+    "72": {
+        "rarity": 4,
+        "name": "Chaotic Desire"
+    },
+    "73": {
+        "rarity": 3,
+        "name": "Apprentice's Staff"
+    },
+    "74": {
+        "rarity": 4,
+        "name": "Apprentice's Staff"
+    },
+    "75": {
+        "rarity": 3,
+        "name": "Tunnel Treasure Ches"
+    },
+    "76": {
+        "rarity": 4,
+        "name": "Tunnel Treasure Ches"
+    },
+    "77": {
+        "rarity": 3,
+        "name": "Dagger of the Covena"
+    },
+    "78": {
+        "rarity": 4,
+        "name": "Dagger of the Covena"
+    },
+    "79": {
+        "rarity": 3,
+        "name": "Assassin's Kit"
+    },
+    "80": {
+        "rarity": 4,
+        "name": "Assassin's Kit"
+    },
+    "81": {
+        "rarity": 3,
+        "name": "Calamitous Bow"
+    },
+    "82": {
+        "rarity": 4,
+        "name": "Calamitous Bow"
+    },
+    "83": {
+        "rarity": 3,
+        "name": "Dragon Scythe"
+    },
+    "84": {
+        "rarity": 4,
+        "name": "Dragon Scythe"
+    },
+    "85": {
+        "rarity": 3,
+        "name": "Scales of Fortune"
+    },
+    "86": {
+        "rarity": 4,
+        "name": "Scales of Fortune"
+    },
+    "87": {
+        "rarity": 5,
+        "name": "Sealed Water"
+    },
+    "88": {
+        "rarity": 6,
+        "name": "Sealed Water"
+    },
+    "89": {
+        "rarity": 5,
+        "name": "Demonic Arm"
+    },
+    "90": {
+        "rarity": 6,
+        "name": "Demonic Arm"
+    },
+    "91": {
+        "rarity": 5,
+        "name": "Irreconcilable Enemy"
+    },
+    "92": {
+        "rarity": 6,
+        "name": "Irreconcilable Enemy"
+    },
+    "93": {
+        "rarity": 5,
+        "name": "Rebirth Gem"
+    },
+    "94": {
+        "rarity": 6,
+        "name": "Rebirth Gem"
+    },
+    "95": {
+        "rarity": 5,
+        "name": "Shameless Ambition"
+    },
+    "96": {
+        "rarity": 6,
+        "name": "Shameless Ambition"
+    },
+    "97": {
+        "rarity": 5,
+        "name": "Warden's Mallet"
+    },
+    "98": {
+        "rarity": 6,
+        "name": "Warden's Mallet"
+    },
+    "99": {
+        "rarity": 5,
+        "name": "Accursed Gun"
+    },
+    "100": {
+        "rarity": 6,
+        "name": "Accursed Gun"
+    },
+    "101": {
+        "rarity": 5,
+        "name": "Hunter's Soul"
+    },
+    "102": {
+        "rarity": 6,
+        "name": "Hunter's Soul"
+    },
+    "103": {
+        "rarity": 5,
+        "name": "Fiddle of Delusion"
+    },
+    "104": {
+        "rarity": 6,
+        "name": "Fiddle of Delusion"
+    },
+    "105": {
+        "rarity": 5,
+        "name": "Omniscient Book"
+    },
+    "106": {
+        "rarity": 6,
+        "name": "Omniscient Book"
+    },
+    "107": {
+        "rarity": 5,
+        "name": "Staff of Bondage"
+    },
+    "108": {
+        "rarity": 6,
+        "name": "Staff of Bondage"
+    },
+    "109": {
+        "rarity": 4,
+        "name": "Mirror to the World"
+    },
+    "110": {
+        "rarity": 5,
+        "name": "Mirror to the World"
+    },
+    "111": {
+        "rarity": 5,
+        "name": "False Victor"
+    },
+    "112": {
+        "rarity": 6,
+        "name": "False Victor"
+    },
+    "113": {
+        "rarity": 5,
+        "name": "Soul Shell"
+    },
+    "114": {
+        "rarity": 6,
+        "name": "Soul Shell"
+    },
+    "115": {
+        "rarity": 4,
+        "name": "Burning Satiation"
+    },
+    "116": {
+        "rarity": 5,
+        "name": "Burning Satiation"
+    },
+    "117": {
+        "rarity": 4,
+        "name": "Flood Records"
+    },
+    "118": {
+        "rarity": 5,
+        "name": "Flood Records"
+    },
+    "119": {
+        "rarity": 4,
+        "name": "Engraved Blue Staff"
+    },
+    "120": {
+        "rarity": 5,
+        "name": "Engraved Blue Staff"
+    },
+    "121": {
+        "rarity": 5,
+        "name": "Fool's Desire"
+    },
+    "122": {
+        "rarity": 6,
+        "name": "Fool's Desire"
+    },
+    "123": {
+        "rarity": 4,
+        "name": "Gourmand's Special"
+    },
+    "124": {
+        "rarity": 5,
+        "name": "Gourmand's Special"
+    },
+    "125": {
+        "rarity": 4,
+        "name": "Revolutionary's Maul"
+    },
+    "126": {
+        "rarity": 5,
+        "name": "Revolutionary's Maul"
+    },
+    "127": {
+        "rarity": 4,
+        "name": "Death's Grandeur"
+    },
+    "128": {
+        "rarity": 5,
+        "name": "Death's Grandeur"
+    },
+    "129": {
+        "rarity": 4,
+        "name": "The Lost Spear"
+    },
+    "130": {
+        "rarity": 5,
+        "name": "The Lost Spear"
+    },
+    "131": {
+        "rarity": 4,
+        "name": "Origin of Control"
+    },
+    "132": {
+        "rarity": 5,
+        "name": "Origin of Control"
+    },
+    "133": {
+        "rarity": 4,
+        "name": "Book of Judgment"
+    },
+    "134": {
+        "rarity": 5,
+        "name": "Book of Judgment"
+    },
+    "135": {
+        "rarity": 4,
+        "name": "Sands of Time"
+    },
+    "136": {
+        "rarity": 5,
+        "name": "Sands of Time"
+    },
+    "137": {
+        "rarity": 4,
+        "name": "Petals of Resurrecti"
+    },
+    "138": {
+        "rarity": 5,
+        "name": "Petals of Resurrecti"
+    },
+    "139": {
+        "rarity": 4,
+        "name": "Nocturne's Sword"
+    },
+    "140": {
+        "rarity": 5,
+        "name": "Nocturne's Sword"
+    },
+    "141": {
+        "rarity": 4,
+        "name": "Death and Agony"
+    },
+    "142": {
+        "rarity": 5,
+        "name": "Death and Agony"
+    },
+    "143": {
+        "rarity": 4,
+        "name": "Big Bad Bow"
+    },
+    "144": {
+        "rarity": 5,
+        "name": "Big Bad Bow"
+    },
+    "145": {
+        "rarity": 4,
+        "name": "Alternate Life"
+    },
+    "146": {
+        "rarity": 5,
+        "name": "Alternate Life"
+    },
+    "147": {
+        "rarity": 5,
+        "name": "The Destroyer"
+    },
+    "148": {
+        "rarity": 6,
+        "name": "The Destroyer"
+    },
+    "149": {
+        "rarity": 5,
+        "name": "Holy Dragon Lance"
+    },
+    "150": {
+        "rarity": 6,
+        "name": "Holy Dragon Lance"
+    },
+    "151": {
+        "rarity": 3,
+        "name": "Blessed Violin"
+    },
+    "152": {
+        "rarity": 4,
+        "name": "Blessed Violin"
+    },
+    "153": {
+        "rarity": 3,
+        "name": "Tome of Visions"
+    },
+    "154": {
+        "rarity": 4,
+        "name": "Tome of Visions"
+    },
+    "155": {
+        "rarity": 5,
+        "name": "Tome of Visions"
+    },
+    "156": {
+        "rarity": 3,
+        "name": "Devilish Staff"
+    },
+    "157": {
+        "rarity": 4,
+        "name": "Devilish Staff"
+    },
+    "158": {
+        "rarity": 5,
+        "name": "Devilish Staff"
+    },
+    "159": {
+        "rarity": 3,
+        "name": "Fairy Song"
+    },
+    "160": {
+        "rarity": 4,
+        "name": "Fairy Song"
+    },
+    "161": {
+        "rarity": 5,
+        "name": "Fairy Song"
+    },
+    "162": {
+        "rarity": 3,
+        "name": "Sword of Sacrifice"
+    },
+    "163": {
+        "rarity": 4,
+        "name": "Sword of Sacrifice"
+    },
+    "164": {
+        "rarity": 5,
+        "name": "Sword of Sacrifice"
+    },
+    "165": {
+        "rarity": 3,
+        "name": "Oblivion's Intent"
+    },
+    "166": {
+        "rarity": 4,
+        "name": "Oblivion's Intent"
+    },
+    "167": {
+        "rarity": 5,
+        "name": "Oblivion's Intent"
+    },
+    "168": {
+        "rarity": 3,
+        "name": "Decimation Spear"
+    },
+    "169": {
+        "rarity": 4,
+        "name": "Decimation Spear"
+    },
+    "170": {
+        "rarity": 5,
+        "name": "Decimation Spear"
+    },
+    "171": {
+        "rarity": 3,
+        "name": "Reluctant Rendezvous"
+    },
+    "172": {
+        "rarity": 4,
+        "name": "Reluctant Rendezvous"
+    },
+    "173": {
+        "rarity": 3,
+        "name": "Study of Yggdrasil"
+    },
+    "174": {
+        "rarity": 4,
+        "name": "Study of Yggdrasil"
+    },
+    "175": {
+        "rarity": 3,
+        "name": "Staff of Insanity"
+    },
+    "176": {
+        "rarity": 4,
+        "name": "Staff of Insanity"
+    },
+    "177": {
+        "rarity": 3,
+        "name": "Crystal Ball"
+    },
+    "178": {
+        "rarity": 4,
+        "name": "Crystal Ball"
+    },
+    "179": {
+        "rarity": 3,
+        "name": "Loving Blades"
+    },
+    "180": {
+        "rarity": 4,
+        "name": "Loving Blades"
+    },
+    "181": {
+        "rarity": 3,
+        "name": "Maul of Carnage"
+    },
+    "182": {
+        "rarity": 4,
+        "name": "Maul of Carnage"
+    },
+    "183": {
+        "rarity": 3,
+        "name": "Fairy Blaster"
+    },
+    "184": {
+        "rarity": 4,
+        "name": "Fairy Blaster"
+    },
+    "185": {
+        "rarity": 3,
+        "name": "Maiden's Purity"
+    },
+    "186": {
+        "rarity": 4,
+        "name": "Maiden's Purity"
+    },
+    "187": {
+        "rarity": 3,
+        "name": "Vigilante's Pride"
+    },
+    "188": {
+        "rarity": 4,
+        "name": "Vigilante's Pride"
+    },
+    "189": {
+        "rarity": 5,
+        "name": "Discord"
+    },
+    "190": {
+        "rarity": 6,
+        "name": "Discord"
+    },
+    "191": {
+        "rarity": 5,
+        "name": "Record of Humanity"
+    },
+    "192": {
+        "rarity": 6,
+        "name": "Record of Humanity"
+    },
+    "193": {
+        "rarity": 5,
+        "name": "Naive Miracle Staff"
+    },
+    "194": {
+        "rarity": 6,
+        "name": "Naive Miracle Staff"
+    },
+    "195": {
+        "rarity": 5,
+        "name": "Dragon God's Prayer"
+    },
+    "196": {
+        "rarity": 6,
+        "name": "Dragon God's Prayer"
+    },
+    "197": {
+        "rarity": 5,
+        "name": "Sword of Love and Ha"
+    },
+    "198": {
+        "rarity": 6,
+        "name": "Sword of Love and Ha"
+    },
+    "199": {
+        "rarity": 5,
+        "name": "The Lord's Hammer"
+    },
+    "200": {
+        "rarity": 6,
+        "name": "The Lord's Hammer"
+    },
+    "201": {
+        "rarity": 5,
+        "name": "Death God's Bow"
+    },
+    "202": {
+        "rarity": 6,
+        "name": "Death God's Bow"
+    },
+    "203": {
+        "rarity": 5,
+        "name": "Dwarven Spear"
+    },
+    "204": {
+        "rarity": 6,
+        "name": "Dwarven Spear"
+    },
+    "205": {
+        "rarity": 4,
+        "name": "Tome of Dependence"
+    },
+    "206": {
+        "rarity": 5,
+        "name": "Tome of Dependence"
+    },
+    "207": {
+        "rarity": 4,
+        "name": "Staff of Masochism"
+    },
+    "208": {
+        "rarity": 5,
+        "name": "Staff of Masochism"
+    },
+    "209": {
+        "rarity": 4,
+        "name": "Cursed Chains"
+    },
+    "210": {
+        "rarity": 5,
+        "name": "Cursed Chains"
+    },
+    "211": {
+        "rarity": 4,
+        "name": "Silent Desire"
+    },
+    "212": {
+        "rarity": 5,
+        "name": "Silent Desire"
+    },
+    "213": {
+        "rarity": 4,
+        "name": "Waking Nightmare"
+    },
+    "214": {
+        "rarity": 5,
+        "name": "Waking Nightmare"
+    },
+    "215": {
+        "rarity": 4,
+        "name": "Savage Crossbow"
+    },
+    "216": {
+        "rarity": 5,
+        "name": "Savage Crossbow"
+    },
+    "217": {
+        "rarity": 4,
+        "name": "Jester's Scythe"
+    },
+    "218": {
+        "rarity": 5,
+        "name": "Jester's Scythe"
+    },
+    "219": {
+        "rarity": 4,
+        "name": "Devil's Fife"
+    },
+    "220": {
+        "rarity": 5,
+        "name": "Devil's Fife"
+    },
+    "221": {
+        "rarity": 4,
+        "name": "Wiseman's Notes"
+    },
+    "222": {
+        "rarity": 5,
+        "name": "Wiseman's Notes"
+    },
+    "223": {
+        "rarity": 4,
+        "name": "Cumbersome Staff"
+    },
+    "224": {
+        "rarity": 5,
+        "name": "Cumbersome Staff"
+    },
+    "225": {
+        "rarity": 4,
+        "name": "Faithful Follower"
+    },
+    "226": {
+        "rarity": 5,
+        "name": "Faithful Follower"
+    },
+    "227": {
+        "rarity": 4,
+        "name": "Hero's Sword"
+    },
+    "228": {
+        "rarity": 5,
+        "name": "Hero's Sword"
+    },
+    "229": {
+        "rarity": 4,
+        "name": "Death's Remains"
+    },
+    "230": {
+        "rarity": 5,
+        "name": "Death's Remains"
+    },
+    "231": {
+        "rarity": 4,
+        "name": "Werewolf's Lie"
+    },
+    "232": {
+        "rarity": 5,
+        "name": "Werewolf's Lie"
+    },
+    "233": {
+        "rarity": 4,
+        "name": "Demon Spear"
+    },
+    "234": {
+        "rarity": 5,
+        "name": "Demon Spear"
+    },
+    "235": {
+        "rarity": 3,
+        "name": "Puppeteer's Magic"
+    },
+    "236": {
+        "rarity": 4,
+        "name": "Puppeteer's Magic"
+    },
+    "237": {
+        "rarity": 5,
+        "name": "Puppeteer's Magic"
+    },
+    "238": {
+        "rarity": 5,
+        "name": "Insect Harp"
+    },
+    "239": {
+        "rarity": 6,
+        "name": "Insect Harp"
+    },
+    "240": {
+        "rarity": 5,
+        "name": "Imperial Scout's Not"
+    },
+    "241": {
+        "rarity": 6,
+        "name": "Imperial Scout's Not"
+    },
+    "242": {
+        "rarity": 5,
+        "name": "Ginger Sage (Part I)"
+    },
+    "243": {
+        "rarity": 6,
+        "name": "Ginger Sage (Part I)"
+    },
+    "244": {
+        "rarity": 5,
+        "name": "Lusty God's Lantern"
+    },
+    "245": {
+        "rarity": 6,
+        "name": "Lusty God's Lantern"
+    },
+    "246": {
+        "rarity": 5,
+        "name": "Swordsmith's Spellbo"
+    },
+    "247": {
+        "rarity": 6,
+        "name": "Swordsmith's Spellbo"
+    },
+    "248": {
+        "rarity": 5,
+        "name": "Gluttonous God's Rod"
+    },
+    "249": {
+        "rarity": 6,
+        "name": "Gluttonous God's Rod"
+    },
+    "250": {
+        "rarity": 5,
+        "name": "Substitute Bow"
+    },
+    "251": {
+        "rarity": 6,
+        "name": "Substitute Bow"
+    },
+    "252": {
+        "rarity": 5,
+        "name": "Artisan's Spear"
+    },
+    "253": {
+        "rarity": 6,
+        "name": "Artisan's Spear"
+    },
+    "254": {
+        "rarity": 4,
+        "name": "Pink Harp"
+    },
+    "255": {
+        "rarity": 5,
+        "name": "Pink Harp"
+    },
+    "256": {
+        "rarity": 3,
+        "name": "Ruined Gun"
+    },
+    "257": {
+        "rarity": 4,
+        "name": "Ruined Gun"
+    },
+    "258": {
+        "rarity": 5,
+        "name": "Ruined Gun"
+    },
+    "259": {
+        "rarity": 3,
+        "name": "The Bard and the Fai"
+    },
+    "260": {
+        "rarity": 4,
+        "name": "The Bard and the Fai"
+    },
+    "261": {
+        "rarity": 5,
+        "name": "The Bard and the Fai"
+    },
+    "262": {
+        "rarity": 3,
+        "name": "Foreign Book"
+    },
+    "263": {
+        "rarity": 4,
+        "name": "Foreign Book"
+    },
+    "264": {
+        "rarity": 5,
+        "name": "Foreign Book"
+    },
+    "265": {
+        "rarity": 3,
+        "name": "White Lightning Staf"
+    },
+    "266": {
+        "rarity": 4,
+        "name": "White Lightning Staf"
+    },
+    "267": {
+        "rarity": 3,
+        "name": "The Unwilling"
+    },
+    "268": {
+        "rarity": 4,
+        "name": "The Unwilling"
+    },
+    "269": {
+        "rarity": 3,
+        "name": "Hammer of Brutality"
+    },
+    "270": {
+        "rarity": 4,
+        "name": "Hammer of Brutality"
+    },
+    "271": {
+        "rarity": 5,
+        "name": "Hammer of Brutality"
+    },
+    "272": {
+        "rarity": 3,
+        "name": "Precise Bow"
+    },
+    "273": {
+        "rarity": 4,
+        "name": "Precise Bow"
+    },
+    "274": {
+        "rarity": 3,
+        "name": "Spear of Love and Ha"
+    },
+    "275": {
+        "rarity": 4,
+        "name": "Spear of Love and Ha"
+    },
+    "276": {
+        "rarity": 5,
+        "name": "Spear of Love and Ha"
+    },
+    "277": {
+        "rarity": 3,
+        "name": "Flute of Excess"
+    },
+    "278": {
+        "rarity": 4,
+        "name": "Flute of Excess"
+    },
+    "279": {
+        "rarity": 3,
+        "name": "White Tome"
+    },
+    "280": {
+        "rarity": 4,
+        "name": "White Tome"
+    },
+    "281": {
+        "rarity": 3,
+        "name": "Staff of the Wise"
+    },
+    "282": {
+        "rarity": 4,
+        "name": "Staff of the Wise"
+    },
+    "283": {
+        "rarity": 3,
+        "name": "Zealot's Grudge"
+    },
+    "284": {
+        "rarity": 4,
+        "name": "Zealot's Grudge"
+    },
+    "285": {
+        "rarity": 3,
+        "name": "Tragedy of the Wicke"
+    },
+    "286": {
+        "rarity": 4,
+        "name": "Tragedy of the Wicke"
+    },
+    "287": {
+        "rarity": 3,
+        "name": "Oracle Knight's Axe"
+    },
+    "288": {
+        "rarity": 4,
+        "name": "Oracle Knight's Axe"
+    },
+    "289": {
+        "rarity": 3,
+        "name": "Holy Lance"
+    },
+    "290": {
+        "rarity": 4,
+        "name": "Holy Lance"
+    },
+    "291": {
+        "rarity": 5,
+        "name": "Ancient Violin"
+    },
+    "292": {
+        "rarity": 6,
+        "name": "Ancient Violin"
+    },
+    "293": {
+        "rarity": 5,
+        "name": "Knight's Diary"
+    },
+    "294": {
+        "rarity": 6,
+        "name": "Knight's Diary"
+    },
+    "295": {
+        "rarity": 5,
+        "name": "Ginger Sage (Part II"
+    },
+    "296": {
+        "rarity": 6,
+        "name": "Ginger Sage (Part II"
+    },
+    "297": {
+        "rarity": 5,
+        "name": "Time Remaining"
+    },
+    "298": {
+        "rarity": 6,
+        "name": "Time Remaining"
+    },
+    "299": {
+        "rarity": 5,
+        "name": "Sympathetic Blade"
+    },
+    "300": {
+        "rarity": 6,
+        "name": "Sympathetic Blade"
+    },
+    "301": {
+        "rarity": 5,
+        "name": "Hammer of Endtimes"
+    },
+    "302": {
+        "rarity": 6,
+        "name": "Hammer of Endtimes"
+    },
+    "303": {
+        "rarity": 5,
+        "name": "Holy Knight's Pistol"
+    },
+    "304": {
+        "rarity": 6,
+        "name": "Holy Knight's Pistol"
+    },
+    "305": {
+        "rarity": 5,
+        "name": "Gluttonous Scythe"
+    },
+    "306": {
+        "rarity": 6,
+        "name": "Gluttonous Scythe"
+    },
+    "307": {
+        "rarity": 5,
+        "name": "Flute of Despair"
+    },
+    "308": {
+        "rarity": 6,
+        "name": "Flute of Despair"
+    },
+    "311": {
+        "rarity": 4,
+        "name": "Sword of Revenge"
+    },
+    "312": {
+        "rarity": 5,
+        "name": "Sword of Revenge"
+    },
+    "313": {
+        "rarity": 5,
+        "name": "Veteran's Cannon"
+    },
+    "314": {
+        "rarity": 6,
+        "name": "Veteran's Cannon"
+    },
+    "315": {
+        "rarity": 4,
+        "name": "Idol's Harp"
+    },
+    "316": {
+        "rarity": 5,
+        "name": "Idol's Harp"
+    },
+    "317": {
+        "rarity": 4,
+        "name": "Reincarnation"
+    },
+    "318": {
+        "rarity": 5,
+        "name": "Reincarnation"
+    },
+    "319": {
+        "rarity": 4,
+        "name": "Modern Palace Record"
+    },
+    "320": {
+        "rarity": 5,
+        "name": "Modern Palace Record"
+    },
+    "323": {
+        "rarity": 4,
+        "name": "Dagger of Bonding"
+    },
+    "324": {
+        "rarity": 5,
+        "name": "Dagger of Bonding"
+    },
+    "325": {
+        "rarity": 4,
+        "name": "Azure Wing Crossbow"
+    },
+    "326": {
+        "rarity": 5,
+        "name": "Azure Wing Crossbow"
+    },
+    "327": {
+        "rarity": 4,
+        "name": "Veteran's Mallet"
+    },
+    "328": {
+        "rarity": 5,
+        "name": "Veteran's Mallet"
+    },
+    "329": {
+        "rarity": 4,
+        "name": "Hollow Spear"
+    },
+    "330": {
+        "rarity": 5,
+        "name": "Hollow Spear"
+    },
+    "331": {
+        "rarity": 4,
+        "name": "Harp of Collection"
+    },
+    "332": {
+        "rarity": 5,
+        "name": "Harp of Collection"
+    },
+    "335": {
+        "rarity": 5,
+        "name": "Oblivion Staff"
+    },
+    "336": {
+        "rarity": 6,
+        "name": "Oblivion Staff"
+    },
+    "337": {
+        "rarity": 4,
+        "name": "Crimson Jewel"
+    },
+    "338": {
+        "rarity": 5,
+        "name": "Crimson Jewel"
+    },
+    "339": {
+        "rarity": 5,
+        "name": "Sword of Humility"
+    },
+    "340": {
+        "rarity": 6,
+        "name": "Sword of Humility"
+    },
+    "341": {
+        "rarity": 4,
+        "name": "Mad Demon"
+    },
+    "342": {
+        "rarity": 5,
+        "name": "Mad Demon"
+    },
+    "343": {
+        "rarity": 5,
+        "name": "Gun of Incineration"
+    },
+    "344": {
+        "rarity": 6,
+        "name": "Gun of Incineration"
+    },
+    "345": {
+        "rarity": 5,
+        "name": "Snowflake Spear"
+    },
+    "346": {
+        "rarity": 6,
+        "name": "Snowflake Spear"
+    },
+    "347": {
+        "rarity": 5,
+        "name": "Reunion Whistle"
+    },
+    "348": {
+        "rarity": 6,
+        "name": "Reunion Whistle"
+    },
+    "349": {
+        "rarity": 4,
+        "name": "Spellbook of Reversa"
+    },
+    "350": {
+        "rarity": 5,
+        "name": "Spellbook of Reversa"
+    },
+    "353": {
+        "rarity": 5,
+        "name": "Staff of Incarnation"
+    },
+    "354": {
+        "rarity": 6,
+        "name": "Staff of Incarnation"
+    },
+    "355": {
+        "rarity": 5,
+        "name": "Sealed Dragon Puppet"
+    },
+    "356": {
+        "rarity": 6,
+        "name": "Sealed Dragon Puppet"
+    },
+    "357": {
+        "rarity": 5,
+        "name": "Virgin's Spinal Flui"
+    },
+    "358": {
+        "rarity": 6,
+        "name": "Virgin's Spinal Flui"
+    },
+    "359": {
+        "rarity": 5,
+        "name": "Shell Wings"
+    },
+    "360": {
+        "rarity": 6,
+        "name": "Shell Wings"
+    },
+    "361": {
+        "rarity": 1,
+        "name": "Upgrade Sword (C)"
+    },
+    "362": {
+        "rarity": 2,
+        "name": "Upgrade Sword (B)"
+    },
+    "363": {
+        "rarity": 3,
+        "name": "Upgrade Sword (A)"
+    },
+    "364": {
+        "rarity": 4,
+        "name": "Upgrade Sword (S)"
+    },
+    "365": {
+        "rarity": 5,
+        "name": "Upgrade Sword (SR)"
+    },
+    "366": {
+        "rarity": 1,
+        "name": "Upgrade Shield (C)"
+    },
+    "367": {
+        "rarity": 2,
+        "name": "Upgrade Shield (B)"
+    },
+    "368": {
+        "rarity": 3,
+        "name": "Upgrade Shield (A)"
+    },
+    "369": {
+        "rarity": 4,
+        "name": "Upgrade Shield (S)"
+    },
+    "370": {
+        "rarity": 5,
+        "name": "Upgrade Shield (SR)"
+    },
+    "371": {
+        "rarity": 1,
+        "name": "Upgrade Tablet (C)"
+    },
+    "372": {
+        "rarity": 2,
+        "name": "Upgrade Tablet (B)"
+    },
+    "373": {
+        "rarity": 3,
+        "name": "Upgrade Tablet (A)"
+    },
+    "374": {
+        "rarity": 4,
+        "name": "Upgrade Tablet (S)"
+    },
+    "375": {
+        "rarity": 5,
+        "name": "Upgrade Tablet (SR)"
+    },
+    "376": {
+        "rarity": 3,
+        "name": "Colosseum Gem (A)"
+    },
+    "377": {
+        "rarity": 4,
+        "name": "Colosseum Gem (S)"
+    },
+    "378": {
+        "rarity": 5,
+        "name": "Colosseum Gem (SR)"
+    },
+    "379": {
+        "rarity": 3,
+        "name": "Colosseum Support Ge"
+    },
+    "380": {
+        "rarity": 4,
+        "name": "Colosseum Support Ge"
+    },
+    "381": {
+        "rarity": 5,
+        "name": "Colosseum Support Ge"
+    },
+    "382": {
+        "rarity": 3,
+        "name": "Story Gem (A)"
+    },
+    "383": {
+        "rarity": 4,
+        "name": "Story Gem (S)"
+    },
+    "384": {
+        "rarity": 5,
+        "name": "Story Gem (SR)"
+    },
+    "385": {
+        "rarity": 3,
+        "name": "Story Support Gem (A"
+    },
+    "386": {
+        "rarity": 4,
+        "name": "Story Support Gem (S"
+    },
+    "387": {
+        "rarity": 5,
+        "name": "Story Support Gem (S"
+    },
+    "397": {
+        "rarity": 2,
+        "name": "Modest Sack"
+    },
+    "398": {
+        "rarity": 3,
+        "name": "Decent Sack"
+    },
+    "399": {
+        "rarity": 4,
+        "name": "Hefty Sack"
+    },
+    "400": {
+        "rarity": 2,
+        "name": "Maiden's Hairband"
+    },
+    "401": {
+        "rarity": 3,
+        "name": "Maiden's Hairband"
+    },
+    "402": {
+        "rarity": 4,
+        "name": "Maiden's Hairband"
+    },
+    "403": {
+        "rarity": 2,
+        "name": "Maiden's Dress"
+    },
+    "404": {
+        "rarity": 3,
+        "name": "Maiden's Dress"
+    },
+    "405": {
+        "rarity": 4,
+        "name": "Maiden's Dress"
+    },
+    "406": {
+        "rarity": 2,
+        "name": "Maiden's Heels"
+    },
+    "407": {
+        "rarity": 3,
+        "name": "Maiden's Heels"
+    },
+    "408": {
+        "rarity": 4,
+        "name": "Maiden's Heels"
+    },
+    "409": {
+        "rarity": 2,
+        "name": "Maiden's Gloves"
+    },
+    "410": {
+        "rarity": 3,
+        "name": "Maiden's Gloves"
+    },
+    "411": {
+        "rarity": 4,
+        "name": "Maiden's Gloves"
+    },
+    "412": {
+        "rarity": 2,
+        "name": "Girl's Hairband"
+    },
+    "413": {
+        "rarity": 3,
+        "name": "Girl's Hairband"
+    },
+    "414": {
+        "rarity": 4,
+        "name": "Girl's Hairband"
+    },
+    "415": {
+        "rarity": 2,
+        "name": "Girl's Frock"
+    },
+    "416": {
+        "rarity": 3,
+        "name": "Girl's Frock"
+    },
+    "417": {
+        "rarity": 4,
+        "name": "Girl's Frock"
+    },
+    "418": {
+        "rarity": 2,
+        "name": "Girl's Pumps"
+    },
+    "419": {
+        "rarity": 3,
+        "name": "Girl's Pumps"
+    },
+    "420": {
+        "rarity": 4,
+        "name": "Girl's Pumps"
+    },
+    "421": {
+        "rarity": 2,
+        "name": "Girl's Bracelet"
+    },
+    "422": {
+        "rarity": 3,
+        "name": "Girl's Bracelet"
+    },
+    "423": {
+        "rarity": 4,
+        "name": "Girl's Bracelet"
+    },
+    "424": {
+        "rarity": 3,
+        "name": "Hairpiece of Misery"
+    },
+    "425": {
+        "rarity": 4,
+        "name": "Hairpiece of Misery"
+    },
+    "426": {
+        "rarity": 5,
+        "name": "Hairpiece of Misery"
+    },
+    "427": {
+        "rarity": 3,
+        "name": "Dress of Misery"
+    },
+    "428": {
+        "rarity": 4,
+        "name": "Dress of Misery"
+    },
+    "429": {
+        "rarity": 5,
+        "name": "Dress of Misery"
+    },
+    "430": {
+        "rarity": 3,
+        "name": "Pumps of Misery"
+    },
+    "431": {
+        "rarity": 4,
+        "name": "Pumps of Misery"
+    },
+    "432": {
+        "rarity": 5,
+        "name": "Pumps of Misery"
+    },
+    "433": {
+        "rarity": 3,
+        "name": "Bracelet of Misery"
+    },
+    "434": {
+        "rarity": 4,
+        "name": "Bracelet of Misery"
+    },
+    "435": {
+        "rarity": 5,
+        "name": "Bracelet of Misery"
+    },
+    "448": {
+        "rarity": 3,
+        "name": "Hound (Fire)"
+    },
+    "449": {
+        "rarity": 4,
+        "name": "Hound (Fire)"
+    },
+    "450": {
+        "rarity": 3,
+        "name": "Hound (Water)"
+    },
+    "451": {
+        "rarity": 4,
+        "name": "Hound (Water)"
+    },
+    "452": {
+        "rarity": 3,
+        "name": "Hound (Wind)"
+    },
+    "453": {
+        "rarity": 4,
+        "name": "Hound (Wind)"
+    },
+    "454": {
+        "rarity": 3,
+        "name": "Hateful Hound (Fire)"
+    },
+    "455": {
+        "rarity": 3,
+        "name": "Hateful Hound (Water"
+    },
+    "456": {
+        "rarity": 3,
+        "name": "Hateful Hound (Wind)"
+    },
+    "457": {
+        "rarity": 5,
+        "name": "Ugallu"
+    },
+    "458": {
+        "rarity": 6,
+        "name": "Ugallu"
+    },
+    "459": {
+        "rarity": 4,
+        "name": "Clock Rabbit"
+    },
+    "460": {
+        "rarity": 5,
+        "name": "Clock Rabbit"
+    },
+    "461": {
+        "rarity": 3,
+        "name": "Plant (Fire)"
+    },
+    "462": {
+        "rarity": 4,
+        "name": "Plant (Fire)"
+    },
+    "463": {
+        "rarity": 3,
+        "name": "Plant (Water)"
+    },
+    "464": {
+        "rarity": 4,
+        "name": "Plant (Water)"
+    },
+    "465": {
+        "rarity": 3,
+        "name": "Plant (Wind)"
+    },
+    "466": {
+        "rarity": 4,
+        "name": "Plant (Wind)"
+    },
+    "467": {
+        "rarity": 3,
+        "name": "Hateful Plant (Fire)"
+    },
+    "468": {
+        "rarity": 3,
+        "name": "Hateful Plant (Water"
+    },
+    "469": {
+        "rarity": 3,
+        "name": "Hateful Plant (Wind)"
+    },
+    "470": {
+        "rarity": 3,
+        "name": "Golem (Fire)"
+    },
+    "471": {
+        "rarity": 4,
+        "name": "Golem (Fire)"
+    },
+    "472": {
+        "rarity": 3,
+        "name": "Golem (Water)"
+    },
+    "473": {
+        "rarity": 4,
+        "name": "Golem (Water)"
+    },
+    "474": {
+        "rarity": 3,
+        "name": "Golem (Wind)"
+    },
+    "475": {
+        "rarity": 4,
+        "name": "Golem (Wind)"
+    },
+    "476": {
+        "rarity": 3,
+        "name": "Hateful Golem (Fire)"
+    },
+    "477": {
+        "rarity": 3,
+        "name": "Hateful Golem (Water"
+    },
+    "478": {
+        "rarity": 3,
+        "name": "Hateful Golem (Wind)"
+    },
+    "479": {
+        "rarity": 5,
+        "name": "Freeze Golem"
+    },
+    "480": {
+        "rarity": 6,
+        "name": "Freeze Golem"
+    },
+    "483": {
+        "rarity": 3,
+        "name": "Bird (Fire)"
+    },
+    "484": {
+        "rarity": 4,
+        "name": "Bird (Fire)"
+    },
+    "485": {
+        "rarity": 3,
+        "name": "Bird (Water)"
+    },
+    "486": {
+        "rarity": 4,
+        "name": "Bird (Water)"
+    },
+    "487": {
+        "rarity": 3,
+        "name": "Bird (Wind)"
+    },
+    "488": {
+        "rarity": 4,
+        "name": "Bird (Wind)"
+    },
+    "489": {
+        "rarity": 3,
+        "name": "Hateful Bird (Fire)"
+    },
+    "490": {
+        "rarity": 3,
+        "name": "Hateful Bird (Water)"
+    },
+    "491": {
+        "rarity": 3,
+        "name": "Hateful Bird (Wind)"
+    },
+    "494": {
+        "rarity": 3,
+        "name": "Ghost (Fire)"
+    },
+    "495": {
+        "rarity": 4,
+        "name": "Ghost (Fire)"
+    },
+    "496": {
+        "rarity": 3,
+        "name": "Ghost (Water)"
+    },
+    "497": {
+        "rarity": 4,
+        "name": "Ghost (Water)"
+    },
+    "498": {
+        "rarity": 3,
+        "name": "Ghost (Wind)"
+    },
+    "499": {
+        "rarity": 4,
+        "name": "Ghost (Wind)"
+    },
+    "500": {
+        "rarity": 3,
+        "name": "Hateful Ghost (Fire)"
+    },
+    "501": {
+        "rarity": 3,
+        "name": "Hateful Ghost (Water"
+    },
+    "502": {
+        "rarity": 3,
+        "name": "Hateful Ghost (Wind)"
+    },
+    "503": {
+        "rarity": 3,
+        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u5263)"
+    },
+    "504": {
+        "rarity": 3,
+        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u5263)"
+    },
+    "505": {
+        "rarity": 3,
+        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u76fe)"
+    },
+    "506": {
+        "rarity": 3,
+        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u76fe)"
+    },
+    "507": {
+        "rarity": 3,
+        "name": "Lizard (Fire)"
+    },
+    "508": {
+        "rarity": 4,
+        "name": "Lizard (Fire)"
+    },
+    "509": {
+        "rarity": 3,
+        "name": "Lizard (Water)"
+    },
+    "510": {
+        "rarity": 4,
+        "name": "Lizard (Water)"
+    },
+    "511": {
+        "rarity": 3,
+        "name": "Lizard (Wind)"
+    },
+    "512": {
+        "rarity": 4,
+        "name": "Lizard (Wind)"
+    },
+    "513": {
+        "rarity": 3,
+        "name": "Hateful Lizard (Fire"
+    },
+    "514": {
+        "rarity": 3,
+        "name": "Hateful Lizard (Wate"
+    },
+    "515": {
+        "rarity": 3,
+        "name": "Hateful Lizard (Wind"
+    },
+    "516": {
+        "rarity": 5,
+        "name": "Lindwyrm"
+    },
+    "517": {
+        "rarity": 6,
+        "name": "Lindwyrm"
+    },
+    "518": {
+        "rarity": 3,
+        "name": "Orc (Fire)"
+    },
+    "519": {
+        "rarity": 4,
+        "name": "Orc (Fire)"
+    },
+    "520": {
+        "rarity": 3,
+        "name": "Orc (Water)"
+    },
+    "521": {
+        "rarity": 4,
+        "name": "Orc (Water)"
+    },
+    "522": {
+        "rarity": 3,
+        "name": "Orc (Wind)"
+    },
+    "523": {
+        "rarity": 4,
+        "name": "Orc (Wind)"
+    },
+    "524": {
+        "rarity": 3,
+        "name": "Hateful Orc (Fire)"
+    },
+    "525": {
+        "rarity": 3,
+        "name": "Hateful Orc (Water)"
+    },
+    "526": {
+        "rarity": 3,
+        "name": "Hateful Orc (Wind)"
+    },
+    "527": {
+        "rarity": 3,
+        "name": "Spider (Fire)"
+    },
+    "528": {
+        "rarity": 4,
+        "name": "Spider (Fire)"
+    },
+    "529": {
+        "rarity": 3,
+        "name": "Spider (Water)"
+    },
+    "530": {
+        "rarity": 4,
+        "name": "Spider (Water)"
+    },
+    "531": {
+        "rarity": 3,
+        "name": "Spider (Wind)"
+    },
+    "532": {
+        "rarity": 4,
+        "name": "Spider (Wind)"
+    },
+    "533": {
+        "rarity": 3,
+        "name": "Hateful Spider (Fire"
+    },
+    "534": {
+        "rarity": 3,
+        "name": "Hateful Spider (Wate"
+    },
+    "535": {
+        "rarity": 3,
+        "name": "Hateful Spider (Wind"
+    },
+    "538": {
+        "rarity": 4,
+        "name": "Shield Wisp (Fire)"
+    },
+    "539": {
+        "rarity": 4,
+        "name": "Shield Wisp (Water)"
+    },
+    "540": {
+        "rarity": 4,
+        "name": "Shield Wisp (Wind)"
+    },
+    "541": {
+        "rarity": 3,
+        "name": "Snake (Fire)"
+    },
+    "542": {
+        "rarity": 4,
+        "name": "Snake (Fire)"
+    },
+    "543": {
+        "rarity": 3,
+        "name": "Snake (Water)"
+    },
+    "544": {
+        "rarity": 4,
+        "name": "Snake (Water)"
+    },
+    "545": {
+        "rarity": 3,
+        "name": "Snake (Wind)"
+    },
+    "546": {
+        "rarity": 4,
+        "name": "Snake (Wind)"
+    },
+    "547": {
+        "rarity": 3,
+        "name": "Hateful Snake (Fire)"
+    },
+    "548": {
+        "rarity": 3,
+        "name": "Hateful Snake (Water"
+    },
+    "549": {
+        "rarity": 3,
+        "name": "Hateful Snake (Wind)"
+    },
+    "550": {
+        "rarity": 5,
+        "name": "J\u00f6rmungandr"
+    },
+    "551": {
+        "rarity": 6,
+        "name": "J\u00f6rmungandr"
+    },
+    "553": {
+        "rarity": 4,
+        "name": "Drizella, the Jealou"
+    },
+    "554": {
+        "rarity": 5,
+        "name": "Drizella, the Jealou"
+    },
+    "557": {
+        "rarity": 5,
+        "name": "Gluttonous Eris"
+    },
+    "558": {
+        "rarity": 6,
+        "name": "Gluttonous Eris"
+    },
+    "559": {
+        "rarity": 4,
+        "name": "Nightmare (Bondage)"
+    },
+    "560": {
+        "rarity": 4,
+        "name": "Nightmare (Justice)"
+    },
+    "561": {
+        "rarity": 4,
+        "name": "Nightmare (Brutality"
+    },
+    "562": {
+        "rarity": 4,
+        "name": "Nightmare (Depravity"
+    },
+    "563": {
+        "rarity": 4,
+        "name": "Nightmare (N/A)"
+    },
+    "564": {
+        "rarity": 4,
+        "name": "Nightmare (Dependenc"
+    },
+    "567": {
+        "rarity": 4,
+        "name": "Nightmare (Delusion)"
+    },
+    "568": {
+        "rarity": 4,
+        "name": "Nightmare (N/A)"
+    },
+    "569": {
+        "rarity": 4,
+        "name": "Nightmare (Languor)"
+    },
+    "570": {
+        "rarity": 4,
+        "name": "Nightmare (N/A)"
+    },
+    "571": {
+        "rarity": 4,
+        "name": "Nightmare (Masochism"
+    },
+    "572": {
+        "rarity": 4,
+        "name": "Nightmare (N/A)"
+    },
+    "581": {
+        "rarity": 5,
+        "name": "Hammer of Justice"
+    },
+    "582": {
+        "rarity": 6,
+        "name": "Hammer of Justice"
+    },
+    "583": {
+        "rarity": 4,
+        "name": "Fina, the Loyal Fals"
+    },
+    "584": {
+        "rarity": 5,
+        "name": "Fina, the Loyal Fals"
+    },
+    "585": {
+        "rarity": 4,
+        "name": "Sword of Misery"
+    },
+    "586": {
+        "rarity": 5,
+        "name": "Sword of Misery"
+    },
+    "587": {
+        "rarity": 5,
+        "name": "Sword of Bondage"
+    },
+    "588": {
+        "rarity": 6,
+        "name": "Sword of Bondage"
+    },
+    "589": {
+        "rarity": 5,
+        "name": "Book of Brutality"
+    },
+    "590": {
+        "rarity": 6,
+        "name": "Book of Brutality"
+    },
+    "639": {
+        "rarity": 5,
+        "name": "Digitalis, the Under"
+    },
+    "640": {
+        "rarity": 6,
+        "name": "Digitalis, the Under"
+    },
+    "641": {
+        "rarity": 5,
+        "name": "Deep Sea Staff"
+    },
+    "642": {
+        "rarity": 6,
+        "name": "Deep Sea Staff"
+    },
+    "643": {
+        "rarity": 5,
+        "name": "Deep Sea Bow"
+    },
+    "644": {
+        "rarity": 6,
+        "name": "Deep Sea Bow"
+    },
+    "645": {
+        "rarity": 5,
+        "name": "Deep Sea Sword"
+    },
+    "646": {
+        "rarity": 6,
+        "name": "Deep Sea Sword"
+    },
+    "647": {
+        "rarity": 5,
+        "name": "Harp of Misery"
+    },
+    "648": {
+        "rarity": 6,
+        "name": "Harp of Misery"
+    },
+    "649": {
+        "rarity": 4,
+        "name": "Hunter's Spirit"
+    },
+    "650": {
+        "rarity": 5,
+        "name": "Hunter's Spirit"
+    },
+    "651": {
+        "rarity": 4,
+        "name": "Magma Axe"
+    },
+    "652": {
+        "rarity": 5,
+        "name": "Magma Axe"
+    },
+    "653": {
+        "rarity": 4,
+        "name": "Deceptive Eye"
+    },
+    "654": {
+        "rarity": 5,
+        "name": "Deceptive Eye"
+    },
+    "655": {
+        "rarity": 4,
+        "name": "Twilight Glow"
+    },
+    "656": {
+        "rarity": 5,
+        "name": "Twilight Glow"
+    },
+    "657": {
+        "rarity": 4,
+        "name": "Proof of Virtue"
+    },
+    "658": {
+        "rarity": 5,
+        "name": "Proof of Virtue"
+    },
+    "659": {
+        "rarity": 4,
+        "name": "Empty Teachings"
+    },
+    "660": {
+        "rarity": 5,
+        "name": "Empty Teachings"
+    },
+    "661": {
+        "rarity": 4,
+        "name": "Key of Hatred"
+    },
+    "662": {
+        "rarity": 5,
+        "name": "Key of Hatred"
+    },
+    "667": {
+        "rarity": 5,
+        "name": "Tricky Wisp"
+    },
+    "668": {
+        "rarity": 6,
+        "name": "Tricky Wisp"
+    },
+    "811": {
+        "rarity": 5,
+        "name": "Type-4O Blade"
+    },
+    "812": {
+        "rarity": 6,
+        "name": "Type-4O Blade"
+    },
+    "813": {
+        "rarity": 5,
+        "name": "Cruel Arrogance"
+    },
+    "814": {
+        "rarity": 6,
+        "name": "Cruel Arrogance"
+    },
+    "815": {
+        "rarity": 5,
+        "name": "Virtuous Contract"
+    },
+    "816": {
+        "rarity": 6,
+        "name": "Virtuous Contract"
+    },
+    "817": {
+        "rarity": 5,
+        "name": "No. 7's Staff"
+    },
+    "818": {
+        "rarity": 6,
+        "name": "No. 7's Staff"
+    },
+    "819": {
+        "rarity": 4,
+        "name": "Iron Pipe"
+    },
+    "820": {
+        "rarity": 5,
+        "name": "Iron Pipe"
+    },
+    "821": {
+        "rarity": 4,
+        "name": "Type-3 Lance"
+    },
+    "822": {
+        "rarity": 5,
+        "name": "Type-3 Lance"
+    },
+    "823": {
+        "rarity": 4,
+        "name": "Emil's Head"
+    },
+    "824": {
+        "rarity": 5,
+        "name": "Emil's Head"
+    },
+    "825": {
+        "rarity": 5,
+        "name": "Simone"
+    },
+    "826": {
+        "rarity": 6,
+        "name": "Simone"
+    },
+    "827": {
+        "rarity": 4,
+        "name": "Machine Lifeform"
+    },
+    "829": {
+        "rarity": 4,
+        "name": "Machine Lifeform (Gu"
+    },
+    "831": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "832": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "833": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "834": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "835": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "836": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "837": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "838": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "839": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "840": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "841": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "842": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "843": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "844": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "845": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "846": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "847": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "848": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "849": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "850": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "851": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "852": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "853": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "854": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "855": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "856": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "857": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "858": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "859": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "860": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "861": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "862": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "863": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "864": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "865": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "866": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "867": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "868": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "869": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "870": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "871": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "872": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "873": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "874": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "875": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "876": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "877": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "878": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "879": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "880": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "881": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "882": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "883": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "884": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "885": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "886": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "887": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "888": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "889": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "890": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "891": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "892": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "893": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "894": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "895": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "896": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "897": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "898": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "899": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "900": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "901": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "902": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "903": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "904": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "905": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "906": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "907": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "908": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "909": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "910": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "911": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "912": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "913": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "914": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "915": {
+        "rarity": 3,
+        "name": "2B's Goggles"
+    },
+    "916": {
+        "rarity": 4,
+        "name": "2B's Goggles"
+    },
+    "917": {
+        "rarity": 5,
+        "name": "2B's Goggles"
+    },
+    "918": {
+        "rarity": 3,
+        "name": "2B's Combat Uniform"
+    },
+    "919": {
+        "rarity": 4,
+        "name": "2B's Combat Uniform"
+    },
+    "920": {
+        "rarity": 5,
+        "name": "2B's Combat Uniform"
+    },
+    "921": {
+        "rarity": 3,
+        "name": "2B's Boots"
+    },
+    "922": {
+        "rarity": 4,
+        "name": "2B's Boots"
+    },
+    "923": {
+        "rarity": 5,
+        "name": "2B's Boots"
+    },
+    "924": {
+        "rarity": 3,
+        "name": "2B's Gloves"
+    },
+    "925": {
+        "rarity": 4,
+        "name": "2B's Gloves"
+    },
+    "926": {
+        "rarity": 5,
+        "name": "2B's Gloves"
+    },
+    "927": {
+        "rarity": 5,
+        "name": "Beastlord"
+    },
+    "928": {
+        "rarity": 6,
+        "name": "Beastlord"
+    },
+    "1107": {
+        "rarity": 5,
+        "name": "Library Wisp"
+    },
+    "1108": {
+        "rarity": 6,
+        "name": "Library Wisp"
+    },
+    "1364": {
+        "rarity": 5,
+        "name": "Pagan Staff"
+    },
+    "1365": {
+        "rarity": 6,
+        "name": "Pagan Staff"
+    },
+    "1492": {
+        "rarity": 5,
+        "name": "Sinner\u2019s Manuscript"
+    },
+    "1493": {
+        "rarity": 6,
+        "name": "Sinner\u2019s Manuscript"
+    },
+    "1576": {
+        "rarity": 5,
+        "name": "Instrument Artisan\u2019s"
+    },
+    "1577": {
+        "rarity": 6,
+        "name": "Instrument Artisan\u2019s"
+    },
+    "1580": {
+        "rarity": 5,
+        "name": "Mask of Pride"
+    },
+    "1581": {
+        "rarity": 6,
+        "name": "Mask of Pride"
+    },
+    "1736": {
+        "rarity": 5,
+        "name": "Hydra\u2019s Spear"
+    },
+    "1737": {
+        "rarity": 6,
+        "name": "Hydra\u2019s Spear"
+    },
+    "1909": {
+        "rarity": 5,
+        "name": "Forest of Darkness"
+    },
+    "1910": {
+        "rarity": 6,
+        "name": "Forest of Darkness"
+    },
+    "2042": {
+        "rarity": 5,
+        "name": "Sacred Bird Arbalest"
+    },
+    "2043": {
+        "rarity": 6,
+        "name": "Sacred Bird Arbalest"
+    },
+    "2080": {
+        "rarity": 5,
+        "name": "Great Sword of Natur"
+    },
+    "2081": {
+        "rarity": 6,
+        "name": "Great Sword of Natur"
+    }
+}

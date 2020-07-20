@@ -63,11 +63,11 @@ if __name__ == "__main__":
     a.POST__api_cleaning_end_wave(11, 6, 7, 7, 7)
     a.POST__api_cleaning_end_wave(6, 7, 3, 7, 7)
     a.POST__api_cleaning_end_wave(3, 8, 111110, 111110, 111110)
-    a.POST__api_cleaning_end_wave(0, 9, 111110, 11100, 1400)
+    a.POST__api_cleaning_end_wave(0, 9, 211110, 321100, 1400)
     a.POST__api_cleaning_end(10)
     # Missions done
     a.POST__api_user_get_user_data()
     a.POST__api_tutorial_get_next_tutorial_mst_id()
     a.POST__api_cleaning_retire()
     # Migration
-    a.get_migrate_information("Qwerty12")
+    a.get_migrate_information("COSInu11")
