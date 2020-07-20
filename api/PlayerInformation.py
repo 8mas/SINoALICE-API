@@ -5,14 +5,16 @@ from sqlalchemy import create_engine
 from Crypto.PublicKey.RSA import RsaKey
 from Crypto.PublicKey import RSA
 import random
+import codecs
+import base64
 
 Base = declarative_base()
 engine = create_engine("sqlite:///foo.db", echo=True)
 
-
 def generate_device_id():
-    return "==" + "".join(
-        [random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890") for _ in range(22)])
+    id = "".join([random.choice("abcdef1234567890") for _ in range(16)])
+    encoded_id = codecs.encode(base64.b64encode(id.encode())[::-1].decode(), "rot_13")
+    return encoded_id
 
 
 class PlayerInformation(Base):
