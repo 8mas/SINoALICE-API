@@ -1,5 +1,6 @@
 from api.BaseApi import BaseApi
-
+from api.ParseResourceData import character_dict, card_dict
+import logging
 
 class API(BaseApi):
     def __init__(self):
@@ -20,9 +21,36 @@ class API(BaseApi):
     def POST__api_tutorial_get_tutorial_gacha(self):
         self._post("/api/tutorial/get_tutorial_gacha")
 
-    def POST__api_tutorial_fxm_tutorial_gacha_drawn_result(self):
-        # TODO check results
-        self._post("/api/tutorial/fxm_tutorial_gacha_drawn_result")
+    def POST__api_tutorial_fxm_tutorial_gacha_drawn_result(self) -> (int, int, int):
+        response = self._post("/api/tutorial/fxm_tutorial_gacha_drawn_result")
+
+        item_names = []
+        num_ssrare = 0
+        num_srare = 0
+        num_characters = 0
+
+        for result in response["payload"]["result"]:
+            rarity = int(result["rarity"])
+            object_id = str(result["objectId"])
+            character_id = str(result["characterMstId"])
+
+            if character_id != "0":
+                item_names.append(character_dict[character_id]["name"])
+            else:
+                item_names.append(card_dict[object_id]["name"])
+
+            if rarity > 5:
+                logging.info("Got rarity >5")
+            if rarity == 5:
+                num_ssrare += 1
+            if rarity == 4:
+                num_srare += 1
+            if character_id != "0":
+                num_characters += 1
+
+        logging.info(f"Gacha result SS:{num_ssrare} S:{num_srare} Chars:{num_characters} Names: {item_names}")
+
+        return num_ssrare, num_srare, num_characters, item_names
 
     def POST__api_tutorial_fxm_tutorial_gacha_exec(self):
         self._post("/api/tutorial/fxm_tutorial_gacha_exec")

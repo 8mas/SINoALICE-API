@@ -43,8 +43,12 @@ if __name__ == "__main__":
     time.sleep(7)
     a.POST__api_tutorial_get_tutorial_gacha()
     # Loop
-    time.sleep(7)
-    a.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
+    num_ssrare = 0
+    num_characters = 0
+    while num_ssrare < 6 and num_characters < 3:
+        time.sleep(11)
+        num_ssrare, num_srare , num_characters, item_names = a.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
+
     time.sleep(7)
     a.POST__api_tutorial_fxm_tutorial_gacha_exec()
     # Loop End

@@ -1,8 +1,11 @@
 import json
+from pathlib import Path
 
+base_path = Path(__file__).parent
 
 def parse_card_en():
-    file = open("../resources/card_en.json", encoding="utf-8")
+
+    file = open(base_path / "../resources/raw_resources/card_en.json", encoding="utf-8")
     data = file.read()
     data_dict = json.loads(data)
 
@@ -15,12 +18,12 @@ def parse_card_en():
 
     to_write = json.dumps(better_dict, indent=4)
 
-    file = open("../resources/card_en_parsed.json", "w")
+    file = open(base_path / "../resources/card_en_parsed.json", "w")
     file.write(to_write)
 
 
 def parse_character():
-    file = open("../resources/character.json", encoding="utf-8")
+    file = open(base_path / "../resources/raw_resources/character.json", encoding="utf-8")
     data = file.read()
     data_dict = json.loads(data)
 
@@ -32,6 +35,15 @@ def parse_character():
 
     to_write = json.dumps(better_dict, indent=4)
 
-    file = open("../resources/character_parsed.json", "w")
+    file = open(base_path / "../resources/character_parsed.json", "w")
     file.write(to_write)
 
+
+with open(base_path / "../resources/character_parsed.json", "r") as character_file:
+    data = character_file.read()
+    character_dict = json.loads(data)
+
+
+with open(base_path / "../resources/card_en_parsed.json", "r") as card_file:
+    data = card_file.read()
+    card_dict = json.loads(data)

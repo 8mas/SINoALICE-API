@@ -4,6 +4,7 @@ import json
 import codecs
 import base64
 
+
 class OAuthPayment:
     BN_PAYMENT_URL = "https://bn-payment-us.wrightflyer.net"
 

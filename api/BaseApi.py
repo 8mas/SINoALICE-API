@@ -133,7 +133,7 @@ class BaseApi:
             "actionTime": self.action_time
         }
 
-        logging.info(f"to {resource} {payload} {self.player_information.uuid_payment}")
+        logging.debug(f"to {resource} {payload} {self.player_information.uuid_payment}")
 
         payload = self._encrypt_request(payload)
 
@@ -160,7 +160,7 @@ class BaseApi:
 
     def _handle_response(self, response):
         decrypted_response = self._decrypt_response(response.content)
-        logging.info(f"from {response.request.path_url} {decrypted_response}")
+        logging.debug(f"from {response.request.path_url} {decrypted_response}")
         code = response.status_code
 
         if decrypted_response.get("errors", None) is not None:
@@ -179,13 +179,13 @@ class BaseApi:
         response = self.request_session.get(url, params=params)
         return self._handle_response(response)
 
-    def _post(self, resource, payload: dict = None, remove_header=None):
+    def _post(self, resource, payload: dict = None, remove_header=None) -> dict:
         url = BaseApi.URL + resource
 
         payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
 
         resulting_response = None
-        timeout_duration = 15
+        timeout_duration = 10
         while resulting_response is None:
             response = self.request_session.post(url, payload)
             try:
