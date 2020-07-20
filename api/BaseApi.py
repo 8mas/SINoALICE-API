@@ -2,7 +2,6 @@ from Crypto.Util.Padding import pad, unpad
 from Crypto.Cipher import AES
 from Crypto.Signature import pkcs1_15
 from Crypto.Hash import SHA1
-from sqlalchemy.orm import sessionmaker, session
 
 from api.Constants.ErrorCodes import *
 from api.Constants.Secrets import CRYPTO_KEY, APP_VERSION
@@ -86,8 +85,10 @@ class BaseApi:
         self._login_account()
         self.oauth_payment.payment_device_verification()
 
-    def get_migrate_information(self, passwort):
-        self.oauth_payment.get_migrate_information(passwort)
+    def get_migrate_information(self, password):
+        self.oauth_payment.get_migrate_information(password)
+        self.player_information.transfer_code = self.oauth_payment.migration_code
+        self.player_information.transfer_password = password
 
     def _generate_signature(self, data: bytes, hash_function, key):
         hashed_string = hash_function.new(data)

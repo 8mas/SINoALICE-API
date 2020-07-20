@@ -48,6 +48,11 @@ class API(BaseApi):
             if character_id != "0":
                 num_characters += 1
 
+        self.player_information.ss_rare = num_ssrare
+        self.player_information.s_rare = num_srare
+        self.player_information.characters = num_characters
+        self.player_information.item_names = str(item_names)
+
         logging.info(f"Gacha result SS:{num_ssrare} S:{num_srare} Chars:{num_characters} Names: {item_names}")
 
         return num_ssrare, num_srare, num_characters, item_names

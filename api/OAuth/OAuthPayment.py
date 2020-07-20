@@ -17,6 +17,7 @@ class OAuthPayment:
         self.uuid = None
         self.x_uid = None
         self.oauth_crypto = OAuthCrypto(APP_SECRET_PAYMENT, self.rsa_key)
+        self.migration_code = None
 
     def _prepare_request(self, rest_type: str, resource: str, data, extra_header=None):
         new_account = self.uuid is None
@@ -34,7 +35,12 @@ class OAuthPayment:
         self._prepare_request("GET", migration_endpoint, b"", extra_header)
         response = self.request_session.get(self.BN_PAYMENT_URL + migration_endpoint + "?renew=0")
 
-        logging.info(f"Migration code: {response.content.decode()}")
+        logging.info(f"Migration code response: {response.content.decode()}")
+        try:
+            self.migration_code = response.json()["migration_code"]
+        except Exception as e:
+            logging.exception("Exception during migration", e)
+            raise Migration_Info_Exception(e)
 
         password = codecs.encode(base64.b64encode(password.encode())[::-1].decode(), "rot_13")
 
@@ -44,8 +50,7 @@ class OAuthPayment:
 
         self._prepare_request("POST", migration_password_endpoint, payload)
         response = self.request_session.post(self.BN_PAYMENT_URL + migration_password_endpoint, payload)
-        logging.debug(f"Migration code password set: {response.content.decode()}")
-
+        logging.debug(f"Migration password response: {response.content.decode()}")
 
     # We can not fake a attestation :/ we can leave it empty or throw an error that is defined in the app
     def payment_device_verification(self):
@@ -101,3 +106,7 @@ class OAuthPayment:
         self._prepare_request("GET", auth_x_uid, b"")
         response = self.request_session.get(self.BN_PAYMENT_URL + auth_x_uid)
         self.x_uid = response.json()["x_uid"]
+
+
+class Migration_Info_Exception(Exception):
+    pass
