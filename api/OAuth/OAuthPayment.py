@@ -3,6 +3,7 @@ from api.Constants.Secrets import APP_VERSION, APP_SECRET_PAYMENT
 import json
 import codecs
 import base64
+import logging
 
 
 class OAuthPayment:
@@ -33,8 +34,8 @@ class OAuthPayment:
         self._prepare_request("GET", migration_endpoint, b"", extra_header)
         response = self.request_session.get(self.BN_PAYMENT_URL + migration_endpoint + "?renew=0")
 
-        # ToDO LOG
-        print(response.content)
+        logging.info(f"Migration code: {response.content.decode()}")
+
         password = codecs.encode(base64.b64encode(password.encode())[::-1].decode(), "rot_13")
 
         migration_password_endpoint = "/v1.0/migration/password/register"
@@ -43,9 +44,8 @@ class OAuthPayment:
 
         self._prepare_request("POST", migration_password_endpoint, payload)
         response = self.request_session.post(self.BN_PAYMENT_URL + migration_password_endpoint, payload)
+        logging.debug(f"Migration code password set: {response.content.decode()}")
 
-        # ToDO LOG
-        print(response.content)
 
     # We can not fake a attestation :/ we can leave it empty or throw an error that is defined in the app
     def payment_device_verification(self):

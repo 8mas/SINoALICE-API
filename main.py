@@ -3,7 +3,7 @@ import sys
 import time
 import random
 from api.API import API
-
+from concurrent.futures import ThreadPoolExecutor
 
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
@@ -30,9 +30,8 @@ class BotLogic:
 common_names = ["Ninja", "Ryu", "Nathan", "Ashley", "Kasumi", "Leon", "Adam", "Shepard",
                 "James", "John", "David", "Richard", "Maria", "Donald"]
 
-import codecs
-import base64
-if __name__ == "__main__":
+
+def create_new_account():
     a = API()
     a.login(True)
     a.POST__api_user_get_user_data()
@@ -40,16 +39,15 @@ if __name__ == "__main__":
     a.POST__api_tutorial_get_next_tutorial_mst_id()
     a.POST__api_tutorial_agree_legal_document()
     a.POST__api_tutorial_get_user_mini_tutorial_data()
-    time.sleep(7)
     a.POST__api_tutorial_get_tutorial_gacha()
     # Loop
     num_ssrare = 0
     num_characters = 0
-    while num_ssrare < 6 and num_characters < 3:
+    while (num_ssrare < 4 or num_characters < 1) and (num_ssrare < 3 or num_characters < 2) and num_characters < 3\
+            and num_ssrare < 5:
         time.sleep(11)
         num_ssrare, num_srare , num_characters, item_names = a.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
 
-    time.sleep(7)
     a.POST__api_tutorial_fxm_tutorial_gacha_exec()
     # Loop End
 
@@ -75,3 +73,15 @@ if __name__ == "__main__":
     a.POST__api_cleaning_retire()
     # Migration
     a.get_migrate_information("COSInu11")
+
+
+    """
+    2020/07/20 04:01:30 INFO Gacha result SS:4 S:2 Chars:1 Names: ['Holy Lance', "Princess' Pillage", 'Alice/Cleric', 'Sword of Necessary E', 'Ceremonial Spear', "Oracle Knight's Axe", "Retainer's Hammer", 'Savage Crossbow', 'Hammer of Brutality', 'Ruined Gun', 'Naive Miracle Staff']
+    b'{"result":"OK","migration_code":"6Q2876N474BDBJ7A"}'
+    b'{"result":"OK","migration_code":"WDWG63BNLMJGB56F"}'
+    b'{"result":"OK","migration_code":"CMHWNWLS84VL7F7B"}'
+    """
+if __name__ == "__main__":
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        for _ in range(25):
+            executor.submit(create_new_account)
