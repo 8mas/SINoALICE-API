@@ -23,7 +23,7 @@ requests.packages.urllib3.disable_warnings()
 logging.getLogger("requests").setLevel(logging.CRITICAL)
 logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 
-DEBUG = True
+DEBUG = False
 
 def get_action_time(old_action_time=0):
     action_times = [0xfd2c030, 0x18c120b0, 0xdd98840, 0x13ee8a0, 0x1a26560, 0x21526d10, 0xe100190, 0xfbf3830]  # Todo how are those generated

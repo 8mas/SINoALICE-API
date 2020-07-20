@@ -12,7 +12,7 @@ root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
 
 file_handler = logging.FileHandler("sinoalice.log", "w", "utf-8")
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(logging.INFO)
 
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel(logging.INFO)
@@ -46,7 +46,7 @@ class Bot:
         # Loop
         num_ssrare = 0
         num_characters = 0
-        while (num_ssrare + num_characters) < 5 and (num_ssrare < 3 or num_characters < 2) and num_characters < 3:
+        while (num_ssrare + num_characters) < 5 and num_characters < 3:
             time.sleep(11)
             num_ssrare, num_srare, num_characters, item_names = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
 
@@ -91,14 +91,19 @@ if __name__ == "__main__":
     session = Session()
 
     future_list = []
-    with ThreadPoolExecutor(max_workers=25) as executor:
-        for _ in range(125):
+    with ThreadPoolExecutor(max_workers=120) as executor:
+        for _ in range(1000):
             future = executor.submit(reroll_good_account)
             future_list.append(future)
 
         for future in as_completed(future_list):
-            player_information = future.result()
-            session.add(player_information)
-            session.commit()
+            try:
+                player_information = future.result()
+                if player_information:
+                    session.add(player_information)
+                    session.commit()
+            except Exception as e:
+                logging.warning("An exception occurred, to many threads?")
+
 
     logging.info("Finished")
