@@ -1,2810 +1,3512 @@
 {
     "1": {
         "rarity": 4,
-        "name": "War Song's Echo"
+        "name": "War Song's Echo",
+        "cardType": 1
     },
     "2": {
         "rarity": 5,
-        "name": "War Song's Echo"
+        "name": "War Song's Echo",
+        "cardType": 1
     },
     "3": {
         "rarity": 4,
-        "name": "Book of Regret"
+        "name": "Book of Regret",
+        "cardType": 1
     },
     "4": {
         "rarity": 5,
-        "name": "Book of Regret"
+        "name": "Book of Regret",
+        "cardType": 1
     },
     "5": {
         "rarity": 4,
-        "name": "Staff of Submission"
+        "name": "Staff of Submission",
+        "cardType": 1
     },
     "6": {
         "rarity": 5,
-        "name": "Staff of Submission"
+        "name": "Staff of Submission",
+        "cardType": 1
     },
     "7": {
         "rarity": 4,
-        "name": "One Wish"
+        "name": "One Wish",
+        "cardType": 1
     },
     "8": {
         "rarity": 5,
-        "name": "One Wish"
+        "name": "One Wish",
+        "cardType": 1
     },
     "9": {
         "rarity": 4,
-        "name": "Fencer's Foil"
+        "name": "Fencer's Foil",
+        "cardType": 1
     },
     "10": {
         "rarity": 5,
-        "name": "Fencer's Foil"
+        "name": "Fencer's Foil",
+        "cardType": 1
     },
     "11": {
         "rarity": 4,
-        "name": "Meat Pulverizer"
+        "name": "Meat Pulverizer",
+        "cardType": 1
     },
     "12": {
         "rarity": 5,
-        "name": "Meat Pulverizer"
+        "name": "Meat Pulverizer",
+        "cardType": 1
     },
     "13": {
         "rarity": 4,
-        "name": "Princess' Pillage"
+        "name": "Princess' Pillage",
+        "cardType": 1
     },
     "14": {
         "rarity": 5,
-        "name": "Princess' Pillage"
+        "name": "Princess' Pillage",
+        "cardType": 1
     },
     "15": {
         "rarity": 4,
-        "name": "Illusionary Scythe"
+        "name": "Illusionary Scythe",
+        "cardType": 1
     },
     "16": {
         "rarity": 5,
-        "name": "Illusionary Scythe"
+        "name": "Illusionary Scythe",
+        "cardType": 1
     },
     "17": {
         "rarity": 4,
-        "name": "Slothful God's Harp"
+        "name": "Slothful God's Harp",
+        "cardType": 1
     },
     "18": {
         "rarity": 5,
-        "name": "Slothful God's Harp"
+        "name": "Slothful God's Harp",
+        "cardType": 1
     },
     "19": {
         "rarity": 4,
-        "name": "Torture Doctrine"
+        "name": "Torture Doctrine",
+        "cardType": 1
     },
     "20": {
         "rarity": 5,
-        "name": "Torture Doctrine"
+        "name": "Torture Doctrine",
+        "cardType": 1
     },
     "21": {
         "rarity": 4,
-        "name": "Monk's Staff"
+        "name": "Monk's Staff",
+        "cardType": 1
     },
     "22": {
         "rarity": 5,
-        "name": "Monk's Staff"
+        "name": "Monk's Staff",
+        "cardType": 1
     },
     "23": {
         "rarity": 4,
-        "name": "Dark Puppet"
+        "name": "Dark Puppet",
+        "cardType": 1
     },
     "24": {
         "rarity": 5,
-        "name": "Dark Puppet"
+        "name": "Dark Puppet",
+        "cardType": 1
     },
     "25": {
         "rarity": 4,
-        "name": "Embodiment of Love"
+        "name": "Embodiment of Love",
+        "cardType": 1
     },
     "26": {
         "rarity": 5,
-        "name": "Embodiment of Love"
+        "name": "Embodiment of Love",
+        "cardType": 1
     },
     "27": {
         "rarity": 4,
-        "name": "Grudge Hammer"
+        "name": "Grudge Hammer",
+        "cardType": 1
     },
     "28": {
         "rarity": 5,
-        "name": "Grudge Hammer"
+        "name": "Grudge Hammer",
+        "cardType": 1
     },
     "29": {
         "rarity": 4,
-        "name": "Ancient Elven Bow"
+        "name": "Ancient Elven Bow",
+        "cardType": 1
     },
     "30": {
         "rarity": 5,
-        "name": "Ancient Elven Bow"
+        "name": "Ancient Elven Bow",
+        "cardType": 1
     },
     "31": {
         "rarity": 4,
-        "name": "Thirst for War"
+        "name": "Thirst for War",
+        "cardType": 1
     },
     "32": {
         "rarity": 5,
-        "name": "Thirst for War"
+        "name": "Thirst for War",
+        "cardType": 1
     },
     "33": {
         "rarity": 5,
-        "name": "Harpy's Harp"
+        "name": "Harpy's Harp",
+        "cardType": 1
     },
     "34": {
         "rarity": 6,
-        "name": "Harpy's Harp"
+        "name": "Harpy's Harp",
+        "cardType": 1
     },
     "35": {
         "rarity": 5,
-        "name": "Tome of Absolution"
+        "name": "Tome of Absolution",
+        "cardType": 1
     },
     "36": {
         "rarity": 6,
-        "name": "Tome of Absolution"
+        "name": "Tome of Absolution",
+        "cardType": 1
     },
     "37": {
         "rarity": 5,
-        "name": "Risen Staff"
+        "name": "Risen Staff",
+        "cardType": 1
     },
     "38": {
         "rarity": 6,
-        "name": "Risen Staff"
+        "name": "Risen Staff",
+        "cardType": 1
     },
     "39": {
         "rarity": 5,
-        "name": "Astrologer's Manasto"
+        "name": "Astrologer's Manasto",
+        "cardType": 1
     },
     "40": {
         "rarity": 6,
-        "name": "Astrologer's Manasto"
+        "name": "Astrologer's Manasto",
+        "cardType": 1
     },
     "41": {
         "rarity": 5,
-        "name": "Blade of Depravity"
+        "name": "Blade of Depravity",
+        "cardType": 1
     },
     "42": {
         "rarity": 6,
-        "name": "Blade of Depravity"
+        "name": "Blade of Depravity",
+        "cardType": 1
     },
     "43": {
         "rarity": 5,
-        "name": "Retainer's Hammer"
+        "name": "Retainer's Hammer",
+        "cardType": 1
     },
     "44": {
         "rarity": 6,
-        "name": "Retainer's Hammer"
+        "name": "Retainer's Hammer",
+        "cardType": 1
     },
     "45": {
         "rarity": 5,
-        "name": "Tracker's Bow"
+        "name": "Tracker's Bow",
+        "cardType": 1
     },
     "46": {
         "rarity": 6,
-        "name": "Tracker's Bow"
+        "name": "Tracker's Bow",
+        "cardType": 1
     },
     "47": {
         "rarity": 5,
-        "name": "Ceremonial Spear"
+        "name": "Ceremonial Spear",
+        "cardType": 1
     },
     "48": {
         "rarity": 6,
-        "name": "Ceremonial Spear"
+        "name": "Ceremonial Spear",
+        "cardType": 1
     },
     "49": {
         "rarity": 3,
-        "name": "Poet's Harp"
+        "name": "Poet's Harp",
+        "cardType": 1
     },
     "50": {
         "rarity": 4,
-        "name": "Poet's Harp"
+        "name": "Poet's Harp",
+        "cardType": 1
     },
     "51": {
         "rarity": 5,
-        "name": "Poet's Harp"
+        "name": "Poet's Harp",
+        "cardType": 1
     },
     "52": {
         "rarity": 3,
-        "name": "Otherworldly Chronic"
+        "name": "Otherworldly Chronic",
+        "cardType": 1
     },
     "53": {
         "rarity": 4,
-        "name": "Otherworldly Chronic"
+        "name": "Otherworldly Chronic",
+        "cardType": 1
     },
     "54": {
         "rarity": 5,
-        "name": "Otherworldly Chronic"
+        "name": "Otherworldly Chronic",
+        "cardType": 1
     },
     "55": {
         "rarity": 3,
-        "name": "Scepter of Power"
+        "name": "Scepter of Power",
+        "cardType": 1
     },
     "56": {
         "rarity": 4,
-        "name": "Scepter of Power"
+        "name": "Scepter of Power",
+        "cardType": 1
     },
     "57": {
         "rarity": 5,
-        "name": "Scepter of Power"
+        "name": "Scepter of Power",
+        "cardType": 1
     },
     "58": {
         "rarity": 3,
-        "name": "Sword of Necessary E"
+        "name": "Sword of Necessary E",
+        "cardType": 1
     },
     "59": {
         "rarity": 4,
-        "name": "Sword of Necessary E"
+        "name": "Sword of Necessary E",
+        "cardType": 1
     },
     "60": {
         "rarity": 5,
-        "name": "Sword of Necessary E"
+        "name": "Sword of Necessary E",
+        "cardType": 1
     },
     "61": {
         "rarity": 3,
-        "name": "Strongman's Hammer"
+        "name": "Strongman's Hammer",
+        "cardType": 1
     },
     "62": {
         "rarity": 4,
-        "name": "Strongman's Hammer"
+        "name": "Strongman's Hammer",
+        "cardType": 1
     },
     "63": {
         "rarity": 5,
-        "name": "Strongman's Hammer"
+        "name": "Strongman's Hammer",
+        "cardType": 1
     },
     "64": {
         "rarity": 3,
-        "name": "Farmer's Bow"
+        "name": "Farmer's Bow",
+        "cardType": 1
     },
     "65": {
         "rarity": 4,
-        "name": "Farmer's Bow"
+        "name": "Farmer's Bow",
+        "cardType": 1
     },
     "66": {
         "rarity": 5,
-        "name": "Farmer's Bow"
+        "name": "Farmer's Bow",
+        "cardType": 1
     },
     "67": {
         "rarity": 3,
-        "name": "The Wolf's Offering"
+        "name": "The Wolf's Offering",
+        "cardType": 1
     },
     "68": {
         "rarity": 4,
-        "name": "The Wolf's Offering"
+        "name": "The Wolf's Offering",
+        "cardType": 1
     },
     "69": {
         "rarity": 3,
-        "name": "Lovely Violin"
+        "name": "Lovely Violin",
+        "cardType": 1
     },
     "70": {
         "rarity": 4,
-        "name": "Lovely Violin"
+        "name": "Lovely Violin",
+        "cardType": 1
     },
     "71": {
         "rarity": 3,
-        "name": "Chaotic Desire"
+        "name": "Chaotic Desire",
+        "cardType": 1
     },
     "72": {
         "rarity": 4,
-        "name": "Chaotic Desire"
+        "name": "Chaotic Desire",
+        "cardType": 1
     },
     "73": {
         "rarity": 3,
-        "name": "Apprentice's Staff"
+        "name": "Apprentice's Staff",
+        "cardType": 1
     },
     "74": {
         "rarity": 4,
-        "name": "Apprentice's Staff"
+        "name": "Apprentice's Staff",
+        "cardType": 1
     },
     "75": {
         "rarity": 3,
-        "name": "Tunnel Treasure Ches"
+        "name": "Tunnel Treasure Ches",
+        "cardType": 1
     },
     "76": {
         "rarity": 4,
-        "name": "Tunnel Treasure Ches"
+        "name": "Tunnel Treasure Ches",
+        "cardType": 1
     },
     "77": {
         "rarity": 3,
-        "name": "Dagger of the Covena"
+        "name": "Dagger of the Covena",
+        "cardType": 1
     },
     "78": {
         "rarity": 4,
-        "name": "Dagger of the Covena"
+        "name": "Dagger of the Covena",
+        "cardType": 1
     },
     "79": {
         "rarity": 3,
-        "name": "Assassin's Kit"
+        "name": "Assassin's Kit",
+        "cardType": 1
     },
     "80": {
         "rarity": 4,
-        "name": "Assassin's Kit"
+        "name": "Assassin's Kit",
+        "cardType": 1
     },
     "81": {
         "rarity": 3,
-        "name": "Calamitous Bow"
+        "name": "Calamitous Bow",
+        "cardType": 1
     },
     "82": {
         "rarity": 4,
-        "name": "Calamitous Bow"
+        "name": "Calamitous Bow",
+        "cardType": 1
     },
     "83": {
         "rarity": 3,
-        "name": "Dragon Scythe"
+        "name": "Dragon Scythe",
+        "cardType": 1
     },
     "84": {
         "rarity": 4,
-        "name": "Dragon Scythe"
+        "name": "Dragon Scythe",
+        "cardType": 1
     },
     "85": {
         "rarity": 3,
-        "name": "Scales of Fortune"
+        "name": "Scales of Fortune",
+        "cardType": 1
     },
     "86": {
         "rarity": 4,
-        "name": "Scales of Fortune"
+        "name": "Scales of Fortune",
+        "cardType": 1
     },
     "87": {
         "rarity": 5,
-        "name": "Sealed Water"
+        "name": "Sealed Water",
+        "cardType": 1
     },
     "88": {
         "rarity": 6,
-        "name": "Sealed Water"
+        "name": "Sealed Water",
+        "cardType": 1
     },
     "89": {
         "rarity": 5,
-        "name": "Demonic Arm"
+        "name": "Demonic Arm",
+        "cardType": 1
     },
     "90": {
         "rarity": 6,
-        "name": "Demonic Arm"
+        "name": "Demonic Arm",
+        "cardType": 1
     },
     "91": {
         "rarity": 5,
-        "name": "Irreconcilable Enemy"
+        "name": "Irreconcilable Enemy",
+        "cardType": 1
     },
     "92": {
         "rarity": 6,
-        "name": "Irreconcilable Enemy"
+        "name": "Irreconcilable Enemy",
+        "cardType": 1
     },
     "93": {
         "rarity": 5,
-        "name": "Rebirth Gem"
+        "name": "Rebirth Gem",
+        "cardType": 1
     },
     "94": {
         "rarity": 6,
-        "name": "Rebirth Gem"
+        "name": "Rebirth Gem",
+        "cardType": 1
     },
     "95": {
         "rarity": 5,
-        "name": "Shameless Ambition"
+        "name": "Shameless Ambition",
+        "cardType": 1
     },
     "96": {
         "rarity": 6,
-        "name": "Shameless Ambition"
+        "name": "Shameless Ambition",
+        "cardType": 1
     },
     "97": {
         "rarity": 5,
-        "name": "Warden's Mallet"
+        "name": "Warden's Mallet",
+        "cardType": 1
     },
     "98": {
         "rarity": 6,
-        "name": "Warden's Mallet"
+        "name": "Warden's Mallet",
+        "cardType": 1
     },
     "99": {
         "rarity": 5,
-        "name": "Accursed Gun"
+        "name": "Accursed Gun",
+        "cardType": 1
     },
     "100": {
         "rarity": 6,
-        "name": "Accursed Gun"
+        "name": "Accursed Gun",
+        "cardType": 1
     },
     "101": {
         "rarity": 5,
-        "name": "Hunter's Soul"
+        "name": "Hunter's Soul",
+        "cardType": 1
     },
     "102": {
         "rarity": 6,
-        "name": "Hunter's Soul"
+        "name": "Hunter's Soul",
+        "cardType": 1
     },
     "103": {
         "rarity": 5,
-        "name": "Fiddle of Delusion"
+        "name": "Fiddle of Delusion",
+        "cardType": 1
     },
     "104": {
         "rarity": 6,
-        "name": "Fiddle of Delusion"
+        "name": "Fiddle of Delusion",
+        "cardType": 1
     },
     "105": {
         "rarity": 5,
-        "name": "Omniscient Book"
+        "name": "Omniscient Book",
+        "cardType": 1
     },
     "106": {
         "rarity": 6,
-        "name": "Omniscient Book"
+        "name": "Omniscient Book",
+        "cardType": 1
     },
     "107": {
         "rarity": 5,
-        "name": "Staff of Bondage"
+        "name": "Staff of Bondage",
+        "cardType": 1
     },
     "108": {
         "rarity": 6,
-        "name": "Staff of Bondage"
+        "name": "Staff of Bondage",
+        "cardType": 1
     },
     "109": {
         "rarity": 4,
-        "name": "Mirror to the World"
+        "name": "Mirror to the World",
+        "cardType": 1
     },
     "110": {
         "rarity": 5,
-        "name": "Mirror to the World"
+        "name": "Mirror to the World",
+        "cardType": 1
     },
     "111": {
         "rarity": 5,
-        "name": "False Victor"
+        "name": "False Victor",
+        "cardType": 1
     },
     "112": {
         "rarity": 6,
-        "name": "False Victor"
+        "name": "False Victor",
+        "cardType": 1
     },
     "113": {
         "rarity": 5,
-        "name": "Soul Shell"
+        "name": "Soul Shell",
+        "cardType": 1
     },
     "114": {
         "rarity": 6,
-        "name": "Soul Shell"
+        "name": "Soul Shell",
+        "cardType": 1
     },
     "115": {
         "rarity": 4,
-        "name": "Burning Satiation"
+        "name": "Burning Satiation",
+        "cardType": 1
     },
     "116": {
         "rarity": 5,
-        "name": "Burning Satiation"
+        "name": "Burning Satiation",
+        "cardType": 1
     },
     "117": {
         "rarity": 4,
-        "name": "Flood Records"
+        "name": "Flood Records",
+        "cardType": 1
     },
     "118": {
         "rarity": 5,
-        "name": "Flood Records"
+        "name": "Flood Records",
+        "cardType": 1
     },
     "119": {
         "rarity": 4,
-        "name": "Engraved Blue Staff"
+        "name": "Engraved Blue Staff",
+        "cardType": 1
     },
     "120": {
         "rarity": 5,
-        "name": "Engraved Blue Staff"
+        "name": "Engraved Blue Staff",
+        "cardType": 1
     },
     "121": {
         "rarity": 5,
-        "name": "Fool's Desire"
+        "name": "Fool's Desire",
+        "cardType": 1
     },
     "122": {
         "rarity": 6,
-        "name": "Fool's Desire"
+        "name": "Fool's Desire",
+        "cardType": 1
     },
     "123": {
         "rarity": 4,
-        "name": "Gourmand's Special"
+        "name": "Gourmand's Special",
+        "cardType": 1
     },
     "124": {
         "rarity": 5,
-        "name": "Gourmand's Special"
+        "name": "Gourmand's Special",
+        "cardType": 1
     },
     "125": {
         "rarity": 4,
-        "name": "Revolutionary's Maul"
+        "name": "Revolutionary's Maul",
+        "cardType": 1
     },
     "126": {
         "rarity": 5,
-        "name": "Revolutionary's Maul"
+        "name": "Revolutionary's Maul",
+        "cardType": 1
     },
     "127": {
         "rarity": 4,
-        "name": "Death's Grandeur"
+        "name": "Death's Grandeur",
+        "cardType": 1
     },
     "128": {
         "rarity": 5,
-        "name": "Death's Grandeur"
+        "name": "Death's Grandeur",
+        "cardType": 1
     },
     "129": {
         "rarity": 4,
-        "name": "The Lost Spear"
+        "name": "The Lost Spear",
+        "cardType": 1
     },
     "130": {
         "rarity": 5,
-        "name": "The Lost Spear"
+        "name": "The Lost Spear",
+        "cardType": 1
     },
     "131": {
         "rarity": 4,
-        "name": "Origin of Control"
+        "name": "Origin of Control",
+        "cardType": 1
     },
     "132": {
         "rarity": 5,
-        "name": "Origin of Control"
+        "name": "Origin of Control",
+        "cardType": 1
     },
     "133": {
         "rarity": 4,
-        "name": "Book of Judgment"
+        "name": "Book of Judgment",
+        "cardType": 1
     },
     "134": {
         "rarity": 5,
-        "name": "Book of Judgment"
+        "name": "Book of Judgment",
+        "cardType": 1
     },
     "135": {
         "rarity": 4,
-        "name": "Sands of Time"
+        "name": "Sands of Time",
+        "cardType": 1
     },
     "136": {
         "rarity": 5,
-        "name": "Sands of Time"
+        "name": "Sands of Time",
+        "cardType": 1
     },
     "137": {
         "rarity": 4,
-        "name": "Petals of Resurrecti"
+        "name": "Petals of Resurrecti",
+        "cardType": 1
     },
     "138": {
         "rarity": 5,
-        "name": "Petals of Resurrecti"
+        "name": "Petals of Resurrecti",
+        "cardType": 1
     },
     "139": {
         "rarity": 4,
-        "name": "Nocturne's Sword"
+        "name": "Nocturne's Sword",
+        "cardType": 1
     },
     "140": {
         "rarity": 5,
-        "name": "Nocturne's Sword"
+        "name": "Nocturne's Sword",
+        "cardType": 1
     },
     "141": {
         "rarity": 4,
-        "name": "Death and Agony"
+        "name": "Death and Agony",
+        "cardType": 1
     },
     "142": {
         "rarity": 5,
-        "name": "Death and Agony"
+        "name": "Death and Agony",
+        "cardType": 1
     },
     "143": {
         "rarity": 4,
-        "name": "Big Bad Bow"
+        "name": "Big Bad Bow",
+        "cardType": 1
     },
     "144": {
         "rarity": 5,
-        "name": "Big Bad Bow"
+        "name": "Big Bad Bow",
+        "cardType": 1
     },
     "145": {
         "rarity": 4,
-        "name": "Alternate Life"
+        "name": "Alternate Life",
+        "cardType": 1
     },
     "146": {
         "rarity": 5,
-        "name": "Alternate Life"
+        "name": "Alternate Life",
+        "cardType": 1
     },
     "147": {
         "rarity": 5,
-        "name": "The Destroyer"
+        "name": "The Destroyer",
+        "cardType": 1
     },
     "148": {
         "rarity": 6,
-        "name": "The Destroyer"
+        "name": "The Destroyer",
+        "cardType": 1
     },
     "149": {
         "rarity": 5,
-        "name": "Holy Dragon Lance"
+        "name": "Holy Dragon Lance",
+        "cardType": 1
     },
     "150": {
         "rarity": 6,
-        "name": "Holy Dragon Lance"
+        "name": "Holy Dragon Lance",
+        "cardType": 1
     },
     "151": {
         "rarity": 3,
-        "name": "Blessed Violin"
+        "name": "Blessed Violin",
+        "cardType": 1
     },
     "152": {
         "rarity": 4,
-        "name": "Blessed Violin"
+        "name": "Blessed Violin",
+        "cardType": 1
     },
     "153": {
         "rarity": 3,
-        "name": "Tome of Visions"
+        "name": "Tome of Visions",
+        "cardType": 1
     },
     "154": {
         "rarity": 4,
-        "name": "Tome of Visions"
+        "name": "Tome of Visions",
+        "cardType": 1
     },
     "155": {
         "rarity": 5,
-        "name": "Tome of Visions"
+        "name": "Tome of Visions",
+        "cardType": 1
     },
     "156": {
         "rarity": 3,
-        "name": "Devilish Staff"
+        "name": "Devilish Staff",
+        "cardType": 1
     },
     "157": {
         "rarity": 4,
-        "name": "Devilish Staff"
+        "name": "Devilish Staff",
+        "cardType": 1
     },
     "158": {
         "rarity": 5,
-        "name": "Devilish Staff"
+        "name": "Devilish Staff",
+        "cardType": 1
     },
     "159": {
         "rarity": 3,
-        "name": "Fairy Song"
+        "name": "Fairy Song",
+        "cardType": 1
     },
     "160": {
         "rarity": 4,
-        "name": "Fairy Song"
+        "name": "Fairy Song",
+        "cardType": 1
     },
     "161": {
         "rarity": 5,
-        "name": "Fairy Song"
+        "name": "Fairy Song",
+        "cardType": 1
     },
     "162": {
         "rarity": 3,
-        "name": "Sword of Sacrifice"
+        "name": "Sword of Sacrifice",
+        "cardType": 1
     },
     "163": {
         "rarity": 4,
-        "name": "Sword of Sacrifice"
+        "name": "Sword of Sacrifice",
+        "cardType": 1
     },
     "164": {
         "rarity": 5,
-        "name": "Sword of Sacrifice"
+        "name": "Sword of Sacrifice",
+        "cardType": 1
     },
     "165": {
         "rarity": 3,
-        "name": "Oblivion's Intent"
+        "name": "Oblivion's Intent",
+        "cardType": 1
     },
     "166": {
         "rarity": 4,
-        "name": "Oblivion's Intent"
+        "name": "Oblivion's Intent",
+        "cardType": 1
     },
     "167": {
         "rarity": 5,
-        "name": "Oblivion's Intent"
+        "name": "Oblivion's Intent",
+        "cardType": 1
     },
     "168": {
         "rarity": 3,
-        "name": "Decimation Spear"
+        "name": "Decimation Spear",
+        "cardType": 1
     },
     "169": {
         "rarity": 4,
-        "name": "Decimation Spear"
+        "name": "Decimation Spear",
+        "cardType": 1
     },
     "170": {
         "rarity": 5,
-        "name": "Decimation Spear"
+        "name": "Decimation Spear",
+        "cardType": 1
     },
     "171": {
         "rarity": 3,
-        "name": "Reluctant Rendezvous"
+        "name": "Reluctant Rendezvous",
+        "cardType": 1
     },
     "172": {
         "rarity": 4,
-        "name": "Reluctant Rendezvous"
+        "name": "Reluctant Rendezvous",
+        "cardType": 1
     },
     "173": {
         "rarity": 3,
-        "name": "Study of Yggdrasil"
+        "name": "Study of Yggdrasil",
+        "cardType": 1
     },
     "174": {
         "rarity": 4,
-        "name": "Study of Yggdrasil"
+        "name": "Study of Yggdrasil",
+        "cardType": 1
     },
     "175": {
         "rarity": 3,
-        "name": "Staff of Insanity"
+        "name": "Staff of Insanity",
+        "cardType": 1
     },
     "176": {
         "rarity": 4,
-        "name": "Staff of Insanity"
+        "name": "Staff of Insanity",
+        "cardType": 1
     },
     "177": {
         "rarity": 3,
-        "name": "Crystal Ball"
+        "name": "Crystal Ball",
+        "cardType": 1
     },
     "178": {
         "rarity": 4,
-        "name": "Crystal Ball"
+        "name": "Crystal Ball",
+        "cardType": 1
     },
     "179": {
         "rarity": 3,
-        "name": "Loving Blades"
+        "name": "Loving Blades",
+        "cardType": 1
     },
     "180": {
         "rarity": 4,
-        "name": "Loving Blades"
+        "name": "Loving Blades",
+        "cardType": 1
     },
     "181": {
         "rarity": 3,
-        "name": "Maul of Carnage"
+        "name": "Maul of Carnage",
+        "cardType": 1
     },
     "182": {
         "rarity": 4,
-        "name": "Maul of Carnage"
+        "name": "Maul of Carnage",
+        "cardType": 1
     },
     "183": {
         "rarity": 3,
-        "name": "Fairy Blaster"
+        "name": "Fairy Blaster",
+        "cardType": 1
     },
     "184": {
         "rarity": 4,
-        "name": "Fairy Blaster"
+        "name": "Fairy Blaster",
+        "cardType": 1
     },
     "185": {
         "rarity": 3,
-        "name": "Maiden's Purity"
+        "name": "Maiden's Purity",
+        "cardType": 1
     },
     "186": {
         "rarity": 4,
-        "name": "Maiden's Purity"
+        "name": "Maiden's Purity",
+        "cardType": 1
     },
     "187": {
         "rarity": 3,
-        "name": "Vigilante's Pride"
+        "name": "Vigilante's Pride",
+        "cardType": 1
     },
     "188": {
         "rarity": 4,
-        "name": "Vigilante's Pride"
+        "name": "Vigilante's Pride",
+        "cardType": 1
     },
     "189": {
         "rarity": 5,
-        "name": "Discord"
+        "name": "Discord",
+        "cardType": 1
     },
     "190": {
         "rarity": 6,
-        "name": "Discord"
+        "name": "Discord",
+        "cardType": 1
     },
     "191": {
         "rarity": 5,
-        "name": "Record of Humanity"
+        "name": "Record of Humanity",
+        "cardType": 1
     },
     "192": {
         "rarity": 6,
-        "name": "Record of Humanity"
+        "name": "Record of Humanity",
+        "cardType": 1
     },
     "193": {
         "rarity": 5,
-        "name": "Naive Miracle Staff"
+        "name": "Naive Miracle Staff",
+        "cardType": 1
     },
     "194": {
         "rarity": 6,
-        "name": "Naive Miracle Staff"
+        "name": "Naive Miracle Staff",
+        "cardType": 1
     },
     "195": {
         "rarity": 5,
-        "name": "Dragon God's Prayer"
+        "name": "Dragon God's Prayer",
+        "cardType": 1
     },
     "196": {
         "rarity": 6,
-        "name": "Dragon God's Prayer"
+        "name": "Dragon God's Prayer",
+        "cardType": 1
     },
     "197": {
         "rarity": 5,
-        "name": "Sword of Love and Ha"
+        "name": "Sword of Love and Ha",
+        "cardType": 1
     },
     "198": {
         "rarity": 6,
-        "name": "Sword of Love and Ha"
+        "name": "Sword of Love and Ha",
+        "cardType": 1
     },
     "199": {
         "rarity": 5,
-        "name": "The Lord's Hammer"
+        "name": "The Lord's Hammer",
+        "cardType": 1
     },
     "200": {
         "rarity": 6,
-        "name": "The Lord's Hammer"
+        "name": "The Lord's Hammer",
+        "cardType": 1
     },
     "201": {
         "rarity": 5,
-        "name": "Death God's Bow"
+        "name": "Death God's Bow",
+        "cardType": 1
     },
     "202": {
         "rarity": 6,
-        "name": "Death God's Bow"
+        "name": "Death God's Bow",
+        "cardType": 1
     },
     "203": {
         "rarity": 5,
-        "name": "Dwarven Spear"
+        "name": "Dwarven Spear",
+        "cardType": 1
     },
     "204": {
         "rarity": 6,
-        "name": "Dwarven Spear"
+        "name": "Dwarven Spear",
+        "cardType": 1
     },
     "205": {
         "rarity": 4,
-        "name": "Tome of Dependence"
+        "name": "Tome of Dependence",
+        "cardType": 1
     },
     "206": {
         "rarity": 5,
-        "name": "Tome of Dependence"
+        "name": "Tome of Dependence",
+        "cardType": 1
     },
     "207": {
         "rarity": 4,
-        "name": "Staff of Masochism"
+        "name": "Staff of Masochism",
+        "cardType": 1
     },
     "208": {
         "rarity": 5,
-        "name": "Staff of Masochism"
+        "name": "Staff of Masochism",
+        "cardType": 1
     },
     "209": {
         "rarity": 4,
-        "name": "Cursed Chains"
+        "name": "Cursed Chains",
+        "cardType": 1
     },
     "210": {
         "rarity": 5,
-        "name": "Cursed Chains"
+        "name": "Cursed Chains",
+        "cardType": 1
     },
     "211": {
         "rarity": 4,
-        "name": "Silent Desire"
+        "name": "Silent Desire",
+        "cardType": 1
     },
     "212": {
         "rarity": 5,
-        "name": "Silent Desire"
+        "name": "Silent Desire",
+        "cardType": 1
     },
     "213": {
         "rarity": 4,
-        "name": "Waking Nightmare"
+        "name": "Waking Nightmare",
+        "cardType": 1
     },
     "214": {
         "rarity": 5,
-        "name": "Waking Nightmare"
+        "name": "Waking Nightmare",
+        "cardType": 1
     },
     "215": {
         "rarity": 4,
-        "name": "Savage Crossbow"
+        "name": "Savage Crossbow",
+        "cardType": 1
     },
     "216": {
         "rarity": 5,
-        "name": "Savage Crossbow"
+        "name": "Savage Crossbow",
+        "cardType": 1
     },
     "217": {
         "rarity": 4,
-        "name": "Jester's Scythe"
+        "name": "Jester's Scythe",
+        "cardType": 1
     },
     "218": {
         "rarity": 5,
-        "name": "Jester's Scythe"
+        "name": "Jester's Scythe",
+        "cardType": 1
     },
     "219": {
         "rarity": 4,
-        "name": "Devil's Fife"
+        "name": "Devil's Fife",
+        "cardType": 1
     },
     "220": {
         "rarity": 5,
-        "name": "Devil's Fife"
+        "name": "Devil's Fife",
+        "cardType": 1
     },
     "221": {
         "rarity": 4,
-        "name": "Wiseman's Notes"
+        "name": "Wiseman's Notes",
+        "cardType": 1
     },
     "222": {
         "rarity": 5,
-        "name": "Wiseman's Notes"
+        "name": "Wiseman's Notes",
+        "cardType": 1
     },
     "223": {
         "rarity": 4,
-        "name": "Cumbersome Staff"
+        "name": "Cumbersome Staff",
+        "cardType": 1
     },
     "224": {
         "rarity": 5,
-        "name": "Cumbersome Staff"
+        "name": "Cumbersome Staff",
+        "cardType": 1
     },
     "225": {
         "rarity": 4,
-        "name": "Faithful Follower"
+        "name": "Faithful Follower",
+        "cardType": 1
     },
     "226": {
         "rarity": 5,
-        "name": "Faithful Follower"
+        "name": "Faithful Follower",
+        "cardType": 1
     },
     "227": {
         "rarity": 4,
-        "name": "Hero's Sword"
+        "name": "Hero's Sword",
+        "cardType": 1
     },
     "228": {
         "rarity": 5,
-        "name": "Hero's Sword"
+        "name": "Hero's Sword",
+        "cardType": 1
     },
     "229": {
         "rarity": 4,
-        "name": "Death's Remains"
+        "name": "Death's Remains",
+        "cardType": 1
     },
     "230": {
         "rarity": 5,
-        "name": "Death's Remains"
+        "name": "Death's Remains",
+        "cardType": 1
     },
     "231": {
         "rarity": 4,
-        "name": "Werewolf's Lie"
+        "name": "Werewolf's Lie",
+        "cardType": 1
     },
     "232": {
         "rarity": 5,
-        "name": "Werewolf's Lie"
+        "name": "Werewolf's Lie",
+        "cardType": 1
     },
     "233": {
         "rarity": 4,
-        "name": "Demon Spear"
+        "name": "Demon Spear",
+        "cardType": 1
     },
     "234": {
         "rarity": 5,
-        "name": "Demon Spear"
+        "name": "Demon Spear",
+        "cardType": 1
     },
     "235": {
         "rarity": 3,
-        "name": "Puppeteer's Magic"
+        "name": "Puppeteer's Magic",
+        "cardType": 1
     },
     "236": {
         "rarity": 4,
-        "name": "Puppeteer's Magic"
+        "name": "Puppeteer's Magic",
+        "cardType": 1
     },
     "237": {
         "rarity": 5,
-        "name": "Puppeteer's Magic"
+        "name": "Puppeteer's Magic",
+        "cardType": 1
     },
     "238": {
         "rarity": 5,
-        "name": "Insect Harp"
+        "name": "Insect Harp",
+        "cardType": 1
     },
     "239": {
         "rarity": 6,
-        "name": "Insect Harp"
+        "name": "Insect Harp",
+        "cardType": 1
     },
     "240": {
         "rarity": 5,
-        "name": "Imperial Scout's Not"
+        "name": "Imperial Scout's Not",
+        "cardType": 1
     },
     "241": {
         "rarity": 6,
-        "name": "Imperial Scout's Not"
+        "name": "Imperial Scout's Not",
+        "cardType": 1
     },
     "242": {
         "rarity": 5,
-        "name": "Ginger Sage (Part I)"
+        "name": "Ginger Sage (Part I)",
+        "cardType": 1
     },
     "243": {
         "rarity": 6,
-        "name": "Ginger Sage (Part I)"
+        "name": "Ginger Sage (Part I)",
+        "cardType": 1
     },
     "244": {
         "rarity": 5,
-        "name": "Lusty God's Lantern"
+        "name": "Lusty God's Lantern",
+        "cardType": 1
     },
     "245": {
         "rarity": 6,
-        "name": "Lusty God's Lantern"
+        "name": "Lusty God's Lantern",
+        "cardType": 1
     },
     "246": {
         "rarity": 5,
-        "name": "Swordsmith's Spellbo"
+        "name": "Swordsmith's Spellbo",
+        "cardType": 1
     },
     "247": {
         "rarity": 6,
-        "name": "Swordsmith's Spellbo"
+        "name": "Swordsmith's Spellbo",
+        "cardType": 1
     },
     "248": {
         "rarity": 5,
-        "name": "Gluttonous God's Rod"
+        "name": "Gluttonous God's Rod",
+        "cardType": 1
     },
     "249": {
         "rarity": 6,
-        "name": "Gluttonous God's Rod"
+        "name": "Gluttonous God's Rod",
+        "cardType": 1
     },
     "250": {
         "rarity": 5,
-        "name": "Substitute Bow"
+        "name": "Substitute Bow",
+        "cardType": 1
     },
     "251": {
         "rarity": 6,
-        "name": "Substitute Bow"
+        "name": "Substitute Bow",
+        "cardType": 1
     },
     "252": {
         "rarity": 5,
-        "name": "Artisan's Spear"
+        "name": "Artisan's Spear",
+        "cardType": 1
     },
     "253": {
         "rarity": 6,
-        "name": "Artisan's Spear"
+        "name": "Artisan's Spear",
+        "cardType": 1
     },
     "254": {
         "rarity": 4,
-        "name": "Pink Harp"
+        "name": "Pink Harp",
+        "cardType": 1
     },
     "255": {
         "rarity": 5,
-        "name": "Pink Harp"
+        "name": "Pink Harp",
+        "cardType": 1
     },
     "256": {
         "rarity": 3,
-        "name": "Ruined Gun"
+        "name": "Ruined Gun",
+        "cardType": 1
     },
     "257": {
         "rarity": 4,
-        "name": "Ruined Gun"
+        "name": "Ruined Gun",
+        "cardType": 1
     },
     "258": {
         "rarity": 5,
-        "name": "Ruined Gun"
+        "name": "Ruined Gun",
+        "cardType": 1
     },
     "259": {
         "rarity": 3,
-        "name": "The Bard and the Fai"
+        "name": "The Bard and the Fai",
+        "cardType": 1
     },
     "260": {
         "rarity": 4,
-        "name": "The Bard and the Fai"
+        "name": "The Bard and the Fai",
+        "cardType": 1
     },
     "261": {
         "rarity": 5,
-        "name": "The Bard and the Fai"
+        "name": "The Bard and the Fai",
+        "cardType": 1
     },
     "262": {
         "rarity": 3,
-        "name": "Foreign Book"
+        "name": "Foreign Book",
+        "cardType": 1
     },
     "263": {
         "rarity": 4,
-        "name": "Foreign Book"
+        "name": "Foreign Book",
+        "cardType": 1
     },
     "264": {
         "rarity": 5,
-        "name": "Foreign Book"
+        "name": "Foreign Book",
+        "cardType": 1
     },
     "265": {
         "rarity": 3,
-        "name": "White Lightning Staf"
+        "name": "White Lightning Staf",
+        "cardType": 1
     },
     "266": {
         "rarity": 4,
-        "name": "White Lightning Staf"
+        "name": "White Lightning Staf",
+        "cardType": 1
     },
     "267": {
         "rarity": 3,
-        "name": "The Unwilling"
+        "name": "The Unwilling",
+        "cardType": 1
     },
     "268": {
         "rarity": 4,
-        "name": "The Unwilling"
+        "name": "The Unwilling",
+        "cardType": 1
     },
     "269": {
         "rarity": 3,
-        "name": "Hammer of Brutality"
+        "name": "Hammer of Brutality",
+        "cardType": 1
     },
     "270": {
         "rarity": 4,
-        "name": "Hammer of Brutality"
+        "name": "Hammer of Brutality",
+        "cardType": 1
     },
     "271": {
         "rarity": 5,
-        "name": "Hammer of Brutality"
+        "name": "Hammer of Brutality",
+        "cardType": 1
     },
     "272": {
         "rarity": 3,
-        "name": "Precise Bow"
+        "name": "Precise Bow",
+        "cardType": 1
     },
     "273": {
         "rarity": 4,
-        "name": "Precise Bow"
+        "name": "Precise Bow",
+        "cardType": 1
     },
     "274": {
         "rarity": 3,
-        "name": "Spear of Love and Ha"
+        "name": "Spear of Love and Ha",
+        "cardType": 1
     },
     "275": {
         "rarity": 4,
-        "name": "Spear of Love and Ha"
+        "name": "Spear of Love and Ha",
+        "cardType": 1
     },
     "276": {
         "rarity": 5,
-        "name": "Spear of Love and Ha"
+        "name": "Spear of Love and Ha",
+        "cardType": 1
     },
     "277": {
         "rarity": 3,
-        "name": "Flute of Excess"
+        "name": "Flute of Excess",
+        "cardType": 1
     },
     "278": {
         "rarity": 4,
-        "name": "Flute of Excess"
+        "name": "Flute of Excess",
+        "cardType": 1
     },
     "279": {
         "rarity": 3,
-        "name": "White Tome"
+        "name": "White Tome",
+        "cardType": 1
     },
     "280": {
         "rarity": 4,
-        "name": "White Tome"
+        "name": "White Tome",
+        "cardType": 1
     },
     "281": {
         "rarity": 3,
-        "name": "Staff of the Wise"
+        "name": "Staff of the Wise",
+        "cardType": 1
     },
     "282": {
         "rarity": 4,
-        "name": "Staff of the Wise"
+        "name": "Staff of the Wise",
+        "cardType": 1
     },
     "283": {
         "rarity": 3,
-        "name": "Zealot's Grudge"
+        "name": "Zealot's Grudge",
+        "cardType": 1
     },
     "284": {
         "rarity": 4,
-        "name": "Zealot's Grudge"
+        "name": "Zealot's Grudge",
+        "cardType": 1
     },
     "285": {
         "rarity": 3,
-        "name": "Tragedy of the Wicke"
+        "name": "Tragedy of the Wicke",
+        "cardType": 1
     },
     "286": {
         "rarity": 4,
-        "name": "Tragedy of the Wicke"
+        "name": "Tragedy of the Wicke",
+        "cardType": 1
     },
     "287": {
         "rarity": 3,
-        "name": "Oracle Knight's Axe"
+        "name": "Oracle Knight's Axe",
+        "cardType": 1
     },
     "288": {
         "rarity": 4,
-        "name": "Oracle Knight's Axe"
+        "name": "Oracle Knight's Axe",
+        "cardType": 1
     },
     "289": {
         "rarity": 3,
-        "name": "Holy Lance"
+        "name": "Holy Lance",
+        "cardType": 1
     },
     "290": {
         "rarity": 4,
-        "name": "Holy Lance"
+        "name": "Holy Lance",
+        "cardType": 1
     },
     "291": {
         "rarity": 5,
-        "name": "Ancient Violin"
+        "name": "Ancient Violin",
+        "cardType": 1
     },
     "292": {
         "rarity": 6,
-        "name": "Ancient Violin"
+        "name": "Ancient Violin",
+        "cardType": 1
     },
     "293": {
         "rarity": 5,
-        "name": "Knight's Diary"
+        "name": "Knight's Diary",
+        "cardType": 1
     },
     "294": {
         "rarity": 6,
-        "name": "Knight's Diary"
+        "name": "Knight's Diary",
+        "cardType": 1
     },
     "295": {
         "rarity": 5,
-        "name": "Ginger Sage (Part II"
+        "name": "Ginger Sage (Part II",
+        "cardType": 1
     },
     "296": {
         "rarity": 6,
-        "name": "Ginger Sage (Part II"
+        "name": "Ginger Sage (Part II",
+        "cardType": 1
     },
     "297": {
         "rarity": 5,
-        "name": "Time Remaining"
+        "name": "Time Remaining",
+        "cardType": 1
     },
     "298": {
         "rarity": 6,
-        "name": "Time Remaining"
+        "name": "Time Remaining",
+        "cardType": 1
     },
     "299": {
         "rarity": 5,
-        "name": "Sympathetic Blade"
+        "name": "Sympathetic Blade",
+        "cardType": 1
     },
     "300": {
         "rarity": 6,
-        "name": "Sympathetic Blade"
+        "name": "Sympathetic Blade",
+        "cardType": 1
     },
     "301": {
         "rarity": 5,
-        "name": "Hammer of Endtimes"
+        "name": "Hammer of Endtimes",
+        "cardType": 1
     },
     "302": {
         "rarity": 6,
-        "name": "Hammer of Endtimes"
+        "name": "Hammer of Endtimes",
+        "cardType": 1
     },
     "303": {
         "rarity": 5,
-        "name": "Holy Knight's Pistol"
+        "name": "Holy Knight's Pistol",
+        "cardType": 1
     },
     "304": {
         "rarity": 6,
-        "name": "Holy Knight's Pistol"
+        "name": "Holy Knight's Pistol",
+        "cardType": 1
     },
     "305": {
         "rarity": 5,
-        "name": "Gluttonous Scythe"
+        "name": "Gluttonous Scythe",
+        "cardType": 1
     },
     "306": {
         "rarity": 6,
-        "name": "Gluttonous Scythe"
+        "name": "Gluttonous Scythe",
+        "cardType": 1
     },
     "307": {
         "rarity": 5,
-        "name": "Flute of Despair"
+        "name": "Flute of Despair",
+        "cardType": 1
     },
     "308": {
         "rarity": 6,
-        "name": "Flute of Despair"
+        "name": "Flute of Despair",
+        "cardType": 1
     },
     "311": {
         "rarity": 4,
-        "name": "Sword of Revenge"
+        "name": "Sword of Revenge",
+        "cardType": 1
     },
     "312": {
         "rarity": 5,
-        "name": "Sword of Revenge"
+        "name": "Sword of Revenge",
+        "cardType": 1
     },
     "313": {
         "rarity": 5,
-        "name": "Veteran's Cannon"
+        "name": "Veteran's Cannon",
+        "cardType": 1
     },
     "314": {
         "rarity": 6,
-        "name": "Veteran's Cannon"
+        "name": "Veteran's Cannon",
+        "cardType": 1
     },
     "315": {
         "rarity": 4,
-        "name": "Idol's Harp"
+        "name": "Idol's Harp",
+        "cardType": 1
     },
     "316": {
         "rarity": 5,
-        "name": "Idol's Harp"
+        "name": "Idol's Harp",
+        "cardType": 1
     },
     "317": {
         "rarity": 4,
-        "name": "Reincarnation"
+        "name": "Reincarnation",
+        "cardType": 1
     },
     "318": {
         "rarity": 5,
-        "name": "Reincarnation"
+        "name": "Reincarnation",
+        "cardType": 1
     },
     "319": {
         "rarity": 4,
-        "name": "Modern Palace Record"
+        "name": "Modern Palace Record",
+        "cardType": 1
     },
     "320": {
         "rarity": 5,
-        "name": "Modern Palace Record"
+        "name": "Modern Palace Record",
+        "cardType": 1
     },
     "323": {
         "rarity": 4,
-        "name": "Dagger of Bonding"
+        "name": "Dagger of Bonding",
+        "cardType": 1
     },
     "324": {
         "rarity": 5,
-        "name": "Dagger of Bonding"
+        "name": "Dagger of Bonding",
+        "cardType": 1
     },
     "325": {
         "rarity": 4,
-        "name": "Azure Wing Crossbow"
+        "name": "Azure Wing Crossbow",
+        "cardType": 1
     },
     "326": {
         "rarity": 5,
-        "name": "Azure Wing Crossbow"
+        "name": "Azure Wing Crossbow",
+        "cardType": 1
     },
     "327": {
         "rarity": 4,
-        "name": "Veteran's Mallet"
+        "name": "Veteran's Mallet",
+        "cardType": 1
     },
     "328": {
         "rarity": 5,
-        "name": "Veteran's Mallet"
+        "name": "Veteran's Mallet",
+        "cardType": 1
     },
     "329": {
         "rarity": 4,
-        "name": "Hollow Spear"
+        "name": "Hollow Spear",
+        "cardType": 1
     },
     "330": {
         "rarity": 5,
-        "name": "Hollow Spear"
+        "name": "Hollow Spear",
+        "cardType": 1
     },
     "331": {
         "rarity": 4,
-        "name": "Harp of Collection"
+        "name": "Harp of Collection",
+        "cardType": 1
     },
     "332": {
         "rarity": 5,
-        "name": "Harp of Collection"
+        "name": "Harp of Collection",
+        "cardType": 1
     },
     "335": {
         "rarity": 5,
-        "name": "Oblivion Staff"
+        "name": "Oblivion Staff",
+        "cardType": 1
     },
     "336": {
         "rarity": 6,
-        "name": "Oblivion Staff"
+        "name": "Oblivion Staff",
+        "cardType": 1
     },
     "337": {
         "rarity": 4,
-        "name": "Crimson Jewel"
+        "name": "Crimson Jewel",
+        "cardType": 1
     },
     "338": {
         "rarity": 5,
-        "name": "Crimson Jewel"
+        "name": "Crimson Jewel",
+        "cardType": 1
     },
     "339": {
         "rarity": 5,
-        "name": "Sword of Humility"
+        "name": "Sword of Humility",
+        "cardType": 1
     },
     "340": {
         "rarity": 6,
-        "name": "Sword of Humility"
+        "name": "Sword of Humility",
+        "cardType": 1
     },
     "341": {
         "rarity": 4,
-        "name": "Mad Demon"
+        "name": "Mad Demon",
+        "cardType": 1
     },
     "342": {
         "rarity": 5,
-        "name": "Mad Demon"
+        "name": "Mad Demon",
+        "cardType": 1
     },
     "343": {
         "rarity": 5,
-        "name": "Gun of Incineration"
+        "name": "Gun of Incineration",
+        "cardType": 1
     },
     "344": {
         "rarity": 6,
-        "name": "Gun of Incineration"
+        "name": "Gun of Incineration",
+        "cardType": 1
     },
     "345": {
         "rarity": 5,
-        "name": "Snowflake Spear"
+        "name": "Snowflake Spear",
+        "cardType": 1
     },
     "346": {
         "rarity": 6,
-        "name": "Snowflake Spear"
+        "name": "Snowflake Spear",
+        "cardType": 1
     },
     "347": {
         "rarity": 5,
-        "name": "Reunion Whistle"
+        "name": "Reunion Whistle",
+        "cardType": 1
     },
     "348": {
         "rarity": 6,
-        "name": "Reunion Whistle"
+        "name": "Reunion Whistle",
+        "cardType": 1
     },
     "349": {
         "rarity": 4,
-        "name": "Spellbook of Reversa"
+        "name": "Spellbook of Reversa",
+        "cardType": 1
     },
     "350": {
         "rarity": 5,
-        "name": "Spellbook of Reversa"
+        "name": "Spellbook of Reversa",
+        "cardType": 1
     },
     "353": {
         "rarity": 5,
-        "name": "Staff of Incarnation"
+        "name": "Staff of Incarnation",
+        "cardType": 1
     },
     "354": {
         "rarity": 6,
-        "name": "Staff of Incarnation"
+        "name": "Staff of Incarnation",
+        "cardType": 1
     },
     "355": {
         "rarity": 5,
-        "name": "Sealed Dragon Puppet"
+        "name": "Sealed Dragon Puppet",
+        "cardType": 1
     },
     "356": {
         "rarity": 6,
-        "name": "Sealed Dragon Puppet"
+        "name": "Sealed Dragon Puppet",
+        "cardType": 1
     },
     "357": {
         "rarity": 5,
-        "name": "Virgin's Spinal Flui"
+        "name": "Virgin's Spinal Flui",
+        "cardType": 1
     },
     "358": {
         "rarity": 6,
-        "name": "Virgin's Spinal Flui"
+        "name": "Virgin's Spinal Flui",
+        "cardType": 1
     },
     "359": {
         "rarity": 5,
-        "name": "Shell Wings"
+        "name": "Shell Wings",
+        "cardType": 1
     },
     "360": {
         "rarity": 6,
-        "name": "Shell Wings"
+        "name": "Shell Wings",
+        "cardType": 1
     },
     "361": {
         "rarity": 1,
-        "name": "Upgrade Sword (C)"
+        "name": "Upgrade Sword (C)",
+        "cardType": 5
     },
     "362": {
         "rarity": 2,
-        "name": "Upgrade Sword (B)"
+        "name": "Upgrade Sword (B)",
+        "cardType": 5
     },
     "363": {
         "rarity": 3,
-        "name": "Upgrade Sword (A)"
+        "name": "Upgrade Sword (A)",
+        "cardType": 5
     },
     "364": {
         "rarity": 4,
-        "name": "Upgrade Sword (S)"
+        "name": "Upgrade Sword (S)",
+        "cardType": 5
     },
     "365": {
         "rarity": 5,
-        "name": "Upgrade Sword (SR)"
+        "name": "Upgrade Sword (SR)",
+        "cardType": 5
     },
     "366": {
         "rarity": 1,
-        "name": "Upgrade Shield (C)"
+        "name": "Upgrade Shield (C)",
+        "cardType": 5
     },
     "367": {
         "rarity": 2,
-        "name": "Upgrade Shield (B)"
+        "name": "Upgrade Shield (B)",
+        "cardType": 5
     },
     "368": {
         "rarity": 3,
-        "name": "Upgrade Shield (A)"
+        "name": "Upgrade Shield (A)",
+        "cardType": 5
     },
     "369": {
         "rarity": 4,
-        "name": "Upgrade Shield (S)"
+        "name": "Upgrade Shield (S)",
+        "cardType": 5
     },
     "370": {
         "rarity": 5,
-        "name": "Upgrade Shield (SR)"
+        "name": "Upgrade Shield (SR)",
+        "cardType": 5
     },
     "371": {
         "rarity": 1,
-        "name": "Upgrade Tablet (C)"
+        "name": "Upgrade Tablet (C)",
+        "cardType": 5
     },
     "372": {
         "rarity": 2,
-        "name": "Upgrade Tablet (B)"
+        "name": "Upgrade Tablet (B)",
+        "cardType": 5
     },
     "373": {
         "rarity": 3,
-        "name": "Upgrade Tablet (A)"
+        "name": "Upgrade Tablet (A)",
+        "cardType": 5
     },
     "374": {
         "rarity": 4,
-        "name": "Upgrade Tablet (S)"
+        "name": "Upgrade Tablet (S)",
+        "cardType": 5
     },
     "375": {
         "rarity": 5,
-        "name": "Upgrade Tablet (SR)"
+        "name": "Upgrade Tablet (SR)",
+        "cardType": 5
     },
     "376": {
         "rarity": 3,
-        "name": "Colosseum Gem (A)"
+        "name": "Colosseum Gem (A)",
+        "cardType": 7
     },
     "377": {
         "rarity": 4,
-        "name": "Colosseum Gem (S)"
+        "name": "Colosseum Gem (S)",
+        "cardType": 7
     },
     "378": {
         "rarity": 5,
-        "name": "Colosseum Gem (SR)"
+        "name": "Colosseum Gem (SR)",
+        "cardType": 7
     },
     "379": {
         "rarity": 3,
-        "name": "Colosseum Support Ge"
+        "name": "Colosseum Support Ge",
+        "cardType": 7
     },
     "380": {
         "rarity": 4,
-        "name": "Colosseum Support Ge"
+        "name": "Colosseum Support Ge",
+        "cardType": 7
     },
     "381": {
         "rarity": 5,
-        "name": "Colosseum Support Ge"
+        "name": "Colosseum Support Ge",
+        "cardType": 7
     },
     "382": {
         "rarity": 3,
-        "name": "Story Gem (A)"
+        "name": "Story Gem (A)",
+        "cardType": 7
     },
     "383": {
         "rarity": 4,
-        "name": "Story Gem (S)"
+        "name": "Story Gem (S)",
+        "cardType": 7
     },
     "384": {
         "rarity": 5,
-        "name": "Story Gem (SR)"
+        "name": "Story Gem (SR)",
+        "cardType": 7
     },
     "385": {
         "rarity": 3,
-        "name": "Story Support Gem (A"
+        "name": "Story Support Gem (A",
+        "cardType": 7
     },
     "386": {
         "rarity": 4,
-        "name": "Story Support Gem (S"
+        "name": "Story Support Gem (S",
+        "cardType": 7
     },
     "387": {
         "rarity": 5,
-        "name": "Story Support Gem (S"
+        "name": "Story Support Gem (S",
+        "cardType": 7
     },
     "397": {
         "rarity": 2,
-        "name": "Modest Sack"
+        "name": "Modest Sack",
+        "cardType": 6
     },
     "398": {
         "rarity": 3,
-        "name": "Decent Sack"
+        "name": "Decent Sack",
+        "cardType": 6
     },
     "399": {
         "rarity": 4,
-        "name": "Hefty Sack"
+        "name": "Hefty Sack",
+        "cardType": 6
     },
     "400": {
         "rarity": 2,
-        "name": "Maiden's Hairband"
+        "name": "Maiden's Hairband",
+        "cardType": 2
     },
     "401": {
         "rarity": 3,
-        "name": "Maiden's Hairband"
+        "name": "Maiden's Hairband",
+        "cardType": 2
     },
     "402": {
         "rarity": 4,
-        "name": "Maiden's Hairband"
+        "name": "Maiden's Hairband",
+        "cardType": 2
     },
     "403": {
         "rarity": 2,
-        "name": "Maiden's Dress"
+        "name": "Maiden's Dress",
+        "cardType": 2
     },
     "404": {
         "rarity": 3,
-        "name": "Maiden's Dress"
+        "name": "Maiden's Dress",
+        "cardType": 2
     },
     "405": {
         "rarity": 4,
-        "name": "Maiden's Dress"
+        "name": "Maiden's Dress",
+        "cardType": 2
     },
     "406": {
         "rarity": 2,
-        "name": "Maiden's Heels"
+        "name": "Maiden's Heels",
+        "cardType": 2
     },
     "407": {
         "rarity": 3,
-        "name": "Maiden's Heels"
+        "name": "Maiden's Heels",
+        "cardType": 2
     },
     "408": {
         "rarity": 4,
-        "name": "Maiden's Heels"
+        "name": "Maiden's Heels",
+        "cardType": 2
     },
     "409": {
         "rarity": 2,
-        "name": "Maiden's Gloves"
+        "name": "Maiden's Gloves",
+        "cardType": 2
     },
     "410": {
         "rarity": 3,
-        "name": "Maiden's Gloves"
+        "name": "Maiden's Gloves",
+        "cardType": 2
     },
     "411": {
         "rarity": 4,
-        "name": "Maiden's Gloves"
+        "name": "Maiden's Gloves",
+        "cardType": 2
     },
     "412": {
         "rarity": 2,
-        "name": "Girl's Hairband"
+        "name": "Girl's Hairband",
+        "cardType": 2
     },
     "413": {
         "rarity": 3,
-        "name": "Girl's Hairband"
+        "name": "Girl's Hairband",
+        "cardType": 2
     },
     "414": {
         "rarity": 4,
-        "name": "Girl's Hairband"
+        "name": "Girl's Hairband",
+        "cardType": 2
     },
     "415": {
         "rarity": 2,
-        "name": "Girl's Frock"
+        "name": "Girl's Frock",
+        "cardType": 2
     },
     "416": {
         "rarity": 3,
-        "name": "Girl's Frock"
+        "name": "Girl's Frock",
+        "cardType": 2
     },
     "417": {
         "rarity": 4,
-        "name": "Girl's Frock"
+        "name": "Girl's Frock",
+        "cardType": 2
     },
     "418": {
         "rarity": 2,
-        "name": "Girl's Pumps"
+        "name": "Girl's Pumps",
+        "cardType": 2
     },
     "419": {
         "rarity": 3,
-        "name": "Girl's Pumps"
+        "name": "Girl's Pumps",
+        "cardType": 2
     },
     "420": {
         "rarity": 4,
-        "name": "Girl's Pumps"
+        "name": "Girl's Pumps",
+        "cardType": 2
     },
     "421": {
         "rarity": 2,
-        "name": "Girl's Bracelet"
+        "name": "Girl's Bracelet",
+        "cardType": 2
     },
     "422": {
         "rarity": 3,
-        "name": "Girl's Bracelet"
+        "name": "Girl's Bracelet",
+        "cardType": 2
     },
     "423": {
         "rarity": 4,
-        "name": "Girl's Bracelet"
+        "name": "Girl's Bracelet",
+        "cardType": 2
     },
     "424": {
         "rarity": 3,
-        "name": "Hairpiece of Misery"
+        "name": "Hairpiece of Misery",
+        "cardType": 2
     },
     "425": {
         "rarity": 4,
-        "name": "Hairpiece of Misery"
+        "name": "Hairpiece of Misery",
+        "cardType": 2
     },
     "426": {
         "rarity": 5,
-        "name": "Hairpiece of Misery"
+        "name": "Hairpiece of Misery",
+        "cardType": 2
     },
     "427": {
         "rarity": 3,
-        "name": "Dress of Misery"
+        "name": "Dress of Misery",
+        "cardType": 2
     },
     "428": {
         "rarity": 4,
-        "name": "Dress of Misery"
+        "name": "Dress of Misery",
+        "cardType": 2
     },
     "429": {
         "rarity": 5,
-        "name": "Dress of Misery"
+        "name": "Dress of Misery",
+        "cardType": 2
     },
     "430": {
         "rarity": 3,
-        "name": "Pumps of Misery"
+        "name": "Pumps of Misery",
+        "cardType": 2
     },
     "431": {
         "rarity": 4,
-        "name": "Pumps of Misery"
+        "name": "Pumps of Misery",
+        "cardType": 2
     },
     "432": {
         "rarity": 5,
-        "name": "Pumps of Misery"
+        "name": "Pumps of Misery",
+        "cardType": 2
     },
     "433": {
         "rarity": 3,
-        "name": "Bracelet of Misery"
+        "name": "Bracelet of Misery",
+        "cardType": 2
     },
     "434": {
         "rarity": 4,
-        "name": "Bracelet of Misery"
+        "name": "Bracelet of Misery",
+        "cardType": 2
     },
     "435": {
         "rarity": 5,
-        "name": "Bracelet of Misery"
+        "name": "Bracelet of Misery",
+        "cardType": 2
     },
     "448": {
         "rarity": 3,
-        "name": "Hound (Fire)"
+        "name": "Hound (Fire)",
+        "cardType": 3
     },
     "449": {
         "rarity": 4,
-        "name": "Hound (Fire)"
+        "name": "Hound (Fire)",
+        "cardType": 3
     },
     "450": {
         "rarity": 3,
-        "name": "Hound (Water)"
+        "name": "Hound (Water)",
+        "cardType": 3
     },
     "451": {
         "rarity": 4,
-        "name": "Hound (Water)"
+        "name": "Hound (Water)",
+        "cardType": 3
     },
     "452": {
         "rarity": 3,
-        "name": "Hound (Wind)"
+        "name": "Hound (Wind)",
+        "cardType": 3
     },
     "453": {
         "rarity": 4,
-        "name": "Hound (Wind)"
+        "name": "Hound (Wind)",
+        "cardType": 3
     },
     "454": {
         "rarity": 3,
-        "name": "Hateful Hound (Fire)"
+        "name": "Hateful Hound (Fire)",
+        "cardType": 3
     },
     "455": {
         "rarity": 3,
-        "name": "Hateful Hound (Water"
+        "name": "Hateful Hound (Water",
+        "cardType": 3
     },
     "456": {
         "rarity": 3,
-        "name": "Hateful Hound (Wind)"
+        "name": "Hateful Hound (Wind)",
+        "cardType": 3
     },
     "457": {
         "rarity": 5,
-        "name": "Ugallu"
+        "name": "Ugallu",
+        "cardType": 3
     },
     "458": {
         "rarity": 6,
-        "name": "Ugallu"
+        "name": "Ugallu",
+        "cardType": 3
     },
     "459": {
         "rarity": 4,
-        "name": "Clock Rabbit"
+        "name": "Clock Rabbit",
+        "cardType": 3
     },
     "460": {
         "rarity": 5,
-        "name": "Clock Rabbit"
+        "name": "Clock Rabbit",
+        "cardType": 3
     },
     "461": {
         "rarity": 3,
-        "name": "Plant (Fire)"
+        "name": "Plant (Fire)",
+        "cardType": 3
     },
     "462": {
         "rarity": 4,
-        "name": "Plant (Fire)"
+        "name": "Plant (Fire)",
+        "cardType": 3
     },
     "463": {
         "rarity": 3,
-        "name": "Plant (Water)"
+        "name": "Plant (Water)",
+        "cardType": 3
     },
     "464": {
         "rarity": 4,
-        "name": "Plant (Water)"
+        "name": "Plant (Water)",
+        "cardType": 3
     },
     "465": {
         "rarity": 3,
-        "name": "Plant (Wind)"
+        "name": "Plant (Wind)",
+        "cardType": 3
     },
     "466": {
         "rarity": 4,
-        "name": "Plant (Wind)"
+        "name": "Plant (Wind)",
+        "cardType": 3
     },
     "467": {
         "rarity": 3,
-        "name": "Hateful Plant (Fire)"
+        "name": "Hateful Plant (Fire)",
+        "cardType": 3
     },
     "468": {
         "rarity": 3,
-        "name": "Hateful Plant (Water"
+        "name": "Hateful Plant (Water",
+        "cardType": 3
     },
     "469": {
         "rarity": 3,
-        "name": "Hateful Plant (Wind)"
+        "name": "Hateful Plant (Wind)",
+        "cardType": 3
     },
     "470": {
         "rarity": 3,
-        "name": "Golem (Fire)"
+        "name": "Golem (Fire)",
+        "cardType": 3
     },
     "471": {
         "rarity": 4,
-        "name": "Golem (Fire)"
+        "name": "Golem (Fire)",
+        "cardType": 3
     },
     "472": {
         "rarity": 3,
-        "name": "Golem (Water)"
+        "name": "Golem (Water)",
+        "cardType": 3
     },
     "473": {
         "rarity": 4,
-        "name": "Golem (Water)"
+        "name": "Golem (Water)",
+        "cardType": 3
     },
     "474": {
         "rarity": 3,
-        "name": "Golem (Wind)"
+        "name": "Golem (Wind)",
+        "cardType": 3
     },
     "475": {
         "rarity": 4,
-        "name": "Golem (Wind)"
+        "name": "Golem (Wind)",
+        "cardType": 3
     },
     "476": {
         "rarity": 3,
-        "name": "Hateful Golem (Fire)"
+        "name": "Hateful Golem (Fire)",
+        "cardType": 3
     },
     "477": {
         "rarity": 3,
-        "name": "Hateful Golem (Water"
+        "name": "Hateful Golem (Water",
+        "cardType": 3
     },
     "478": {
         "rarity": 3,
-        "name": "Hateful Golem (Wind)"
+        "name": "Hateful Golem (Wind)",
+        "cardType": 3
     },
     "479": {
         "rarity": 5,
-        "name": "Freeze Golem"
+        "name": "Freeze Golem",
+        "cardType": 3
     },
     "480": {
         "rarity": 6,
-        "name": "Freeze Golem"
+        "name": "Freeze Golem",
+        "cardType": 3
     },
     "483": {
         "rarity": 3,
-        "name": "Bird (Fire)"
+        "name": "Bird (Fire)",
+        "cardType": 3
     },
     "484": {
         "rarity": 4,
-        "name": "Bird (Fire)"
+        "name": "Bird (Fire)",
+        "cardType": 3
     },
     "485": {
         "rarity": 3,
-        "name": "Bird (Water)"
+        "name": "Bird (Water)",
+        "cardType": 3
     },
     "486": {
         "rarity": 4,
-        "name": "Bird (Water)"
+        "name": "Bird (Water)",
+        "cardType": 3
     },
     "487": {
         "rarity": 3,
-        "name": "Bird (Wind)"
+        "name": "Bird (Wind)",
+        "cardType": 3
     },
     "488": {
         "rarity": 4,
-        "name": "Bird (Wind)"
+        "name": "Bird (Wind)",
+        "cardType": 3
     },
     "489": {
         "rarity": 3,
-        "name": "Hateful Bird (Fire)"
+        "name": "Hateful Bird (Fire)",
+        "cardType": 3
     },
     "490": {
         "rarity": 3,
-        "name": "Hateful Bird (Water)"
+        "name": "Hateful Bird (Water)",
+        "cardType": 3
     },
     "491": {
         "rarity": 3,
-        "name": "Hateful Bird (Wind)"
+        "name": "Hateful Bird (Wind)",
+        "cardType": 3
     },
     "494": {
         "rarity": 3,
-        "name": "Ghost (Fire)"
+        "name": "Ghost (Fire)",
+        "cardType": 3
     },
     "495": {
         "rarity": 4,
-        "name": "Ghost (Fire)"
+        "name": "Ghost (Fire)",
+        "cardType": 3
     },
     "496": {
         "rarity": 3,
-        "name": "Ghost (Water)"
+        "name": "Ghost (Water)",
+        "cardType": 3
     },
     "497": {
         "rarity": 4,
-        "name": "Ghost (Water)"
+        "name": "Ghost (Water)",
+        "cardType": 3
     },
     "498": {
         "rarity": 3,
-        "name": "Ghost (Wind)"
+        "name": "Ghost (Wind)",
+        "cardType": 3
     },
     "499": {
         "rarity": 4,
-        "name": "Ghost (Wind)"
+        "name": "Ghost (Wind)",
+        "cardType": 3
     },
     "500": {
         "rarity": 3,
-        "name": "Hateful Ghost (Fire)"
+        "name": "Hateful Ghost (Fire)",
+        "cardType": 3
     },
     "501": {
         "rarity": 3,
-        "name": "Hateful Ghost (Water"
+        "name": "Hateful Ghost (Water",
+        "cardType": 3
     },
     "502": {
         "rarity": 3,
-        "name": "Hateful Ghost (Wind)"
+        "name": "Hateful Ghost (Wind)",
+        "cardType": 3
     },
     "503": {
         "rarity": 3,
-        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u5263)"
+        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u5263)",
+        "cardType": 3
     },
     "504": {
         "rarity": 3,
-        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u5263)"
+        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u5263)",
+        "cardType": 3
     },
     "505": {
         "rarity": 3,
-        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u76fe)"
+        "name": "\u5f37\u5316\u30b4\u30fc\u30b9\u30c8(\u76fe)",
+        "cardType": 3
     },
     "506": {
         "rarity": 3,
-        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u76fe)"
+        "name": "\u5f37\u5316\u30cf\u30a4\u30b4\u30fc\u30b9\u30c8(\u76fe)",
+        "cardType": 3
     },
     "507": {
         "rarity": 3,
-        "name": "Lizard (Fire)"
+        "name": "Lizard (Fire)",
+        "cardType": 3
     },
     "508": {
         "rarity": 4,
-        "name": "Lizard (Fire)"
+        "name": "Lizard (Fire)",
+        "cardType": 3
     },
     "509": {
         "rarity": 3,
-        "name": "Lizard (Water)"
+        "name": "Lizard (Water)",
+        "cardType": 3
     },
     "510": {
         "rarity": 4,
-        "name": "Lizard (Water)"
+        "name": "Lizard (Water)",
+        "cardType": 3
     },
     "511": {
         "rarity": 3,
-        "name": "Lizard (Wind)"
+        "name": "Lizard (Wind)",
+        "cardType": 3
     },
     "512": {
         "rarity": 4,
-        "name": "Lizard (Wind)"
+        "name": "Lizard (Wind)",
+        "cardType": 3
     },
     "513": {
         "rarity": 3,
-        "name": "Hateful Lizard (Fire"
+        "name": "Hateful Lizard (Fire",
+        "cardType": 3
     },
     "514": {
         "rarity": 3,
-        "name": "Hateful Lizard (Wate"
+        "name": "Hateful Lizard (Wate",
+        "cardType": 3
     },
     "515": {
         "rarity": 3,
-        "name": "Hateful Lizard (Wind"
+        "name": "Hateful Lizard (Wind",
+        "cardType": 3
     },
     "516": {
         "rarity": 5,
-        "name": "Lindwyrm"
+        "name": "Lindwyrm",
+        "cardType": 3
     },
     "517": {
         "rarity": 6,
-        "name": "Lindwyrm"
+        "name": "Lindwyrm",
+        "cardType": 3
     },
     "518": {
         "rarity": 3,
-        "name": "Orc (Fire)"
+        "name": "Orc (Fire)",
+        "cardType": 3
     },
     "519": {
         "rarity": 4,
-        "name": "Orc (Fire)"
+        "name": "Orc (Fire)",
+        "cardType": 3
     },
     "520": {
         "rarity": 3,
-        "name": "Orc (Water)"
+        "name": "Orc (Water)",
+        "cardType": 3
     },
     "521": {
         "rarity": 4,
-        "name": "Orc (Water)"
+        "name": "Orc (Water)",
+        "cardType": 3
     },
     "522": {
         "rarity": 3,
-        "name": "Orc (Wind)"
+        "name": "Orc (Wind)",
+        "cardType": 3
     },
     "523": {
         "rarity": 4,
-        "name": "Orc (Wind)"
+        "name": "Orc (Wind)",
+        "cardType": 3
     },
     "524": {
         "rarity": 3,
-        "name": "Hateful Orc (Fire)"
+        "name": "Hateful Orc (Fire)",
+        "cardType": 3
     },
     "525": {
         "rarity": 3,
-        "name": "Hateful Orc (Water)"
+        "name": "Hateful Orc (Water)",
+        "cardType": 3
     },
     "526": {
         "rarity": 3,
-        "name": "Hateful Orc (Wind)"
+        "name": "Hateful Orc (Wind)",
+        "cardType": 3
     },
     "527": {
         "rarity": 3,
-        "name": "Spider (Fire)"
+        "name": "Spider (Fire)",
+        "cardType": 3
     },
     "528": {
         "rarity": 4,
-        "name": "Spider (Fire)"
+        "name": "Spider (Fire)",
+        "cardType": 3
     },
     "529": {
         "rarity": 3,
-        "name": "Spider (Water)"
+        "name": "Spider (Water)",
+        "cardType": 3
     },
     "530": {
         "rarity": 4,
-        "name": "Spider (Water)"
+        "name": "Spider (Water)",
+        "cardType": 3
     },
     "531": {
         "rarity": 3,
-        "name": "Spider (Wind)"
+        "name": "Spider (Wind)",
+        "cardType": 3
     },
     "532": {
         "rarity": 4,
-        "name": "Spider (Wind)"
+        "name": "Spider (Wind)",
+        "cardType": 3
     },
     "533": {
         "rarity": 3,
-        "name": "Hateful Spider (Fire"
+        "name": "Hateful Spider (Fire",
+        "cardType": 3
     },
     "534": {
         "rarity": 3,
-        "name": "Hateful Spider (Wate"
+        "name": "Hateful Spider (Wate",
+        "cardType": 3
     },
     "535": {
         "rarity": 3,
-        "name": "Hateful Spider (Wind"
+        "name": "Hateful Spider (Wind",
+        "cardType": 3
     },
     "538": {
         "rarity": 4,
-        "name": "Shield Wisp (Fire)"
+        "name": "Shield Wisp (Fire)",
+        "cardType": 3
     },
     "539": {
         "rarity": 4,
-        "name": "Shield Wisp (Water)"
+        "name": "Shield Wisp (Water)",
+        "cardType": 3
     },
     "540": {
         "rarity": 4,
-        "name": "Shield Wisp (Wind)"
+        "name": "Shield Wisp (Wind)",
+        "cardType": 3
     },
     "541": {
         "rarity": 3,
-        "name": "Snake (Fire)"
+        "name": "Snake (Fire)",
+        "cardType": 3
     },
     "542": {
         "rarity": 4,
-        "name": "Snake (Fire)"
+        "name": "Snake (Fire)",
+        "cardType": 3
     },
     "543": {
         "rarity": 3,
-        "name": "Snake (Water)"
+        "name": "Snake (Water)",
+        "cardType": 3
     },
     "544": {
         "rarity": 4,
-        "name": "Snake (Water)"
+        "name": "Snake (Water)",
+        "cardType": 3
     },
     "545": {
         "rarity": 3,
-        "name": "Snake (Wind)"
+        "name": "Snake (Wind)",
+        "cardType": 3
     },
     "546": {
         "rarity": 4,
-        "name": "Snake (Wind)"
+        "name": "Snake (Wind)",
+        "cardType": 3
     },
     "547": {
         "rarity": 3,
-        "name": "Hateful Snake (Fire)"
+        "name": "Hateful Snake (Fire)",
+        "cardType": 3
     },
     "548": {
         "rarity": 3,
-        "name": "Hateful Snake (Water"
+        "name": "Hateful Snake (Water",
+        "cardType": 3
     },
     "549": {
         "rarity": 3,
-        "name": "Hateful Snake (Wind)"
+        "name": "Hateful Snake (Wind)",
+        "cardType": 3
     },
     "550": {
         "rarity": 5,
-        "name": "J\u00f6rmungandr"
+        "name": "J\u00f6rmungandr",
+        "cardType": 3
     },
     "551": {
         "rarity": 6,
-        "name": "J\u00f6rmungandr"
+        "name": "J\u00f6rmungandr",
+        "cardType": 3
     },
     "553": {
         "rarity": 4,
-        "name": "Drizella, the Jealou"
+        "name": "Drizella, the Jealou",
+        "cardType": 3
     },
     "554": {
         "rarity": 5,
-        "name": "Drizella, the Jealou"
+        "name": "Drizella, the Jealou",
+        "cardType": 3
     },
     "557": {
         "rarity": 5,
-        "name": "Gluttonous Eris"
+        "name": "Gluttonous Eris",
+        "cardType": 3
     },
     "558": {
         "rarity": 6,
-        "name": "Gluttonous Eris"
+        "name": "Gluttonous Eris",
+        "cardType": 3
     },
     "559": {
         "rarity": 4,
-        "name": "Nightmare (Bondage)"
+        "name": "Nightmare (Bondage)",
+        "cardType": 3
     },
     "560": {
         "rarity": 4,
-        "name": "Nightmare (Justice)"
+        "name": "Nightmare (Justice)",
+        "cardType": 3
     },
     "561": {
         "rarity": 4,
-        "name": "Nightmare (Brutality"
+        "name": "Nightmare (Brutality",
+        "cardType": 3
     },
     "562": {
         "rarity": 4,
-        "name": "Nightmare (Depravity"
+        "name": "Nightmare (Depravity",
+        "cardType": 3
     },
     "563": {
         "rarity": 4,
-        "name": "Nightmare (N/A)"
+        "name": "Nightmare (N/A)",
+        "cardType": 3
     },
     "564": {
         "rarity": 4,
-        "name": "Nightmare (Dependenc"
+        "name": "Nightmare (Dependenc",
+        "cardType": 3
     },
     "567": {
         "rarity": 4,
-        "name": "Nightmare (Delusion)"
+        "name": "Nightmare (Delusion)",
+        "cardType": 3
     },
     "568": {
         "rarity": 4,
-        "name": "Nightmare (N/A)"
+        "name": "Nightmare (N/A)",
+        "cardType": 3
     },
     "569": {
         "rarity": 4,
-        "name": "Nightmare (Languor)"
+        "name": "Nightmare (Languor)",
+        "cardType": 3
     },
     "570": {
         "rarity": 4,
-        "name": "Nightmare (N/A)"
+        "name": "Nightmare (N/A)",
+        "cardType": 3
     },
     "571": {
         "rarity": 4,
-        "name": "Nightmare (Masochism"
+        "name": "Nightmare (Masochism",
+        "cardType": 3
     },
     "572": {
         "rarity": 4,
-        "name": "Nightmare (N/A)"
+        "name": "Nightmare (N/A)",
+        "cardType": 3
     },
     "581": {
         "rarity": 5,
-        "name": "Hammer of Justice"
+        "name": "Hammer of Justice",
+        "cardType": 1
     },
     "582": {
         "rarity": 6,
-        "name": "Hammer of Justice"
+        "name": "Hammer of Justice",
+        "cardType": 1
     },
     "583": {
         "rarity": 4,
-        "name": "Fina, the Loyal Fals"
+        "name": "Fina, the Loyal Fals",
+        "cardType": 3
     },
     "584": {
         "rarity": 5,
-        "name": "Fina, the Loyal Fals"
+        "name": "Fina, the Loyal Fals",
+        "cardType": 3
     },
     "585": {
         "rarity": 4,
-        "name": "Sword of Misery"
+        "name": "Sword of Misery",
+        "cardType": 1
     },
     "586": {
         "rarity": 5,
-        "name": "Sword of Misery"
+        "name": "Sword of Misery",
+        "cardType": 1
     },
     "587": {
         "rarity": 5,
-        "name": "Sword of Bondage"
+        "name": "Sword of Bondage",
+        "cardType": 1
     },
     "588": {
         "rarity": 6,
-        "name": "Sword of Bondage"
+        "name": "Sword of Bondage",
+        "cardType": 1
     },
     "589": {
         "rarity": 5,
-        "name": "Book of Brutality"
+        "name": "Book of Brutality",
+        "cardType": 1
     },
     "590": {
         "rarity": 6,
-        "name": "Book of Brutality"
+        "name": "Book of Brutality",
+        "cardType": 1
     },
     "639": {
         "rarity": 5,
-        "name": "Digitalis, the Under"
+        "name": "Digitalis, the Under",
+        "cardType": 3
     },
     "640": {
         "rarity": 6,
-        "name": "Digitalis, the Under"
+        "name": "Digitalis, the Under",
+        "cardType": 3
     },
     "641": {
         "rarity": 5,
-        "name": "Deep Sea Staff"
+        "name": "Deep Sea Staff",
+        "cardType": 1
     },
     "642": {
         "rarity": 6,
-        "name": "Deep Sea Staff"
+        "name": "Deep Sea Staff",
+        "cardType": 1
     },
     "643": {
         "rarity": 5,
-        "name": "Deep Sea Bow"
+        "name": "Deep Sea Bow",
+        "cardType": 1
     },
     "644": {
         "rarity": 6,
-        "name": "Deep Sea Bow"
+        "name": "Deep Sea Bow",
+        "cardType": 1
     },
     "645": {
         "rarity": 5,
-        "name": "Deep Sea Sword"
+        "name": "Deep Sea Sword",
+        "cardType": 1
     },
     "646": {
         "rarity": 6,
-        "name": "Deep Sea Sword"
+        "name": "Deep Sea Sword",
+        "cardType": 1
     },
     "647": {
         "rarity": 5,
-        "name": "Harp of Misery"
+        "name": "Harp of Misery",
+        "cardType": 1
     },
     "648": {
         "rarity": 6,
-        "name": "Harp of Misery"
+        "name": "Harp of Misery",
+        "cardType": 1
     },
     "649": {
         "rarity": 4,
-        "name": "Hunter's Spirit"
+        "name": "Hunter's Spirit",
+        "cardType": 1
     },
     "650": {
         "rarity": 5,
-        "name": "Hunter's Spirit"
+        "name": "Hunter's Spirit",
+        "cardType": 1
     },
     "651": {
         "rarity": 4,
-        "name": "Magma Axe"
+        "name": "Magma Axe",
+        "cardType": 1
     },
     "652": {
         "rarity": 5,
-        "name": "Magma Axe"
+        "name": "Magma Axe",
+        "cardType": 1
     },
     "653": {
         "rarity": 4,
-        "name": "Deceptive Eye"
+        "name": "Deceptive Eye",
+        "cardType": 1
     },
     "654": {
         "rarity": 5,
-        "name": "Deceptive Eye"
+        "name": "Deceptive Eye",
+        "cardType": 1
     },
     "655": {
         "rarity": 4,
-        "name": "Twilight Glow"
+        "name": "Twilight Glow",
+        "cardType": 1
     },
     "656": {
         "rarity": 5,
-        "name": "Twilight Glow"
+        "name": "Twilight Glow",
+        "cardType": 1
     },
     "657": {
         "rarity": 4,
-        "name": "Proof of Virtue"
+        "name": "Proof of Virtue",
+        "cardType": 1
     },
     "658": {
         "rarity": 5,
-        "name": "Proof of Virtue"
+        "name": "Proof of Virtue",
+        "cardType": 1
     },
     "659": {
         "rarity": 4,
-        "name": "Empty Teachings"
+        "name": "Empty Teachings",
+        "cardType": 1
     },
     "660": {
         "rarity": 5,
-        "name": "Empty Teachings"
+        "name": "Empty Teachings",
+        "cardType": 1
     },
     "661": {
         "rarity": 4,
-        "name": "Key of Hatred"
+        "name": "Key of Hatred",
+        "cardType": 1
     },
     "662": {
         "rarity": 5,
-        "name": "Key of Hatred"
+        "name": "Key of Hatred",
+        "cardType": 1
     },
     "667": {
         "rarity": 5,
-        "name": "Tricky Wisp"
+        "name": "Tricky Wisp",
+        "cardType": 3
     },
     "668": {
         "rarity": 6,
-        "name": "Tricky Wisp"
+        "name": "Tricky Wisp",
+        "cardType": 3
     },
     "811": {
         "rarity": 5,
-        "name": "Type-4O Blade"
+        "name": "Type-4O Blade",
+        "cardType": 1
     },
     "812": {
         "rarity": 6,
-        "name": "Type-4O Blade"
+        "name": "Type-4O Blade",
+        "cardType": 1
     },
     "813": {
         "rarity": 5,
-        "name": "Cruel Arrogance"
+        "name": "Cruel Arrogance",
+        "cardType": 1
     },
     "814": {
         "rarity": 6,
-        "name": "Cruel Arrogance"
+        "name": "Cruel Arrogance",
+        "cardType": 1
     },
     "815": {
         "rarity": 5,
-        "name": "Virtuous Contract"
+        "name": "Virtuous Contract",
+        "cardType": 1
     },
     "816": {
         "rarity": 6,
-        "name": "Virtuous Contract"
+        "name": "Virtuous Contract",
+        "cardType": 1
     },
     "817": {
         "rarity": 5,
-        "name": "No. 7's Staff"
+        "name": "No. 7's Staff",
+        "cardType": 1
     },
     "818": {
         "rarity": 6,
-        "name": "No. 7's Staff"
+        "name": "No. 7's Staff",
+        "cardType": 1
     },
     "819": {
         "rarity": 4,
-        "name": "Iron Pipe"
+        "name": "Iron Pipe",
+        "cardType": 1
     },
     "820": {
         "rarity": 5,
-        "name": "Iron Pipe"
+        "name": "Iron Pipe",
+        "cardType": 1
     },
     "821": {
         "rarity": 4,
-        "name": "Type-3 Lance"
+        "name": "Type-3 Lance",
+        "cardType": 1
     },
     "822": {
         "rarity": 5,
-        "name": "Type-3 Lance"
+        "name": "Type-3 Lance",
+        "cardType": 1
     },
     "823": {
         "rarity": 4,
-        "name": "Emil's Head"
+        "name": "Emil's Head",
+        "cardType": 1
     },
     "824": {
         "rarity": 5,
-        "name": "Emil's Head"
+        "name": "Emil's Head",
+        "cardType": 1
     },
     "825": {
         "rarity": 5,
-        "name": "Simone"
+        "name": "Simone",
+        "cardType": 3
     },
     "826": {
         "rarity": 6,
-        "name": "Simone"
+        "name": "Simone",
+        "cardType": 3
     },
     "827": {
         "rarity": 4,
-        "name": "Machine Lifeform"
+        "name": "Machine Lifeform",
+        "cardType": 3
     },
     "829": {
         "rarity": 4,
-        "name": "Machine Lifeform (Gu"
+        "name": "Machine Lifeform (Gu",
+        "cardType": 3
     },
     "831": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "832": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "833": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "834": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "835": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "836": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "837": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "838": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "839": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "840": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "841": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "842": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "843": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "844": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "845": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "846": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "847": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "848": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "849": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "850": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "851": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "852": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "853": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "854": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "855": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "856": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "857": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "858": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "859": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "860": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "861": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "862": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "863": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "864": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "865": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "866": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "867": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "868": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "869": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "870": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "871": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "872": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "873": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "874": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "875": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "876": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "877": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "878": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "879": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "880": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "881": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "882": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "883": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "884": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "885": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "886": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "887": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "888": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "889": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "890": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "891": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "892": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "893": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "894": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "895": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "896": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "897": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "898": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "899": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "900": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "901": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "902": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "903": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "904": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "905": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "906": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "907": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "908": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "909": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "910": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "911": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "912": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "913": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "914": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "915": {
         "rarity": 3,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "916": {
         "rarity": 4,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "917": {
         "rarity": 5,
-        "name": "2B's Goggles"
+        "name": "2B's Goggles",
+        "cardType": 2
     },
     "918": {
         "rarity": 3,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "919": {
         "rarity": 4,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "920": {
         "rarity": 5,
-        "name": "2B's Combat Uniform"
+        "name": "2B's Combat Uniform",
+        "cardType": 2
     },
     "921": {
         "rarity": 3,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "922": {
         "rarity": 4,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "923": {
         "rarity": 5,
-        "name": "2B's Boots"
+        "name": "2B's Boots",
+        "cardType": 2
     },
     "924": {
         "rarity": 3,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "925": {
         "rarity": 4,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "926": {
         "rarity": 5,
-        "name": "2B's Gloves"
+        "name": "2B's Gloves",
+        "cardType": 2
     },
     "927": {
         "rarity": 5,
-        "name": "Beastlord"
+        "name": "Beastlord",
+        "cardType": 1
     },
     "928": {
         "rarity": 6,
-        "name": "Beastlord"
+        "name": "Beastlord",
+        "cardType": 1
     },
     "1107": {
         "rarity": 5,
-        "name": "Library Wisp"
+        "name": "Library Wisp",
+        "cardType": 3
     },
     "1108": {
         "rarity": 6,
-        "name": "Library Wisp"
+        "name": "Library Wisp",
+        "cardType": 3
     },
     "1364": {
         "rarity": 5,
-        "name": "Pagan Staff"
+        "name": "Pagan Staff",
+        "cardType": 1
     },
     "1365": {
         "rarity": 6,
-        "name": "Pagan Staff"
+        "name": "Pagan Staff",
+        "cardType": 1
     },
     "1492": {
         "rarity": 5,
-        "name": "Sinner\u2019s Manuscript"
+        "name": "Sinner\u2019s Manuscript",
+        "cardType": 1
     },
     "1493": {
         "rarity": 6,
-        "name": "Sinner\u2019s Manuscript"
+        "name": "Sinner\u2019s Manuscript",
+        "cardType": 1
     },
     "1576": {
         "rarity": 5,
-        "name": "Instrument Artisan\u2019s"
+        "name": "Instrument Artisan\u2019s",
+        "cardType": 1
     },
     "1577": {
         "rarity": 6,
-        "name": "Instrument Artisan\u2019s"
+        "name": "Instrument Artisan\u2019s",
+        "cardType": 1
     },
     "1580": {
         "rarity": 5,
-        "name": "Mask of Pride"
+        "name": "Mask of Pride",
+        "cardType": 1
     },
     "1581": {
         "rarity": 6,
-        "name": "Mask of Pride"
+        "name": "Mask of Pride",
+        "cardType": 1
     },
     "1736": {
         "rarity": 5,
-        "name": "Hydra\u2019s Spear"
+        "name": "Hydra\u2019s Spear",
+        "cardType": 1
     },
     "1737": {
         "rarity": 6,
-        "name": "Hydra\u2019s Spear"
+        "name": "Hydra\u2019s Spear",
+        "cardType": 1
     },
     "1909": {
         "rarity": 5,
-        "name": "Forest of Darkness"
+        "name": "Forest of Darkness",
+        "cardType": 1
     },
     "1910": {
         "rarity": 6,
-        "name": "Forest of Darkness"
+        "name": "Forest of Darkness",
+        "cardType": 1
     },
     "2042": {
         "rarity": 5,
-        "name": "Sacred Bird Arbalest"
+        "name": "Sacred Bird Arbalest",
+        "cardType": 1
     },
     "2043": {
         "rarity": 6,
-        "name": "Sacred Bird Arbalest"
+        "name": "Sacred Bird Arbalest",
+        "cardType": 1
     },
     "2080": {
         "rarity": 5,
-        "name": "Great Sword of Natur"
+        "name": "Great Sword of Natur",
+        "cardType": 1
     },
     "2081": {
         "rarity": 6,
-        "name": "Great Sword of Natur"
+        "name": "Great Sword of Natur",
+        "cardType": 1
     }
 }
