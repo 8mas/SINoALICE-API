@@ -91,7 +91,7 @@ if __name__ == "__main__":
     session = Session()
 
     future_list = []
-    with ThreadPoolExecutor(max_workers=120) as executor:
+    with ThreadPoolExecutor(max_workers=2) as executor:
         for _ in range(1000):
             future = executor.submit(reroll_good_account)
             future_list.append(future)
@@ -104,6 +104,6 @@ if __name__ == "__main__":
                     session.commit()
             except Exception as e:
                 logging.warning("An exception occurred, to many threads?")
-
+                print(e)
 
     logging.info("Finished")

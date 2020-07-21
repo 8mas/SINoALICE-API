@@ -35,9 +35,11 @@ class API(BaseApi):
             character_id = str(result["characterMstId"])
 
             if character_id != "0":
-                item_names.append(character_dict[character_id]["name"])
+                to_append = str(rarity) + ":" + str(character_dict[character_id]["name"])
+                item_names.append(to_append)
             else:
-                item_names.append(card_dict[object_id]["name"])
+                to_append = str(rarity) + ":" + card_dict[object_id]["name"]
+                item_names.append(to_append)
 
             if rarity > 5:
                 logging.info("Got rarity >5")
