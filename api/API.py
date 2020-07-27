@@ -110,5 +110,113 @@ class API(BaseApi):
     def POST__api_cleaning_retire(self):
         self._post("/api/cleaning/retire")
 
+
+    def POST__api_quest_get_attention(self):
+        self._post("/api/quest/get_attention")
+
+    def POST__api_quest_get_alice_area_map(self):
+        payload = {
+            "questMapMstId": 1,
+        }
+        self._post("/api/quest/get_alice_area_map", payload)
+
+    def POST__api_quest_get_alice_stage_list(self):
+        payload = {
+            "questAreaMstId": 6,
+            "battleNum": 0
+        }
+        self._post("/api/quest/get_alice_stage_list", payload)
+
+    def POST__api_quest_get_stage_data(self):
+        payload = {
+            "questStageMstId": 51
+        }
+        self._post("/api/quest/get_stage_data", payload)
+
+    def POST__api_quest_get_stage_reward(self):
+        payload = {
+            "questStageMstId": 51
+        }
+        self._post("/api/quest/get_stage_reward", payload)
+
+    def POST__api_quest_get_tutorial_result(self):
+        payload =  {"questStageMstId": 51, "characterMstId": 2}
+        self._post("/api/quest/get_tutorial_result", payload)
+
+    def POST__api_tutorial_finish_mini_tutorial(self):
+        payload = {
+            "miniTutorialMstId": 34
+        }
+        self._post("/api/tutorial/finish_mini_tutorial", payload)
+
+    def POST__api_present_get_present_data(self):
+        response = self._post("/api/present/get_present_data")
+        presents = response["payload"]["presentData"]
+
+        present_id_list = []
+        for json_present in presents:
+            present_id_list.append(json_present["presentDataId"])
+
+        return present_id_list
+
+    def POST__api_present_gain_present(self, present_id_list):
+        payload = {
+            "sendCardStorageFlag": False,
+            "presentDataId": present_id_list
+        }
+
+        self._post("/api/present/gain_present", payload)
+
+    #mstID = which banner 23 = nier
+    def POST__api_gacha_gacha_exec(self):
+        payload = {
+            "gachaMstId": 23,
+            "gachaType": 1
+        }
+        self._post("/api/gacha/gacha_exec", payload)
+
+
+
+    def POST__api_character_get_character_data_list(self):
+        response = self._post("/api/character/get_character_data_list")
+        data = response["payload"]["characterDataList"]
+
+        char_names = []
+        all_ids = []
+
+        for char in data:
+            id = str(char["characterMstId"])
+            all_ids.append(int(id))
+            item_name = character_dict[id]["name"]
+            name = item_name
+            char_names.append(name)
+
+        return char_names, all_ids
+
+    def POST__api_card_info_get_card_data_by_user_id(self):
+        response = self._post("/api/card_info/get_card_data_by_user_id" )
+        data = response["payload"]["cardDataList"]
+
+        item_names = []
+        nightmares = []
+        all_ids = []
+
+        for card in data:
+            id = str(card["cardMstId"])
+            all_ids.append(int(id))
+
+            item_name = card_dict[id]["name"]
+            item_rarity = card_dict[id]["rarity"]
+
+            name = str(item_rarity) + ":" + item_name
+
+            if card_dict[id]["cardType"] == 3:
+                nightmares.append(name)
+            else:
+                item_names.append(name)
+
+        return item_names, nightmares, all_ids
+
+
 class SigningException(Exception):
     pass

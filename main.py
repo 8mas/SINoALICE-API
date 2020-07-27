@@ -12,7 +12,7 @@ root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
 
 file_handler = logging.FileHandler("sinoalice.log", "w", "utf-8")
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG)
 
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel(logging.INFO)
@@ -33,7 +33,7 @@ class Bot:
     def __init__(self):
         self.api = API()
 
-    def create_new_account(self):
+    def create_new_account(self, must_char_list, must_item_list):
         self.api.login(new_registration=True)
 
         self.api.POST__api_user_get_user_data()
@@ -46,7 +46,7 @@ class Bot:
         # Loop
         num_ssrare = 0
         num_characters = 0
-        while (num_ssrare + num_characters) < 5 and num_characters < 3:
+        while num_ssrare < 1 and num_characters < 3:
             time.sleep(11)
             num_ssrare, num_srare, num_characters, item_names = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
 
@@ -73,13 +73,52 @@ class Bot:
         self.api.POST__api_user_get_user_data()
         self.api.POST__api_tutorial_get_next_tutorial_mst_id()
         self.api.POST__api_cleaning_retire()
+
+    def finish_first_quest(self):
+        self.api.POST__api_quest_get_attention()
+        self.api.POST__api_quest_get_alice_area_map()
+        self.api.POST__api_quest_get_alice_stage_list()
+        self.api.POST__api_quest_get_stage_reward()
+        self.api.POST__api_quest_get_stage_data()
+        self.api.POST__api_quest_get_tutorial_result()
+
+    def get_all_presents(self):
+        present_list = self.api.POST__api_present_get_present_data()
+        self.api.POST__api_present_gain_present(present_list)
+
+    def play_gacha(self, gacha_id):
+        self.api.POST__api_gacha_gacha_exec()
+        self.api.POST__api_gacha_gacha_exec()
+        self.api.POST__api_gacha_gacha_exec()
+
+    def is_good_account(self):
+        chars, chars_ids = self.api.POST__api_character_get_character_data_list()
+        items, nightmares, ids = self.api.POST__api_card_info_get_card_data_by_user_id()
+        logging.info(nightmares)
+        logging.info(items)
+        logging.info(chars)
+        logging.debug(chars_ids)
+        logging.debug(ids)
+
+    def migrate(self):
         # Migration
         self.api.get_migrate_information("COSInu11")
-        return self.api.player_information
+
 
 def reroll_good_account():
+    tutorial_chars = []
+    tutorial_items = []
+    gacha_items = []
+    gacha_chars = []
+
     bot = Bot()
-    player_information = bot.create_new_account()
+    bot.create_new_account()
+    bot.finish_first_quest()
+    bot.get_all_presents()
+    bot.play_gacha(1)
+    bot.is_good_account()
+    bot.migrate()
+    exit(1)
     return player_information
 
 
@@ -91,7 +130,7 @@ if __name__ == "__main__":
     session = Session()
 
     future_list = []
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         for _ in range(1000):
             future = executor.submit(reroll_good_account)
             future_list.append(future)
