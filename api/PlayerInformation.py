@@ -25,9 +25,12 @@ class PlayerInformation(Base):
     transfer_code: str = Column(String)
     transfer_password: str = Column(String)
     ss_rare: int = Column(Integer)
-    s_rare: int = Column(Integer)
-    characters: int = Column(Integer)
     item_names: str = Column(String)
+    nightmare_names: str = Column(String)
+    character_names: int = Column(Integer)
+
+    item_ids: str = Column(String)
+    character_ids: str = Column(String)
 
     uuid_payment: str = Column(String, primary_key=True)  # static, This is in the first response when sending app id
     uuid_moderation: str = Column(String)  # static, This is in the first response when sending app id

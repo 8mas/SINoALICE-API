@@ -24,40 +24,26 @@ class API(BaseApi):
     def POST__api_tutorial_fxm_tutorial_gacha_drawn_result(self) -> (int, int, int):
         response = self._post("/api/tutorial/fxm_tutorial_gacha_drawn_result")
 
-        item_names = []
+        item_ids = []
+        character_ids = []
         num_ssrare = 0
-        num_srare = 0
-        num_characters = 0
 
         for result in response["payload"]["result"]:
             rarity = int(result["rarity"])
-            object_id = str(result["objectId"])
-            character_id = str(result["characterMstId"])
+            object_id = result["objectId"]
+            character_id = result["characterMstId"]
 
-            if character_id != "0":
-                to_append = str(rarity) + ":" + str(character_dict[character_id]["name"])
-                item_names.append(to_append)
+            if character_id != 0:
+                character_ids.append(character_id)
             else:
-                to_append = str(rarity) + ":" + card_dict[object_id]["name"]
-                item_names.append(to_append)
+                item_ids.append(object_id)
 
             if rarity > 5:
                 logging.info("Got rarity >5")
             if rarity == 5:
                 num_ssrare += 1
-            if rarity == 4:
-                num_srare += 1
-            if character_id != "0":
-                num_characters += 1
 
-        self.player_information.ss_rare = num_ssrare
-        self.player_information.s_rare = num_srare
-        self.player_information.characters = num_characters
-        self.player_information.item_names = str(item_names)
-
-        logging.info(f"Gacha result SS:{num_ssrare} S:{num_srare} Chars:{num_characters} Names: {item_names}")
-
-        return num_ssrare, num_srare, num_characters, item_names
+        return num_ssrare, item_ids, character_ids
 
     def POST__api_tutorial_fxm_tutorial_gacha_exec(self):
         self._post("/api/tutorial/fxm_tutorial_gacha_exec")
@@ -198,7 +184,7 @@ class API(BaseApi):
         data = response["payload"]["cardDataList"]
 
         item_names = []
-        nightmares = []
+        nightmare_names = []
         all_ids = []
 
         for card in data:
@@ -211,11 +197,11 @@ class API(BaseApi):
             name = str(item_rarity) + ":" + item_name
 
             if card_dict[id]["cardType"] == 3:
-                nightmares.append(name)
+                nightmare_names.append(name)
             else:
                 item_names.append(name)
 
-        return item_names, nightmares, all_ids
+        return item_names, nightmare_names, all_ids
 
 
 class SigningException(Exception):
