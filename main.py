@@ -52,7 +52,6 @@ CINDERELLA_BREAKER = 21
 ALICE_CLERIC = 22
 
 
-set()
 TUTORIAL_SS_MIN = 3  # Number of min SS rares
 TUTORIAL_OVERRIDE_SS_MIN = 5  # If so much SS rares are in the gacha, take it
 TUTORIAL_CHAR_MUST_HAVE_IDS = {GRETEL_MINSTREL, CINDERELLA_BREAKER,
@@ -84,6 +83,7 @@ class Bot:
             num_ssrare, item_ids, character_ids = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
 
             if set(character_ids) & TUTORIAL_CHAR_MUST_HAVE_IDS and num_ssrare >= TUTORIAL_SS_MIN:
+                logging.info(f"New Account {character_ids}")
                 break
 
         self.api.POST__api_tutorial_fxm_tutorial_gacha_exec()
@@ -129,7 +129,6 @@ class Bot:
         self.api.POST__api_gacha_gacha_exec()
         self.api.POST__api_gacha_gacha_exec()
 
-
     def set_player_info_dict(self, character_ids_param, item_ids_param):
         ss_rare = 0
         item_names = ""
@@ -141,14 +140,15 @@ class Bot:
 
         for char_id in character_ids_param:
             id = str(char_id)
-            character_ids += id + ","
-            character_names += character_dict[id]["name"] + ","
+            character_ids += id + ", "
+            character_names += character_dict[id]["name"] + ", "
 
         for item_id in item_ids_param:
             id = str(item_id)
+            item_ids += id + ", "
             rarity = str(card_dict[id]["rarity"])
             card_type = card_dict[id]["cardType"]
-            to_save = rarity + ":" + card_dict[id]["name"] + ","
+            to_save = rarity + ":" + card_dict[id]["name"] + ", "
 
             if rarity == "5":
                 ss_rare += 1
@@ -169,15 +169,14 @@ class Bot:
 
         logging.info(f"Nightmares:{nightmare_names} Items:{item_names} Character:{character_names}")
 
-
     def is_good_account(self):
         char_names, chars_ids = self.api.POST__api_character_get_character_data_list()
         item_names, nightmare_names, ids = self.api.POST__api_card_info_get_card_data_by_user_id()
 
         self.set_player_info_dict(chars_ids, ids)
-
         if GACHA_MUST_HAVE_NIGHTMARE_IDS & set(ids):
             if GACHA_MUST_HAVE_ITEM_IDS & set(ids):
+                logging.info(f"Adding account to database {ids} {chars_ids}")
                 return True
         return False
 
@@ -197,7 +196,9 @@ def reroll_good_account():
         if(bot.is_good_account()):
             bot.migrate()
             no_good_account = False
-    return player_information
+            player_info = bot.api.player_information
+
+    return player_info
 
 
 if __name__ == "__main__":
@@ -208,7 +209,7 @@ if __name__ == "__main__":
     session = Session()
 
     future_list = []
-    with ThreadPoolExecutor(max_workers=1) as executor:
+    with ThreadPoolExecutor(max_workers=100) as executor:
         for _ in range(1000):
             future = executor.submit(reroll_good_account)
             future_list.append(future)
