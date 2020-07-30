@@ -13,7 +13,7 @@ root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
 
 file_handler = logging.FileHandler("sinoalice.log", "w", "utf-8")
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(logging.INFO)
 
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel(logging.INFO)
@@ -52,8 +52,8 @@ CINDERELLA_BREAKER = 21
 ALICE_CLERIC = 22
 
 
-TUTORIAL_SS_MIN = 3  # Number of min SS rares
-TUTORIAL_OVERRIDE_SS_MIN = 5  # If so much SS rares are in the gacha, take it
+TUTORIAL_SS_MIN = 1  # Number of min SS rares
+TUTORIAL_OVERRIDE_SS_MIN = 4  # If so much SS rares are in the gacha, take it
 TUTORIAL_CHAR_MUST_HAVE_IDS = {GRETEL_MINSTREL, CINDERELLA_BREAKER,
                                ALICE_CLERIC}  # This is an OR e.g. 24 or 7 must be there
 
@@ -81,7 +81,7 @@ class Bot:
         while num_ssrare < TUTORIAL_OVERRIDE_SS_MIN:
             time.sleep(11)
             num_ssrare, item_ids, character_ids = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
-
+            logging.info("Rolled")
             if set(character_ids) & TUTORIAL_CHAR_MUST_HAVE_IDS and num_ssrare >= TUTORIAL_SS_MIN:
                 logging.info(f"New Account {character_ids}")
                 break
@@ -176,8 +176,18 @@ class Bot:
         self.set_player_info_dict(chars_ids, ids)
         if GACHA_MUST_HAVE_NIGHTMARE_IDS & set(ids):
             if GACHA_MUST_HAVE_ITEM_IDS & set(ids):
-                logging.info(f"Adding account to database {ids} {chars_ids}")
+                logging.info(f"Adding 1x Nightmare and Item account to database {ids} {chars_ids}")
                 return True
+
+        if len(GACHA_MUST_HAVE_NIGHTMARE_IDS & set(ids)) > 1:
+            logging.info(f"Adding 2x Nightmare account to database {ids} {chars_ids}")
+            return True
+
+        if len(TUTORIAL_CHAR_MUST_HAVE_IDS & set(chars_ids)) > 1:
+            if GACHA_MUST_HAVE_NIGHTMARE_IDS & set(ids):
+                logging.info(f"Adding 2x Class and Nightmare account to database {ids} {chars_ids}")
+                return True
+
         return False
 
     def migrate(self):

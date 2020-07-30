@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Interval, String, Integer
+from sqlalchemy import Column, Interval, String, Integer, Boolean
 from sqlalchemy import orm
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -31,6 +31,8 @@ class PlayerInformation(Base):
 
     item_ids: str = Column(String)
     character_ids: str = Column(String)
+    sold: bool = Column(Boolean)
+
 
     uuid_payment: str = Column(String, primary_key=True)  # static, This is in the first response when sending app id
     uuid_moderation: str = Column(String)  # static, This is in the first response when sending app id
@@ -41,6 +43,8 @@ class PlayerInformation(Base):
     _private_key_payment: str = Column(String)
     _private_key_moderation: str = Column(String)
     user_id: int = Column(Integer)  # static, response to api login
+
+
 
     private_key_payment: RsaKey = RSA.generate(512)
     private_key_moderation: RsaKey = RSA.generate(512)
