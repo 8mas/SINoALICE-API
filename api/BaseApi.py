@@ -23,8 +23,6 @@ requests.packages.urllib3.disable_warnings()
 logging.getLogger("requests").setLevel(logging.CRITICAL)
 logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 
-DEBUG = False
-
 def get_action_time(old_action_time=0):
     action_times = [0xfd2c030, 0x18c120b0, 0xdd98840, 0x13ee8a0, 0x1a26560, 0x21526d10, 0xe100190, 0xfbf3830]  # Todo how are those generated
     current_time = (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
@@ -39,6 +37,7 @@ def check_action_time(action_time):
 
 class BaseApi:
     URL = "https://api-sinoalice-us.pokelabo.jp"
+    DEBUG = False
 
     def __init__(self, player_information: PlayerInformation = None):
         self.request_session = requests.session()
@@ -58,9 +57,12 @@ class BaseApi:
         self.action_time = get_action_time()
 
         # Use local proxy
-        if DEBUG:
+        if self.DEBUG:
             logging.info("Using proxy")
             self.request_session.proxies.update({"http": "http://127.0.0.1:8888", "https": "https://127.0.0.1:8888", })
+
+    def _set_in_debug_mode(self):
+        self.request_session.proxies.update({"http": "http://127.0.0.1:8888", "https": "https://127.0.0.1:8888", })
 
     def _login_account(self):
         inner_payload = self.device_info.get_device_info_dict()

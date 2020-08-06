@@ -2839,6 +2839,136 @@
         "name": "Tricky Wisp",
         "cardType": 3
     },
+    "743": {
+        "rarity": 5,
+        "name": "Noin, Sandstorm's Ma",
+        "cardType": 3
+    },
+    "744": {
+        "rarity": 6,
+        "name": "Noin, Sandstorm's Ma",
+        "cardType": 3
+    },
+    "745": {
+        "rarity": 5,
+        "name": "Tome of Bondage",
+        "cardType": 1
+    },
+    "746": {
+        "rarity": 6,
+        "name": "Tome of Bondage",
+        "cardType": 1
+    },
+    "747": {
+        "rarity": 5,
+        "name": "Ebony Sword",
+        "cardType": 1
+    },
+    "748": {
+        "rarity": 6,
+        "name": "Ebony Sword",
+        "cardType": 1
+    },
+    "749": {
+        "rarity": 5,
+        "name": "Ebony Scythe",
+        "cardType": 1
+    },
+    "750": {
+        "rarity": 6,
+        "name": "Ebony Scythe",
+        "cardType": 1
+    },
+    "751": {
+        "rarity": 5,
+        "name": "Ebony Staff",
+        "cardType": 1
+    },
+    "752": {
+        "rarity": 6,
+        "name": "Ebony Staff",
+        "cardType": 1
+    },
+    "753": {
+        "rarity": 4,
+        "name": "Azure Blade",
+        "cardType": 1
+    },
+    "754": {
+        "rarity": 5,
+        "name": "Azure Blade",
+        "cardType": 1
+    },
+    "755": {
+        "rarity": 4,
+        "name": "Guided Gun",
+        "cardType": 1
+    },
+    "756": {
+        "rarity": 5,
+        "name": "Guided Gun",
+        "cardType": 1
+    },
+    "757": {
+        "rarity": 4,
+        "name": "Axe of Paranoia",
+        "cardType": 1
+    },
+    "758": {
+        "rarity": 5,
+        "name": "Axe of Paranoia",
+        "cardType": 1
+    },
+    "759": {
+        "rarity": 4,
+        "name": "Possessed Halberd",
+        "cardType": 1
+    },
+    "760": {
+        "rarity": 5,
+        "name": "Possessed Halberd",
+        "cardType": 1
+    },
+    "761": {
+        "rarity": 4,
+        "name": "Wild Rose Harp",
+        "cardType": 1
+    },
+    "762": {
+        "rarity": 5,
+        "name": "Wild Rose Harp",
+        "cardType": 1
+    },
+    "763": {
+        "rarity": 4,
+        "name": "Clairvoyant Staff",
+        "cardType": 1
+    },
+    "764": {
+        "rarity": 5,
+        "name": "Clairvoyant Staff",
+        "cardType": 1
+    },
+    "765": {
+        "rarity": 4,
+        "name": "Secret Map",
+        "cardType": 1
+    },
+    "766": {
+        "rarity": 5,
+        "name": "Secret Map",
+        "cardType": 1
+    },
+    "767": {
+        "rarity": 4,
+        "name": "Wheel of Perpetuity",
+        "cardType": 1
+    },
+    "768": {
+        "rarity": 5,
+        "name": "Wheel of Perpetuity",
+        "cardType": 1
+    },
     "811": {
         "rarity": 5,
         "name": "Type-4O Blade",
@@ -3508,5 +3638,15 @@
         "rarity": 6,
         "name": "Great Sword of Natur",
         "cardType": 1
+    },
+    "2218": {
+        "rarity": 5,
+        "name": "Disembodied Emil",
+        "cardType": 3
+    },
+    "2219": {
+        "rarity": 6,
+        "name": "Disembodied Emil",
+        "cardType": 3
     }
 }

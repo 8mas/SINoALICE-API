@@ -13,10 +13,10 @@ root_logger = logging.getLogger()
 root_logger.setLevel(logging.DEBUG)
 
 file_handler = logging.FileHandler("sinoalice.log", "w", "utf-8")
-file_handler.setLevel(logging.INFO)
+file_handler.setLevel(logging.DEBUG) # Set to info
 
 console_handler = logging.StreamHandler(sys.stdout)
-console_handler.setLevel(logging.INFO)
+console_handler.setLevel(logging.DEBUG) # Set to info
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%Y/%m/%d %I:%M:%S')
 file_handler.setFormatter(formatter)
@@ -62,11 +62,12 @@ GACHA_MUST_HAVE_ITEM_IDS = {TYPE_40_BLADE, BEASTLORD, CRUEL_ARROGANCE, VIRTUOUS_
 GACHA_MUST_HAVE_NIGHTMARE_IDS = {UGALLU, FREEZE_GOLEM, LINDWYRM}
 
 
+
 class Bot:
     def __init__(self):
         self.api = API()
 
-    def create_new_account(self):
+    def create_new_account(self, activate_farming=False):
         self.api.login(new_registration=True)
 
         self.api.POST__api_user_get_user_data()
@@ -77,14 +78,18 @@ class Bot:
         self.api.POST__api_tutorial_get_tutorial_gacha()
 
         # Loop
-        num_ssrare = 0
-        while num_ssrare < TUTORIAL_OVERRIDE_SS_MIN:
+        if activate_farming:
+            num_ssrare = 0
+            while num_ssrare < TUTORIAL_OVERRIDE_SS_MIN:
+                time.sleep(11)
+                num_ssrare, item_ids, character_ids = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
+                logging.info("Rolled")
+                if set(character_ids) & TUTORIAL_CHAR_MUST_HAVE_IDS and num_ssrare >= TUTORIAL_SS_MIN:
+                    logging.info(f"New Account {character_ids}")
+                    break
+        else:
             time.sleep(11)
             num_ssrare, item_ids, character_ids = self.api.POST__api_tutorial_fxm_tutorial_gacha_drawn_result()
-            logging.info("Rolled")
-            if set(character_ids) & TUTORIAL_CHAR_MUST_HAVE_IDS and num_ssrare >= TUTORIAL_SS_MIN:
-                logging.info(f"New Account {character_ids}")
-                break
 
         self.api.POST__api_tutorial_fxm_tutorial_gacha_exec()
         # Loop End
@@ -211,7 +216,7 @@ def reroll_good_account():
     return player_info
 
 
-if __name__ == "__main__":
+def create_good_accounts():
     db_name = "sinoalice_accounts.db"
     PlayerInformation.create_db(db_name)
     engine = create_engine(f"sqlite:///{db_name}")
@@ -233,5 +238,35 @@ if __name__ == "__main__":
             except Exception as e:
                 logging.warning("An exception occurred, to many threads?")
                 print(e)
+
+    #gacha_10
+    #gacha_11
+    #todo neue karten / cdn-sinoalice-g-ap get_card_mst_list_en
+def test_something():
+    for i in range(14, 100, 5):
+        bot = Bot()
+        bot.api._set_in_debug_mode()
+
+        bot.create_new_account()
+        bot.finish_first_quest()
+        bot.get_all_presents()
+        #bot.api.POST__api_gacha_gacha_exec(23, 5)
+
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+        bot.api.POST__api_gacha_gacha_exec(11, 1)
+
+
+
+        bot.is_good_account()
+        bot.migrate()
+
+
+if __name__ == "__main__":
+    test_something()
 
     logging.info("Finished")

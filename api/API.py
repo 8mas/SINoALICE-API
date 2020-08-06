@@ -2,6 +2,7 @@ from api.BaseApi import BaseApi
 from api.ParseResourceData import character_dict, card_dict
 import logging
 
+
 class API(BaseApi):
     def __init__(self):
         BaseApi.__init__(self)
@@ -96,7 +97,6 @@ class API(BaseApi):
     def POST__api_cleaning_retire(self):
         self._post("/api/cleaning/retire")
 
-
     def POST__api_quest_get_attention(self):
         self._post("/api/quest/get_attention")
 
@@ -126,7 +126,7 @@ class API(BaseApi):
         self._post("/api/quest/get_stage_reward", payload)
 
     def POST__api_quest_get_tutorial_result(self):
-        payload =  {"questStageMstId": 51, "characterMstId": 2}
+        payload = {"questStageMstId": 51, "characterMstId": 2}
         self._post("/api/quest/get_tutorial_result", payload)
 
     def POST__api_tutorial_finish_mini_tutorial(self):
@@ -153,15 +153,13 @@ class API(BaseApi):
 
         self._post("/api/present/gain_present", payload)
 
-    #mstID = which banner 23 = nier
-    def POST__api_gacha_gacha_exec(self):
+    # mstID = which banner 23 = nier
+    def POST__api_gacha_gacha_exec(self, gacha_id=23, gacha_type=1):
         payload = {
-            "gachaMstId": 23,
-            "gachaType": 1
+            "gachaMstId": gacha_id,
+            "gachaType": gacha_type
         }
         self._post("/api/gacha/gacha_exec", payload)
-
-
 
     def POST__api_character_get_character_data_list(self):
         response = self._post("/api/character/get_character_data_list")
@@ -180,7 +178,7 @@ class API(BaseApi):
         return char_names, all_ids
 
     def POST__api_card_info_get_card_data_by_user_id(self):
-        response = self._post("/api/card_info/get_card_data_by_user_id" )
+        response = self._post("/api/card_info/get_card_data_by_user_id")
         data = response["payload"]["cardDataList"]
 
         item_names = []
