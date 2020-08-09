@@ -3,6 +3,7 @@ from pathlib import Path
 
 base_path = Path(__file__).parent
 
+
 def parse_card_en():
     file = open(base_path / "../resources/raw_resources/card_en.json", encoding="utf-8")
     data = file.read()

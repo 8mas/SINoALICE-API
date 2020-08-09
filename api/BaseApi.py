@@ -35,9 +35,10 @@ def get_action_time(old_action_time=0):
 def check_action_time(action_time):
     return action_time < (datetime.datetime.utcnow() - datetime.datetime(1,1,1)).total_seconds() * 10**7
 
+
 class BaseApi:
     URL = "https://api-sinoalice-us.pokelabo.jp"
-    DEBUG = False
+    DEBUG = True
 
     def __init__(self, player_information: PlayerInformation = None):
         self.request_session = requests.session()
@@ -45,8 +46,7 @@ class BaseApi:
 
         self.device_info = DeviceInfo()
         self.player_information = player_information
-        if player_information is None:
-            self.player_information = PlayerInformation()
+        self.player_information = player_information or PlayerInformation()
 
         self.oauth_payment = OAuthPayment(self.device_info, self.player_information.private_key_payment,
                                           self.player_information.device_id, self.request_session)
@@ -185,7 +185,7 @@ class BaseApi:
         payload = self._prepare_request("POST", resource, payload, remove_header=remove_header)
 
         resulting_response = None
-        timeout_duration = 10
+        timeout_duration = 10 # todo exponential backoff
         while resulting_response is None:
             response = self.request_session.post(url, payload)
             try:

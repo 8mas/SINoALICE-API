@@ -1,3 +1,5 @@
+from typing import Optional, Dict, Any
+
 from Crypto.Hash import SHA1
 from urllib.parse import quote_plus
 from Crypto.Signature import pkcs1_15
@@ -25,8 +27,8 @@ class OAuthCrypto:
         self.app_secret = app_secret
         self.rsa_key = rsa_key
 
-    def build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, uuid=None,
-                                 new_account=False, extra_header=None):
+    def build_oauth_header_entry(self, rest_method: str, full_url: str, body_data: bytes, uuid: Optional[str] = None,
+                                 new_account: bool=False, extra_header: Dict[str, Any]=None):
 
         timestamp = int(time.time())
         oauth_header = {
@@ -38,8 +40,7 @@ class OAuthCrypto:
             "oauth_version": "1.0"
         }
 
-        if extra_header:
-            oauth_header.update(extra_header)
+        oauth_header.update(extra_header or {})
 
         if not new_account:
             to_hash = (self.app_secret + str(timestamp)).encode()
