@@ -1,0 +1,13 @@
+/api/Constants/Secrets.py
+Notes
+
+.DS_Store
+.idea
+__pycache__/
+*.chlsj
+*.log
+*.db
+
+test.py
+out.py
+CharlesHacker.py
