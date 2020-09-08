@@ -1,3 +1,4 @@
+# Android. IOS *should* be the same.
 APP_VERSION = "2.4.2"
 
 CRYPTO_KEY = # bytes e.g. b"EOpB..."
